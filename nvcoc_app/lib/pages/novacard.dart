@@ -12,6 +12,7 @@ class NovaTemplate extends StatelessWidget {
     return GestureDetector(
       onTap:() => Navigator.pushNamed(context, screen.pagenav),
       child: Card(
+        color: Color.fromARGB(255, 226, 226, 226),
         margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -24,7 +24,7 @@ List<NovaScreen> screens = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 237, 237),
+      backgroundColor: Color.fromARGB(255, 202, 202, 202),
       appBar: AppBar(
         backgroundColor: const Color(0xFF04578f),
         title: Text(
