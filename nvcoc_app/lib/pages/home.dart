@@ -27,9 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ...screens.map((screen) => NovaTemplate(screen: screen)),
-          ],
+          children: screens.map((screen) => NovaTemplate(screen: screen)).toList(),
         ),
       ),
     );
