@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nvcoc_app/pages/nova_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class WhoWeAreScreen extends StatefulWidget {
   const WhoWeAreScreen({super.key});
 
@@ -10,6 +11,7 @@ class WhoWeAreScreen extends StatefulWidget {
 }
 
 class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,28 +79,37 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                   elevation: 4.0,
                   shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.yellow)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text(
-                              'CHECK OUT OUR INSTAGRAM (@NORTHERNVA.CHURCH)',
-                              style: GoogleFonts.montserrat(
-                                fontSize: 12.0,
-                                letterSpacing: 2.0,
-                                color: const Color(0xFF04578F),
-                              )),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Center(
+                            child: Text(
+                                'CHECK OUT OUR INSTAGRAM (@NORTHERNVA.CHURCH)',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 12.0,
+                                  letterSpacing: 2.0,
+                                  color: const Color(0xFF04578F),
+                                )),
+                          ),
                         ),
-                      ),
-                     Image.asset('assets/insta.png', height: 40, width: 40),
-                    ],
+                        GestureDetector(
+                          onTap: () {Navigator.pushReplacementNamed(context, '/');},
+                      
+                          child: Image.asset('assets/insta.png',
+                              height: 40, width: 40),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )
             ],
           ),
         ]));
+        
   }
 }
