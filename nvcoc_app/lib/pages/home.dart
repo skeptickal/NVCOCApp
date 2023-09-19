@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<NovaScreen> screens = [
-    NovaScreen(pic: 'novalogo.png', pagename: 'About Us', pagenav: '/about'),
+    NovaScreen(pic: 'churchpic.jpg', pagename: 'About Us', pagenav: '/about'),
     NovaScreen(
         pic: 'ministries.jpeg', pagename: 'Ministries', pagenav: '/ministries'),
     NovaScreen(pic: 'give.png', pagename: 'Give', pagenav: '/give'),
