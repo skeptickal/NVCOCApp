@@ -31,7 +31,7 @@ class NovaTemplate extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, screen.pagenav),
               icon: Image.asset(
                 'assets/${screen.pic}',
                 width: 70.0,

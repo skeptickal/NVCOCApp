@@ -12,7 +12,8 @@ class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
         Navigator.pushReplacementNamed(context, '/');
       },
       child: AppBar(
-        backgroundColor: Color.fromARGB(255, 203, 203, 203),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         title: Image.asset(
           'assets/novalogo.png',
           width: 80,

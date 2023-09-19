@@ -17,7 +17,7 @@ class _AboutScreenState extends State<AboutScreen> {
     NovaScreen(
         pic: 'novalogo.png',
         pagename: 'What We Believe',
-        pagenav: '/ministries'),
+        pagenav: '/belief'),
     NovaScreen(pic: 'novalogo.png', pagename: 'Leadership', pagenav: '/give'),
   ];
 
