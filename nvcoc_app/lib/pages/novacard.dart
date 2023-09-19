@@ -3,16 +3,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'novapages.dart';
 
 class NovaTemplate extends StatelessWidget {
-
-    final NovaScreen screen;
-    const NovaTemplate({super.key, required this.screen});
+  final NovaScreen screen;
+  const NovaTemplate({super.key, required this.screen});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:() => Navigator.pushNamed(context, screen.pagenav),
+      onTap: () => Navigator.pushNamed(context, screen.pagenav),
       child: Card(
-        color: Color.fromARGB(255, 226, 226, 226),
+        elevation: 4.0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: Color(0xFF04578F),
+            width: 2.0,
+          ),
+        ),
+        color: Color.fromARGB(255, 255, 255, 255),
         margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,15 +31,13 @@ class NovaTemplate extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {
-              },
+              onPressed: () {},
               icon: Image.asset(
                 'assets/${screen.pic}',
                 width: 70.0,
                 height: 70.0,
               ),
-              ),
-    
+            ),
           ],
         ),
       ),

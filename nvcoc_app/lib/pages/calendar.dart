@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/nova_appbar.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
@@ -12,9 +13,9 @@ class CalendarScreen extends StatefulWidget {
 class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-
-      appBar: AppBar(title: Text('calendar'),),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 217, 216, 216),
+      appBar: NovaAppBar(),
     );
   }
 }
