@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/nova_appbar.dart';
 
 class MinistriesScreen extends StatefulWidget {
   const MinistriesScreen({super.key});
@@ -10,9 +11,9 @@ class MinistriesScreen extends StatefulWidget {
 class _MinistriesScreenState extends State<MinistriesScreen> {
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-
-      appBar: AppBar(title: const Text('ministries'),),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 217, 216, 216),
+      appBar: NovaAppBar(),
     );
   }
 }

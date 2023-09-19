@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/nova_appbar.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -13,8 +14,8 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(title: Text('about us'),),
+      backgroundColor: Color.fromARGB(255, 217, 216, 216),
+      appBar: NovaAppBar(),
     );
   }
 }
