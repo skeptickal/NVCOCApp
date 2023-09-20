@@ -69,11 +69,11 @@ class _BeliefScreenState extends State<BeliefScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
                             child: Text(
-                              'They devoted themselves to the apostles\' teaching and'
+                              'They devoted themselves to the apostles\' teaching and '
                               'to the fellowship, to the breaking of bread and to prayer.'
-                              'Everyone was filled with awe, and many wonders and miraculous'
-                              'signs were done by the apostles. All the believers were together'
-                              'and had everything in common. Selling their possessions and goods,'
+                              ' Everyone was filled with awe, and many wonders and miraculous'
+                              'signs were done by the apostles. All the believers were together '
+                              'and had everything in common. Selling their possessions and goods, '
                               'they gave to anyone as he had need. Every day they continued to meet'
                               'together in the temple courts. They broke bread in their homes and ate'
                               'together with glad and sincere hearts, praising God and enjoying the favor'
