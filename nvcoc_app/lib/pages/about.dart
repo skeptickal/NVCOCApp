@@ -24,14 +24,20 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ...screens.map((screen) => NovaTemplate(screen: screen)),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFF04578f), Colors.white]),),
+        child: ListView(
+          children: [Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ...screens.map((screen) => NovaTemplate(screen: screen)),
+            ],
+          ),],
         ),
       ),
     );

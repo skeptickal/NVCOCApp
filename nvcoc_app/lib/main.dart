@@ -9,11 +9,13 @@ import 'package:nvcoc_app/pages/ministries.dart';
 import 'package:nvcoc_app/aboutpages/belief.dart';
 import 'package:nvcoc_app/aboutpages/who_we_are.dart';
 import 'package:nvcoc_app/aboutpages/leaders.dart';
+import 'package:nvcoc_app/pages/realhome.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/',
+    initialRoute: '/realhome',
     routes: {
+      '/realhome': (context) => RealHomeScreen(),
       '/': (context) => HomeScreen(),
       '/calendar': (context) => CalendarScreen(),
       '/about': (context) => AboutScreen(),
