@@ -12,30 +12,40 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<NovaScreen> screens = [
-    NovaScreen(pic: 'churchpic.png', pagename: 'About Us', pagenav: '/about'),
+    NovaScreen(pic: 'churchpic.png', pagename: 'ABOUT US', pagenav: '/about'),
     NovaScreen(
-        pic: 'people.jpg', pagename: 'Ministries', pagenav: '/ministries'),
-    NovaScreen(pic: 'give.png', pagename: 'Give', pagenav: '/give'),
-    NovaScreen(pic: 'calendar.png', pagename: 'Calendar', pagenav: '/calendar'),
+        pic: 'people.jpg', pagename: 'MINISTRIES', pagenav: '/ministries'),
+    NovaScreen(pic: 'give.png', pagename: 'GIVE', pagenav: '/give'),
+    NovaScreen(pic: 'calendar.png', pagename: 'CALENDAR', pagenav: '/calendar'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      body: Container( decoration: const BoxDecoration(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.white,
+          child: Icon(
+            Icons.chat_bubble,
+            color: Color(0xFF04578f),
+          )),
+      body: Container(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [Color(0xFF04578f), Colors.white]),
         ),
         child: ListView(
-          children: [Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: screens
-                .map((screen) => NovaTemplate(screen: screen))
-                .toList(),
-          ),]
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: screens
+                  .map((screen) => NovaTemplate(screen: screen))
+                  .toList(),
+            ),
+          ],
         ),
       ),
     );
