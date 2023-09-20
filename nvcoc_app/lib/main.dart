@@ -12,6 +12,7 @@ import 'package:nvcoc_app/aboutpages/leaders.dart';
 import 'package:nvcoc_app/homepages/realhome.dart';
 import 'package:nvcoc_app/homepages/connect.dart';
 import 'package:nvcoc_app/homepages/learn.dart';
+import 'package:nvcoc_app/connectpages/smallgroups.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,6 +36,7 @@ void main() {
       '/learn': (context) => LearnScreen(),
       //connect + related subscreens
       '/connect': (context) => ConnectScreen(),
+      '/smallgroups': (context) => SmallGroupScreen(),
 
     },
   ));
