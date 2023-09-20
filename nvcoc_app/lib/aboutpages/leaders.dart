@@ -15,6 +15,11 @@ class _LeadersScreenState extends State<LeadersScreen> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 217, 216, 216),
         appBar: const NovaAppBar(),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+      },
+      backgroundColor: Colors.white,
+      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
+      ),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(

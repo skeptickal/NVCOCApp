@@ -16,6 +16,11 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const NovaAppBar(),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+      },
+      backgroundColor: Colors.white,
+      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
+      ),
         body: Container( decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -92,7 +97,7 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                             padding: const EdgeInsets.all(6.0),
                             child: Center(
                               child: Text(
-                                  'CHECK OUT OUR INSTAGRAM (@NORTHERNVA.CHURCH)',
+                                  'CHECK OUT OUR INSTAGRAM\n  (@NORTHERNVA.CHURCH)',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 12.0,
                                     letterSpacing: 2.0,

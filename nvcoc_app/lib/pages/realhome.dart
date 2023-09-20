@@ -14,6 +14,11 @@ class _RealHomeScreenState extends State<RealHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+      },
+      backgroundColor: Colors.white,
+      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
+      ),
       body: Stack(
         children: [
           Image.asset(
