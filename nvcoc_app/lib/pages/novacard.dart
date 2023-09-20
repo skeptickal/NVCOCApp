@@ -12,13 +12,13 @@ class NovaTemplate extends StatelessWidget {
       onTap: () => Navigator.pushNamed(context, screen.pagenav),
       child: Card(
         elevation: 4.0,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           side: BorderSide(
             color: Color(0xFF04578F),
             width: 2.0,
           ),
         ),
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

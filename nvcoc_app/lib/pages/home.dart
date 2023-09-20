@@ -12,9 +12,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<NovaScreen> screens = [
-    NovaScreen(pic: 'churchpic.jpg', pagename: 'About Us', pagenav: '/about'),
+    NovaScreen(pic: 'churchpic.png', pagename: 'About Us', pagenav: '/about'),
     NovaScreen(
-        pic: 'ministries.jpeg', pagename: 'Ministries', pagenav: '/ministries'),
+        pic: 'people.jpg', pagename: 'Ministries', pagenav: '/ministries'),
     NovaScreen(pic: 'give.png', pagename: 'Give', pagenav: '/give'),
     NovaScreen(pic: 'calendar.png', pagename: 'Calendar', pagenav: '/calendar'),
   ];
@@ -22,8 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NovaAppBar(),
-      body: Container( decoration: BoxDecoration(
+      appBar: const NovaAppBar(),
+      body: Container( decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,

@@ -13,10 +13,10 @@ class _BeliefScreenState extends State<BeliefScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 217, 216, 216),
-        appBar: NovaAppBar(),
+        backgroundColor: const Color.fromARGB(255, 217, 216, 216),
+        appBar: const NovaAppBar(),
         body: Container(
-         decoration: BoxDecoration(
+         decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -109,7 +109,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 2.0),
+                        const SizedBox(height: 2.0),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
@@ -150,7 +150,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 2.0),
+                        const SizedBox(height: 2.0),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
@@ -197,7 +197,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 2.0),
+                        const SizedBox(height: 2.0),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
@@ -238,7 +238,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 2.0),
+                        const SizedBox(height: 2.0),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
@@ -264,7 +264,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                   ),
                 ),
               ],
-            ),],
+            ),], 
           ),
         ));
   }

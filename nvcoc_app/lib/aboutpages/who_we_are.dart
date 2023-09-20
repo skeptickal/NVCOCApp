@@ -15,8 +15,8 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: NovaAppBar(),
-        body: Container( decoration: BoxDecoration(
+        appBar: const NovaAppBar(),
+        body: Container( decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -53,7 +53,7 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                           child: Center(
                             child: Text(
                               'Simply put, we are a group of people trying to live like Jesus.'
-                              ' We\’re broken, passionate, imperfect, and doing our best to love'
+                              ' We’re broken, passionate, imperfect, and doing our best to love'
                               ' a world that needs it. We’re a big family whose doors are wide '
                               'open to anyone! Seriously though, the church is diverse and '
                               'international and you’ll meet people from just about every culture'
@@ -81,7 +81,7 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                   child: Card(
                     margin: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0),
                     elevation: 4.0,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         side: BorderSide(color: Colors.yellow)),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
