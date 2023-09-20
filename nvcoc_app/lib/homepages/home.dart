@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'novapages.dart';
-import 'novacard.dart';
-import 'nova_appbar.dart';
+import '../templates/novapages.dart';
+import '../templates/novacard.dart';
+import '../templates/nova_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,10 +13,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<NovaScreen> screens = [
     NovaScreen(pic: 'churchpic.png', pagename: 'ABOUT US', pagenav: '/about'),
-    NovaScreen(pic: 'novalogo.png', pagename: 'CONNECT', pagenav: '/about'),
+    NovaScreen(pic: 'connect.png', pagename: 'CONNECT', pagenav: '/about'),
     NovaScreen(
         pic: 'people.jpg', pagename: 'MINISTRIES', pagenav: '/ministries'),
-        NovaScreen(pic: 'novalogo.png', pagename: 'LEARN', pagenav: '/about'),
+        NovaScreen(pic: 'learn.png', pagename: 'LEARN', pagenav: '/about'),
     NovaScreen(pic: 'give.png', pagename: 'GIVE', pagenav: '/give'),
     NovaScreen(pic: 'calendar.png', pagename: 'CALENDAR', pagenav: '/calendar'),
   ];
