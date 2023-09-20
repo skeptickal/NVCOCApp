@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/pages/nova_appbar.dart';
+import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class MinistriesScreen extends StatefulWidget {
   const MinistriesScreen({super.key});

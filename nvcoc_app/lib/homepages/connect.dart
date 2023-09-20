@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/pages/nova_appbar.dart';
-import 'novapages.dart';
-import 'novacard.dart';
+import 'package:nvcoc_app/templates/nova_appbar.dart';
+import '../templates/novapages.dart';
+import '../templates/novacard.dart';
 
-class AboutScreen extends StatefulWidget {
-  const AboutScreen({super.key});
+class ConnectScreen extends StatefulWidget {
+  const ConnectScreen({super.key});
 
   @override
-  State<AboutScreen> createState() => _AboutScreenState();
+  State<ConnectScreen> createState() => _ConnectScreenState();
 }
 
-class _AboutScreenState extends State<AboutScreen> {
+class _ConnectScreenState extends State<ConnectScreen> {
   List<NovaScreen> screens = [
     NovaScreen(
         pic: 'people.jpg', pagename: 'WHO WE ARE', pagenav: '/who_we_are'),

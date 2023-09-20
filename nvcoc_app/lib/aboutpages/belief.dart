@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nvcoc_app/pages/nova_appbar.dart';
+import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class BeliefScreen extends StatefulWidget {
   const BeliefScreen({super.key});
