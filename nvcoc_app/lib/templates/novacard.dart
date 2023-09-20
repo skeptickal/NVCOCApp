@@ -27,7 +27,7 @@ class NovaTemplate extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
               child: Text(
                 screen.pagename,
-                style: GoogleFonts.montserrat(fontSize: 20.0),
+                style: GoogleFonts.montserrat(fontSize: 20.0, color: Color(0xff04578f), letterSpacing: 1.5),
               ),
             ),
             IconButton(
