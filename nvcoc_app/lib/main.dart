@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/homepages/home.dart';
 import 'package:nvcoc_app/homepages/calendar.dart';
@@ -15,6 +13,7 @@ import 'package:nvcoc_app/homepages/learn.dart';
 import 'package:nvcoc_app/connectpages/smallgroups.dart';
 
 void main() {
+
   runApp(MaterialApp(
     initialRoute: '/realhome',
     routes: {
@@ -38,6 +37,10 @@ void main() {
       '/connect': (context) => ConnectScreen(),
       '/smallgroups': (context) => SmallGroupScreen(),
 
-    },
-  ));
+    }, 
+  )
+  );
+
 }
+
+
