@@ -19,7 +19,7 @@ class NovaTemplate extends StatelessWidget {
           ),
         ),
         color: const Color.fromARGB(255, 255, 255, 255),
-        margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+        //margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,7 +27,7 @@ class NovaTemplate extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
               child: Text(
                 screen.pagename,
-                style: GoogleFonts.montserrat(fontSize: 20.0, color: Color(0xff04578f), letterSpacing: 1.5),
+                style: GoogleFonts.montserrat(fontSize: 14.0, color: Color(0xff04578f), letterSpacing: 1.5),
               ),
             ),
             IconButton(
