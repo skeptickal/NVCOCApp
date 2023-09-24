@@ -44,9 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   )),
                   child: Padding(
                     padding: EdgeInsets.all(6.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           'CONNECT WITH US',
@@ -56,6 +56,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize: 30.0,
                           ),
                         ),
+                        Text(
+                          'Sundays at Oakton High School or YouTube, 10:30AM',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                          ),
+                        ),
+                        
                       ],
                     ),
                   ),
