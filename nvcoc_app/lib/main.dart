@@ -11,9 +11,9 @@ import 'package:nvcoc_app/homepages/realhome.dart';
 import 'package:nvcoc_app/homepages/connect.dart';
 import 'package:nvcoc_app/homepages/learn.dart';
 import 'package:nvcoc_app/connectpages/smallgroups.dart';
+import 'package:nvcoc_app/connectpages/comment.dart';
 
 void main() {
-
   runApp(MaterialApp(
     initialRoute: '/realhome',
     routes: {
@@ -36,11 +36,7 @@ void main() {
       //connect + related subscreens
       '/connect': (context) => ConnectScreen(),
       '/smallgroups': (context) => SmallGroupScreen(),
-
-    }, 
-  )
-  );
-
+      '/comment': (context) => CommentScreen(),
+    },
+  ));
 }
-
-

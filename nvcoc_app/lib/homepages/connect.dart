@@ -16,12 +16,16 @@ class _ConnectScreenState extends State<ConnectScreen> {
         pic: 'people.jpg', pagename: 'SMALL GROUPS', pagenav: '/smallgroups'),
     NovaScreen(
         pic: 'cross.png', pagename: 'WORSHIP WITH US', pagenav: '/belief'),
-    NovaScreen(pic: 'comment.png', pagename: 'COMMENT CARDS', pagenav: '/leaders'),
-    NovaScreen(pic: 'team.png', pagename: 'SERVICE TEAM SIGN UP', pagenav: '/leaders'),
-    NovaScreen(pic: 'volunteer.png', pagename: 'VOLUNTEER', pagenav: '/leaders'),
+    NovaScreen(
+        pic: 'comment.png', pagename: 'COMMENT CARDS', pagenav: '/comment'),
+    NovaScreen(
+        pic: 'team.png', pagename: 'SERVICE TEAM SIGN UP', pagenav: '/leaders'),
+    NovaScreen(
+        pic: 'volunteer.png', pagename: 'VOLUNTEER', pagenav: '/leaders'),
     NovaScreen(pic: 'missions.png', pagename: 'MISSIONS', pagenav: '/leaders'),
     NovaScreen(pic: 'evite.png', pagename: 'E-INVITES', pagenav: '/leaders'),
-    NovaScreen(pic: 'bulletin.png', pagename: 'E-BULLETIN', pagenav: '/leaders'),
+    NovaScreen(
+        pic: 'bulletin.png', pagename: 'E-BULLETIN', pagenav: '/leaders'),
     NovaScreen(pic: 'contact.png', pagename: 'CONTACT US', pagenav: '/leaders'),
   ];
 
