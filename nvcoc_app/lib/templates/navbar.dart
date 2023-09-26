@@ -33,7 +33,8 @@ class NavBar extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/novaimage.jpg'), fit: BoxFit.cover),
-              )),
+              ),
+            ),
           ...screens.map((screen) => NovaTemplate(screen: screen))
         ],
       ),
