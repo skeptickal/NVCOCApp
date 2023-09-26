@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:nvcoc_app/templates/navbar.dart';
 
 class WhoWeAreScreen extends StatefulWidget {
   const WhoWeAreScreen({super.key});
@@ -11,21 +11,25 @@ class WhoWeAreScreen extends StatefulWidget {
 }
 
 class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const NovaAppBar(),
-        floatingActionButton: FloatingActionButton(onPressed: () {
-      },
-      backgroundColor: Colors.white,
-      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
-      ),
-        body: Container( decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xFF04578f), Colors.white]),),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.chat_bubble,
+              color: Color(0xFF04578f),
+            )),
+        drawer: NavBar(),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xFF04578f), Colors.white]),
+          ),
           child: ListView(children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -106,8 +110,9 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {Navigator.pushReplacementNamed(context, '/');},
-                        
+                            onTap: () {
+                              Navigator.pushReplacementNamed(context, '/');
+                            },
                             child: Image.asset('assets/insta.png',
                                 height: 40, width: 40),
                           )
@@ -120,6 +125,5 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
             ),
           ]),
         ));
-        
   }
 }
