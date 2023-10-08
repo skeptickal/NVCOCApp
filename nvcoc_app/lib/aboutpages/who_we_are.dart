@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/templates/navbar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WhoWeAreScreen extends StatefulWidget {
   const WhoWeAreScreen({super.key});
@@ -11,6 +12,12 @@ class WhoWeAreScreen extends StatefulWidget {
 }
 
 class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
+  final Uri _url = Uri.parse('https://instagram.com/nova.churchofchrist/');
+  Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could Not Launch $_url');
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +25,7 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
             backgroundColor: Colors.white,
-            child: Icon(
+            child: const Icon(
               Icons.chat_bubble,
               color: Color(0xFF04578f),
             )),
@@ -101,7 +108,7 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                             padding: const EdgeInsets.all(6.0),
                             child: Center(
                               child: Text(
-                                  'CHECK OUT OUR INSTAGRAM\n  (@NORTHERNVA.CHURCH)',
+                                  'CHECK OUT OUR INSTAGRAM\n  (@NOVA.CHURCHOFCHRIST)',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 12.0,
                                     letterSpacing: 2.0,
@@ -110,9 +117,8 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacementNamed(context, '/');
-                            },
+                            onTap: _launchUrl,
+                              
                             child: Image.asset('assets/insta.png',
                                 height: 40, width: 40),
                           )
