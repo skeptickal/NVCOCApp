@@ -17,8 +17,8 @@ NVCOCApp is a mobile application developed for our church community to simplify 
 
 1. Clone this repository: git clone https://github.com/skeptickal/NVCOCApp.git
 2. Navigate to the project directory: cd NVCOCApp
-3. Install dependencies: npm install
-4. Start the development server: npm start
+3. Install dependencies: flutter pub get
+4. Start the development server: flutter run
 5. For more detailed information on how to contribute, please refer to the Contribution Guidelines.
 
 ## Usage:
