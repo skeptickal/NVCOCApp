@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: NovaButton(),
+      floatingActionButton: const NovaButton(),
       drawer: NavBar(),
       body: Container(
           decoration: const BoxDecoration(

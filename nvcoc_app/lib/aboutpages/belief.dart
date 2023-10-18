@@ -18,7 +18,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
         floatingActionButton: FloatingActionButton(onPressed: () {
       },
       backgroundColor: Colors.white,
-      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
+      child: const Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
       ),
         body: Container(
          decoration: const BoxDecoration(

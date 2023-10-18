@@ -28,7 +28,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: NovaButton(),
+      floatingActionButton: const NovaButton(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
