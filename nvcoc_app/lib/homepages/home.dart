@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/navbar.dart';
 import '../templates/nova_appbar.dart';
 
@@ -15,13 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.white,
-          child: const Icon(
-            Icons.chat_bubble,
-            color: Color(0xFF04578f),
-          )),
+      floatingActionButton: NovaButton(),
       drawer: NavBar(),
       body: Container(
           decoration: const BoxDecoration(
@@ -33,17 +29,17 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView(
             children: [
               GestureDetector(
-                onTap:() => Navigator.pushNamed(context, '/connect'),
+                onTap:() => context.push('/connect'),
                 child: Container(
                   width: 250,
                   height: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage('assets/churchmeeting.jpg'),
                     fit: BoxFit.cover,
                   )),
                   child: Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,17 +67,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
                 GestureDetector(
-                onTap:() => Navigator.pushNamed(context, '/calendar'),
+                onTap:() => context.push('/calendar'),
                 child: Container(
                   width: 250,
                   height: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage('assets/calendar.jpg'),
                     fit: BoxFit.cover,
                   )),
                   child: Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Text(
                       'CHECK\nOUT\nOUR\nEVENTS',
                       style: GoogleFonts.montserrat(
@@ -94,17 +90,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
                 GestureDetector(
-                onTap:() => Navigator.pushNamed(context, '/learn'),
+                onTap:() => context.push('/learn'),
                 child: Container(
                   width: 250,
                   height: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage('assets/bible.jpg'),
                     fit: BoxFit.cover,
                   )),
                   child: Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [Text(
@@ -120,17 +116,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
                 GestureDetector(
-                onTap:() => Navigator.pushNamed(context, '/belief'),
+                onTap:() => context.push('/belief'),
                 child: Container(
                   width: 250,
                   height: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage('assets/beliefs.jpg'),
                     fit: BoxFit.cover,
                   )),
                   child: Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
