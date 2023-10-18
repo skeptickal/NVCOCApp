@@ -12,7 +12,7 @@ class MinistriesScreen extends StatefulWidget {
 class _MinistriesScreenState extends State<MinistriesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
       floatingActionButton: NovaButton(),

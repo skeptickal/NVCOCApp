@@ -30,7 +30,7 @@ class NovaTemplate extends StatelessWidget {
                 screen.pagename,
                 style: GoogleFonts.montserrat(
                     fontSize: 14.0,
-                    color: Color(0xff04578f),
+                    color: const Color(0xff04578f),
                     letterSpacing: 1.5),
               ),
             ),
