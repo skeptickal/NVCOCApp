@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'novapages.dart';
 
@@ -9,7 +10,7 @@ class NovaTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, screen.pagenav),
+      onTap: () => context.push(screen.pagenav),
       child: Card(
         elevation: 4.0,
         shape: const RoundedRectangleBorder(
@@ -35,7 +36,7 @@ class NovaTemplate extends StatelessWidget {
             ),
             IconButton(
               onPressed: () =>
-                  Navigator.pushReplacementNamed(context, screen.pagenav),
+                  context.push(screen.pagenav),
               icon: Image.asset(
                 'assets/${screen.pic}',
                 width: 70.0,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nvcoc_app/templates/navbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WhoWeAreScreen extends StatefulWidget {
@@ -22,14 +22,8 @@ class _WhoWeAreScreenState extends State<WhoWeAreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const NovaAppBar(),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: Colors.white,
-            child: const Icon(
-              Icons.chat_bubble,
-              color: Color(0xFF04578f),
-            )),
-        drawer: NavBar(),
+        floatingActionButton: const NovaButton(),
+        //drawer: NavBar(),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(

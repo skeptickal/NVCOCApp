@@ -87,7 +87,7 @@ class _CommentScreenState extends State<CommentScreen> {
                     child: Text(
                       'First Name',
                       style: GoogleFonts.montserrat(
-                          color: Color.fromARGB(248, 255, 255, 255)),
+                          color: const Color.fromARGB(248, 255, 255, 255)),
                     ),
                   ),
                 ),
@@ -96,7 +96,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'Last Name',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 255, 255, 255)),
+                        color: const Color.fromARGB(248, 255, 255, 255)),
                   )),
                 )
               ],
@@ -154,7 +154,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Email Address',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -180,7 +180,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Comment/Prayer Request',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -206,7 +206,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'I would like to. . . (check all that apply)',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -270,7 +270,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'I am . . . (check all that apply)',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -332,13 +332,13 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'I am a member and my contact information has changed:',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             CountryListPick(
               appBar: AppBar(
-                backgroundColor: Color(0xFF04578f),
-                title: Text('Pick Your Country'),
+                backgroundColor: const Color(0xFF04578f),
+                title: const Text('Pick Your Country'),
               ),
               theme: CountryTheme(
                 isShowFlag: true,
@@ -346,7 +346,7 @@ class _CommentScreenState extends State<CommentScreen> {
                 isShowCode: false,
                 isDownIcon: true,
                 showEnglishName: false,
-                labelColor: Color.fromARGB(255, 0, 0, 0),
+                labelColor: const Color.fromARGB(255, 0, 0, 0),
               ),
               initialSelection: 'US',
               onChanged: (code) {},
@@ -356,7 +356,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Address Line 1 (required)',
                 style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                    GoogleFonts.montserrat(color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -382,7 +382,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Address Line 2',
                 style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                    GoogleFonts.montserrat(color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -411,7 +411,7 @@ class _CommentScreenState extends State<CommentScreen> {
                     child: Text(
                       'City (required)',
                       style: GoogleFonts.montserrat(
-                          color: Color.fromARGB(248, 0, 0, 0)),
+                          color: const Color.fromARGB(248, 0, 0, 0)),
                     ),
                   ),
                 ),
@@ -420,7 +420,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'State (required)',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 0, 0, 0)),
+                        color: const Color.fromARGB(248, 0, 0, 0)),
                   )),
                 ),
                 Expanded(
@@ -428,7 +428,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'ZIP (required)',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 0, 0, 0)),
+                        color: const Color.fromARGB(248, 0, 0, 0)),
                   )),
                 )
               ],
@@ -506,7 +506,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Phone',
                 style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                    GoogleFonts.montserrat(color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -532,7 +532,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Email',
                 style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                    GoogleFonts.montserrat(color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -558,7 +558,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff04578f)),
+                      backgroundColor: const Color(0xff04578f)),
                   child: Text('SUBMIT',
                       style:
                           GoogleFonts.montserrat(fontWeight: FontWeight.bold))),

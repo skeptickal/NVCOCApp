@@ -26,7 +26,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
-      // floatingActionButton: FloatingActionButton(onPressed: _launchUrl),
+      //floatingActionButton: FloatingActionButton(onPressed: _launchUrl, child: Icon(Icons.calendar_month, color: Color(0xff04578f)), backgroundColor: Colors.white,),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(

@@ -18,7 +18,7 @@ class _LeadersScreenState extends State<LeadersScreen> {
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
             backgroundColor: Colors.white,
-            child: Icon(
+            child: const Icon(
               Icons.chat_bubble,
               color: Color(0xFF04578f),
             )),
@@ -34,7 +34,7 @@ class _LeadersScreenState extends State<LeadersScreen> {
               Card(
                   elevation: 4.0,
                   shape: const RoundedRectangleBorder(
-                      side: BorderSide(color: Color(0x8fff5c937))),
+                      side: BorderSide(color: Color(0xfff5c937))),
                   margin: const EdgeInsets.all(20.0),
                   child: Padding(
                       padding: const EdgeInsets.all(6.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import '../templates/novapages.dart';
 import '../templates/novacard.dart';
@@ -23,13 +24,7 @@ class _AboutScreenState extends State<AboutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.white,
-          child: Icon(
-            Icons.chat_bubble,
-            color: Color(0xFF04578f),
-          )),
+      floatingActionButton: const NovaButton(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

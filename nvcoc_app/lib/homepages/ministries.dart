@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class MinistriesScreen extends StatefulWidget {
@@ -14,10 +15,7 @@ class _MinistriesScreenState extends State<MinistriesScreen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
-      floatingActionButton: FloatingActionButton(onPressed: () {},
-      backgroundColor: Colors.white,
-      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
-      ),
+      floatingActionButton: NovaButton(),
     );
   }
 }
