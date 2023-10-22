@@ -1,3 +1,4 @@
 Things to use bloc for in this project:
     - add a snackbar that says "comment submitted" after submitting a comment card
     - find a way to trap the current text of a multi dropdown menu into a comment card submission
+    - add unit and widget testing
