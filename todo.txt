@@ -3,3 +3,4 @@ Things to use bloc for in this project:
     - find a way to trap the current text of a multi dropdown menu into a comment card submission
     - add unit and widget testing
         - watch video for this ^
+        - including the part 2
