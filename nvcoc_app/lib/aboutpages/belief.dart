@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class BeliefScreen extends StatefulWidget {
@@ -15,11 +16,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 217, 216, 216),
         appBar: const NovaAppBar(),
-        floatingActionButton: FloatingActionButton(onPressed: () {
-      },
-      backgroundColor: Colors.white,
-      child: const Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
-      ),
+         floatingActionButton: NovaButton(),
         body: Container(
          decoration: const BoxDecoration(
           gradient: LinearGradient(

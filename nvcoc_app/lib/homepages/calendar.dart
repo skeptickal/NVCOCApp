@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,12 +21,21 @@ class _CalendarScreenState extends State<CalendarScreen> {
       throw Exception('Could not launch $_url');
     }
   }
+  String dropdownValue = 'SELECT ONE';
+  void dropDownCallBack(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(
+        () => dropdownValue = selectedValue,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
+      floatingActionButton: NovaButton(),
       //floatingActionButton: FloatingActionButton(onPressed: _launchUrl, child: Icon(Icons.calendar_month, color: Color(0xff04578f)), backgroundColor: Colors.white,),
       body: Container(
         decoration: BoxDecoration(
@@ -76,44 +86,39 @@ class _CalendarScreenState extends State<CalendarScreen> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-            child: Row(
-              children: [
-                Checkbox(value: true, onChanged: (value) {}),
-                Text('Church Wide',
-                    style: GoogleFonts.montserrat(color: Colors.white)),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-            child: Row(
-              children: [
-                Checkbox(value: false, onChanged: (value) {}),
-                Text('Campus Ministry',
-                    style: GoogleFonts.montserrat(color: Colors.white)),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-            child: Row(
-              children: [
-                Checkbox(value: false, onChanged: (value) {}),
-                Text('Single Professionals',
-                    style: GoogleFonts.montserrat(color: Colors.white)),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-            child: Row(
-              children: [
-                Checkbox(value: false, onChanged: (value) {}),
-                Text('Youth and Family',
-                    style: GoogleFonts.montserrat(color: Colors.white)),
-              ],
-            ),
+           padding: const EdgeInsets.fromLTRB(24, 10, 50, 10),
+            child: DropdownButton<String>(
+                  isExpanded: true,
+                  value: dropdownValue,
+                  icon: Icon(Icons.menu),
+                  style: TextStyle(color: Colors.black),
+                  underline: Container(height: 2, color: Colors.white),
+                  items: const [
+                    DropdownMenuItem<String>(
+                      value: 'SELECT ONE',
+                      child: Text(
+                        'SELECT ONE',
+                      ),
+                    ),
+                    DropdownMenuItem<String>(
+                      value: 'Church Wide',
+                      child: Text('Church Wide'),
+                    ),
+                    DropdownMenuItem<String>(
+                      value: 'Campus Ministry',
+                      child: Text('Campus Ministry'),
+                    ),
+                    DropdownMenuItem<String>(
+                      value: 'Single Professionals',
+                      child: Text('Single Professionals'),
+                    ),
+                     DropdownMenuItem<String>(
+                      value: 'Youth and Family',
+                      child: Text('Youth and Family'),
+                    ),
+                  ],
+                  onChanged: dropDownCallBack,
+                ),
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
