@@ -104,4 +104,5 @@ final GoRouter router = GoRouter(
       },
     ),
   ],
+  initialLocation: '/realhome',
 );
