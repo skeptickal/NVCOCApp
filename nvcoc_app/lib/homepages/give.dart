@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/novabutton.dart';
+import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class GiveScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nvcoc_app/novabutton.dart';
+import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/navbar.dart';
 import '../templates/nova_appbar.dart';
 
