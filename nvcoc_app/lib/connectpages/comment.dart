@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
-import 'package:nvcoc_app/templates/navbar.dart';
 import 'package:country_list_pick/country_list_pick.dart';
 
 class CommentScreen extends StatefulWidget {
@@ -24,12 +23,29 @@ class _CommentScreenState extends State<CommentScreen> {
   final TextEditingController _phone = TextEditingController();
   final TextEditingController _email2 = TextEditingController();
   bool value = false;
+  String dropdownValue = 'Select One';
+  String dropdownValue1 = 'Select One';
+
+  void dropDownCallBack(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(
+        () => dropdownValue = selectedValue,
+      );
+    }
+  }
+  void dropDownCallBack1(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(
+        () => dropdownValue1 = selectedValue,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      drawer: NavBar(),
+      //drawer: NavBar(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -87,7 +103,7 @@ class _CommentScreenState extends State<CommentScreen> {
                     child: Text(
                       'First Name',
                       style: GoogleFonts.montserrat(
-                          color: Color.fromARGB(248, 255, 255, 255)),
+                          color: const Color.fromARGB(248, 255, 255, 255)),
                     ),
                   ),
                 ),
@@ -96,7 +112,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'Last Name',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 255, 255, 255)),
+                        color: const Color.fromARGB(248, 255, 255, 255)),
                   )),
                 )
               ],
@@ -154,7 +170,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Email Address',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -180,7 +196,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Comment/Prayer Request',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
@@ -204,127 +220,100 @@ class _CommentScreenState extends State<CommentScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
-                'I would like to. . . (check all that apply)',
+                'I would like to. . .',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
+
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Study the Bible with Someone',
-                      style: GoogleFonts.montserrat())
+              padding: const EdgeInsets.fromLTRB(24, 10, 50, 10),
+              child: DropdownButton<String>(
+                isExpanded: true,
+                value: dropdownValue,
+                icon: Icon(Icons.menu),
+                style: TextStyle(color: Colors.black),
+                underline: Container(height: 2, color: Colors.white),
+                items: const [
+                  DropdownMenuItem<String>(
+                    value: 'Select One',
+                    child: Text(
+                      'Select One',
+                    ),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Study the Bible',
+                    child: Text('Study the Bible'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Be baptized',
+                    child: Text('Be baptized'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Become a Christian',
+                    child: Text('Become a Christian'),
+                  ),
+                   DropdownMenuItem<String>(
+                    value: 'Learn more about this church',
+                    child: Text('Learn more about this church'),
+                  ),
+                   DropdownMenuItem<String>(
+                    value: 'Be restored',
+                    child: Text('Place Membership'),
+                  ),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  Text('Be baptized', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Become a Christian', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Learn more about this church',
-                      style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Be restored', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  Text('Place Membership', style: GoogleFonts.montserrat()),
-                ],
+                onChanged: dropDownCallBack,
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
-                'I am . . . (check all that apply)',
+                'I am . . . ',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('a Teenager', style: GoogleFonts.montserrat())
+              padding: const EdgeInsets.fromLTRB(24, 10, 50, 10),
+              child: DropdownButton<String>(
+                isExpanded: true,
+                value: dropdownValue1,
+                icon: Icon(Icons.menu),
+                style: TextStyle(color: Colors.black),
+                underline: Container(height: 2, color: Colors.white),
+                items: const [
+                  DropdownMenuItem<String>(
+                    value: 'Select One',
+                    child: Text(
+                      'Select One',
+                    ),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'a Teenager',
+                    child: Text('a Teenager'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'College Student',
+                    child: Text('College Student'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'Single',
+                    child: Text('Single'),
+                  ),
+                   DropdownMenuItem<String>(
+                    value: 'Married',
+                    child: Text('Married'),
+                  ),
+                   DropdownMenuItem<String>(
+                    value: 'Divorced/Widowed',
+                    child: Text('Divorced/Widowed'),
+                  ),
+                   DropdownMenuItem<String>(
+                    value: 'Parent',
+                    child: Text('Parent'),
+                  ),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('College Student', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  Text('Single', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Married', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Divorce/Widowed', style: GoogleFonts.montserrat()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-              child: Row(
-                children: [
-                  Checkbox(value: false, onChanged: (value) {}),
-                  Text('Parent', style: GoogleFonts.montserrat()),
-                ],
+                onChanged: dropDownCallBack1,
               ),
             ),
             Padding(
@@ -332,13 +321,13 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'I am a member and my contact information has changed:',
                 style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                    color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             CountryListPick(
               appBar: AppBar(
-                backgroundColor: Color(0xFF04578f),
-                title: Text('Pick Your Country'),
+                backgroundColor: const Color(0xFF04578f),
+                title: const Text('Pick Your Country'),
               ),
               theme: CountryTheme(
                 isShowFlag: true,
@@ -346,7 +335,7 @@ class _CommentScreenState extends State<CommentScreen> {
                 isShowCode: false,
                 isDownIcon: true,
                 showEnglishName: false,
-                labelColor: Color.fromARGB(255, 0, 0, 0),
+                labelColor: const Color.fromARGB(255, 0, 0, 0),
               ),
               initialSelection: 'US',
               onChanged: (code) {},
@@ -355,8 +344,8 @@ class _CommentScreenState extends State<CommentScreen> {
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
                 'Address Line 1 (required)',
-                style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                style: GoogleFonts.montserrat(
+                    color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -381,8 +370,8 @@ class _CommentScreenState extends State<CommentScreen> {
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
                 'Address Line 2',
-                style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                style: GoogleFonts.montserrat(
+                    color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -411,7 +400,7 @@ class _CommentScreenState extends State<CommentScreen> {
                     child: Text(
                       'City (required)',
                       style: GoogleFonts.montserrat(
-                          color: Color.fromARGB(248, 0, 0, 0)),
+                          color: const Color.fromARGB(248, 0, 0, 0)),
                     ),
                   ),
                 ),
@@ -420,7 +409,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'State (required)',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 0, 0, 0)),
+                        color: const Color.fromARGB(248, 0, 0, 0)),
                   )),
                 ),
                 Expanded(
@@ -428,7 +417,7 @@ class _CommentScreenState extends State<CommentScreen> {
                       child: Text(
                     'ZIP (required)',
                     style: GoogleFonts.montserrat(
-                        color: Color.fromARGB(248, 0, 0, 0)),
+                        color: const Color.fromARGB(248, 0, 0, 0)),
                   )),
                 )
               ],
@@ -505,8 +494,8 @@ class _CommentScreenState extends State<CommentScreen> {
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
                 'Phone',
-                style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                style: GoogleFonts.montserrat(
+                    color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -531,8 +520,8 @@ class _CommentScreenState extends State<CommentScreen> {
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
                 'Email',
-                style:
-                    GoogleFonts.montserrat(color: Color.fromARGB(248, 0, 0, 0)),
+                style: GoogleFonts.montserrat(
+                    color: const Color.fromARGB(248, 0, 0, 0)),
               ),
             ),
             Padding(
@@ -558,7 +547,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff04578f)),
+                      backgroundColor: const Color(0xff04578f)),
                   child: Text('SUBMIT',
                       style:
                           GoogleFonts.montserrat(fontWeight: FontWeight.bold))),

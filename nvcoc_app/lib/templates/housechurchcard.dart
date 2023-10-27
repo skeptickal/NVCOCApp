@@ -4,15 +4,15 @@ import 'package:nvcoc_app/templates/housechurches.dart';
 
 class HouseChurchCard extends StatelessWidget {
 final HouseChurches house;
-    HouseChurchCard({super.key, required this.house});
+    const HouseChurchCard({super.key, required this.house});
 
   @override
   Widget build(BuildContext context) {
     
     return Card(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           elevation: 4.0,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             side: BorderSide(
               color: Colors.yellow,
             ),
@@ -26,7 +26,7 @@ final HouseChurches house;
                   house.name,
                   style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF04578f),
+                      color: const Color(0xFF04578f),
                       fontSize: 15.0,
                       letterSpacing: 2.0),
                 ),
@@ -38,7 +38,7 @@ final HouseChurches house;
                   style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.normal,
                       letterSpacing: 2.0,
-                      color: Color(0xFF04578f),
+                      color: const Color(0xFF04578f),
                       fontSize: 12.0),
                 ),
               ),
