@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
   const NovaAppBar({
@@ -9,7 +10,7 @@ class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacementNamed(context, '/');
+        context.go('/');
       },
       child: AppBar(
         iconTheme: const IconThemeData(color: Color(0xFF04578f)),

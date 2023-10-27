@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 
 class RealHomeScreen extends StatefulWidget {
@@ -14,11 +16,7 @@ class _RealHomeScreenState extends State<RealHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-      },
-      backgroundColor: Colors.white,
-      child: Icon(Icons.chat_bubble, color: Color(0xFF04578f),)
-      ),
+      floatingActionButton: NovaButton(),
       body: Stack(
         children: [
           Image.asset(
@@ -43,7 +41,7 @@ class _RealHomeScreenState extends State<RealHomeScreen> {
                     iconSize: 60,
                     color: const Color(0xFF04578f),
                     onPressed: () {
-                      Navigator.pop(context, '/'); }
+                      context.push('/'); }
                   ),
                 ),
                 const SizedBox(height: 5),

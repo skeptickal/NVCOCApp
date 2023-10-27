@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import '../templates/novapages.dart';
 import '../templates/novacard.dart';
@@ -18,28 +19,16 @@ class _ConnectScreenState extends State<ConnectScreen> {
         pic: 'cross.png', pagename: 'WORSHIP WITH US', pagenav: '/belief'),
     NovaScreen(
         pic: 'comment.png', pagename: 'COMMENT CARDS', pagenav: '/comment'),
-    NovaScreen(
-        pic: 'team.png', pagename: 'SERVICE TEAM SIGN UP', pagenav: '/leaders'),
-    NovaScreen(
-        pic: 'volunteer.png', pagename: 'VOLUNTEER', pagenav: '/leaders'),
-    NovaScreen(pic: 'missions.png', pagename: 'MISSIONS', pagenav: '/leaders'),
     NovaScreen(pic: 'evite.png', pagename: 'E-INVITES', pagenav: '/leaders'),
     NovaScreen(
         pic: 'bulletin.png', pagename: 'E-BULLETIN', pagenav: '/leaders'),
-    NovaScreen(pic: 'contact.png', pagename: 'CONTACT US', pagenav: '/leaders'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.white,
-          child: Icon(
-            Icons.chat_bubble,
-            color: Color(0xFF04578f),
-          )),
+      floatingActionButton: const NovaButton(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
