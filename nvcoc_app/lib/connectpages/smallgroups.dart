@@ -42,7 +42,7 @@ HouseChurches(name: 'McLean/Herndon/Reston', leaders: 'Jenkin & Wendy Richard', 
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
             backgroundColor: Colors.white,
-            child: Icon(
+            child: const Icon(
               Icons.chat_bubble,
               color: Color(0xFF04578f),
             )),
@@ -59,9 +59,9 @@ HouseChurches(name: 'McLean/Herndon/Reston', leaders: 'Jenkin & Wendy Richard', 
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Card(
-                    margin: EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(20),
                     elevation: 4.0,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       side: BorderSide(
                         color: Colors.yellow,
                       ),
@@ -75,7 +75,7 @@ HouseChurches(name: 'McLean/Herndon/Reston', leaders: 'Jenkin & Wendy Richard', 
                               'FIND A HOUSE CHURCH NEAR YOU',
                               style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF04578f),
+                                  color: const Color(0xFF04578f),
                                   fontSize: 14.0,
                                   letterSpacing: 2.0),
                             ),
@@ -93,7 +93,7 @@ HouseChurches(name: 'McLean/Herndon/Reston', leaders: 'Jenkin & Wendy Richard', 
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.normal,
                                 letterSpacing: 2.0,
-                                color: Color(0xFF04578f),
+                                color: const Color(0xFF04578f),
                                 fontSize: 12.0),
                           ),
                         ),
