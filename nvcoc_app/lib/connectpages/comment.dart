@@ -570,20 +570,32 @@ class _CommentScreenState extends State<CommentScreen> {
                     );
                     dataBaseConnect();
                     DatabaseService().submitCommentCard(
-                        _firstName.text,
-                        _lastName.text,
-                        _email.text,
-                        _comment.text,
-                        join,
-                        iAm,
-                        country,
-                        _address1.text,
-                        _address2.text,
-                        _city.text,
-                        _state.text,
-                        _zip.text,
-                        _phone.text,
-                        _email2.text);
+                      _firstName.text,
+                      _lastName.text,
+                      _email.text,
+                      _comment.text,
+                      join,
+                      iAm,
+                      country,
+                      _address1.text,
+                      _address2.text,
+                      _city.text,
+                      _state.text,
+                      _zip.text,
+                      _phone.text,
+                      _email2.text,
+                    );
+                    _firstName.clear();
+                    _lastName.clear();
+                    _email.clear();
+                    _comment.clear();
+                    _address1.clear();
+                    _address2.clear();
+                    _city.clear();
+                    _state.clear();
+                    _zip.clear();
+                    _phone.clear();
+                    _email2.clear();
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xff04578f)),
