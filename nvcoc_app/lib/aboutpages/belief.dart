@@ -16,7 +16,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 217, 216, 216),
         appBar: const NovaAppBar(),
-         floatingActionButton: NovaButton(),
+         floatingActionButton: const NovaButton(),
         body: Container(
          decoration: const BoxDecoration(
           gradient: LinearGradient(

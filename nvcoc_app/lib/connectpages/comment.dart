@@ -1,5 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/firebase_options.dart';
+import 'package:nvcoc_app/services/database.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:country_list_pick/country_list_pick.dart';
 
@@ -22,23 +25,31 @@ class _CommentScreenState extends State<CommentScreen> {
   final TextEditingController _zip = TextEditingController();
   final TextEditingController _phone = TextEditingController();
   final TextEditingController _email2 = TextEditingController();
+  String join = 'Select One';
+  String iAm = 'Select One';
+  String country = 'US';
   bool value = false;
   String dropdownValue = 'Select One';
   String dropdownValue1 = 'Select One';
 
   void dropDownCallBack(String? selectedValue) {
     if (selectedValue is String) {
-      setState(
-        () => dropdownValue = selectedValue,
-      );
+      setState(() => join = selectedValue);
+      dropdownValue = selectedValue;
     }
   }
+
   void dropDownCallBack1(String? selectedValue) {
     if (selectedValue is String) {
-      setState(
-        () => dropdownValue1 = selectedValue,
-      );
+      setState(() => iAm = selectedValue);
+      dropdownValue1 = selectedValue;
     }
+  }
+
+  Future dataBaseConnect() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
   }
 
   @override
@@ -225,14 +236,13 @@ class _CommentScreenState extends State<CommentScreen> {
                     color: const Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 10, 50, 10),
               child: DropdownButton<String>(
                 isExpanded: true,
                 value: dropdownValue,
-                icon: Icon(Icons.menu),
-                style: TextStyle(color: Colors.black),
+                icon: const Icon(Icons.menu),
+                style: const TextStyle(color: Colors.black),
                 underline: Container(height: 2, color: Colors.white),
                 items: const [
                   DropdownMenuItem<String>(
@@ -253,11 +263,11 @@ class _CommentScreenState extends State<CommentScreen> {
                     value: 'Become a Christian',
                     child: Text('Become a Christian'),
                   ),
-                   DropdownMenuItem<String>(
+                  DropdownMenuItem<String>(
                     value: 'Learn more about this church',
                     child: Text('Learn more about this church'),
                   ),
-                   DropdownMenuItem<String>(
+                  DropdownMenuItem<String>(
                     value: 'Be restored',
                     child: Text('Place Membership'),
                   ),
@@ -278,8 +288,8 @@ class _CommentScreenState extends State<CommentScreen> {
               child: DropdownButton<String>(
                 isExpanded: true,
                 value: dropdownValue1,
-                icon: Icon(Icons.menu),
-                style: TextStyle(color: Colors.black),
+                icon: const Icon(Icons.menu),
+                style: const TextStyle(color: Colors.black),
                 underline: Container(height: 2, color: Colors.white),
                 items: const [
                   DropdownMenuItem<String>(
@@ -300,15 +310,15 @@ class _CommentScreenState extends State<CommentScreen> {
                     value: 'Single',
                     child: Text('Single'),
                   ),
-                   DropdownMenuItem<String>(
+                  DropdownMenuItem<String>(
                     value: 'Married',
                     child: Text('Married'),
                   ),
-                   DropdownMenuItem<String>(
+                  DropdownMenuItem<String>(
                     value: 'Divorced/Widowed',
                     child: Text('Divorced/Widowed'),
                   ),
-                   DropdownMenuItem<String>(
+                  DropdownMenuItem<String>(
                     value: 'Parent',
                     child: Text('Parent'),
                   ),
@@ -338,7 +348,11 @@ class _CommentScreenState extends State<CommentScreen> {
                 labelColor: const Color.fromARGB(255, 0, 0, 0),
               ),
               initialSelection: 'US',
-              onChanged: (code) {},
+              onChanged: (code) {
+                setState(() {
+                  country = code?.code ?? '';
+                });
+              },
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
@@ -545,7 +559,32 @@ class _CommentScreenState extends State<CommentScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Comment Submitted'),
+                        duration: Duration(
+                          milliseconds: 1000,
+                        ),
+                      ),
+                    );
+                    dataBaseConnect();
+                    DatabaseService().submitCommentCard(
+                        _firstName.text,
+                        _lastName.text,
+                        _email.text,
+                        _comment.text,
+                        join,
+                        iAm,
+                        country,
+                        _address1.text,
+                        _address2.text,
+                        _city.text,
+                        _state.text,
+                        _zip.text,
+                        _phone.text,
+                        _email2.text);
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xff04578f)),
                   child: Text('SUBMIT',
