@@ -16,7 +16,7 @@ class _RealHomeScreenState extends State<RealHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NovaAppBar(),
-      floatingActionButton: NovaButton(),
+      floatingActionButton: const NovaButton(),
       body: Stack(
         children: [
           Image.asset(
@@ -35,14 +35,15 @@ class _RealHomeScreenState extends State<RealHomeScreen> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
-                      border: Border.all(width: 2.0, color: const Color(0xFF04578f))),
+                      border: Border.all(
+                          width: 2.0, color: const Color(0xFF04578f))),
                   child: IconButton(
-                    icon: const Icon(Icons.home),
-                    iconSize: 60,
-                    color: const Color(0xFF04578f),
-                    onPressed: () {
-                      context.push('/'); }
-                  ),
+                      icon: const Icon(Icons.home),
+                      iconSize: 60,
+                      color: const Color(0xFF04578f),
+                      onPressed: () {
+                        context.push('/');
+                      }),
                 ),
                 const SizedBox(height: 5),
                 Text('Welcome',
