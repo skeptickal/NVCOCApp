@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/firebase_options.dart';
 import 'package:nvcoc_app/services/database.dart';
+import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:country_list_pick/country_list_pick.dart';
 
@@ -68,7 +69,7 @@ class _CommentScreenState extends State<CommentScreen> {
           children: [
             Card(
               shape: const RoundedRectangleBorder(
-                  side: BorderSide(color: Color(0xFFF5c937))),
+                  side: BorderSide(color: novaYellow)),
               margin: const EdgeInsets.all(20),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
