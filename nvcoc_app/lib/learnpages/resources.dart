@@ -10,14 +10,14 @@ import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class CalendarScreen extends StatefulWidget {
-  const CalendarScreen({super.key});
+class ResourceScreen extends StatefulWidget {
+  const ResourceScreen({super.key});
 
   @override
-  State<CalendarScreen> createState() => _CalendarScreenState();
+  State<ResourceScreen> createState() => _ResourceScreenState();
 }
 
-class _CalendarScreenState extends State<CalendarScreen> {
+class _ResourceScreenState extends State<ResourceScreen> {
   final Uri _url = Uri.parse('https://www.nvcoc.church/churchcalendar');
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
