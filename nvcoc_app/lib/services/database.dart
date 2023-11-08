@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nvcoc_app/templates/housechurches.dart';
 
 class DatabaseService {
   //final String? uid;
@@ -8,6 +9,8 @@ class DatabaseService {
 
   final CollectionReference commentCollection =
       FirebaseFirestore.instance.collection('comments');
+  final CollectionReference houseChurchCollection =
+      FirebaseFirestore.instance.collection('house churches');
 
 //when someone submits a comment card add doc
   Future submitCommentCard(
@@ -42,5 +45,21 @@ class DatabaseService {
       'm. Phone Number': phone,
       'n. Email Address (if changed)': email1,
     });
+  }
+
+  List<HouseChurches> _houseChurchFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      //print('Document data: ${doc.data()}');
+      return HouseChurches(
+        name: doc.get('name') ?? '',
+        leaders: doc.get('leaders') ?? '',
+        location: doc.get('location') ?? '',
+        number: doc.get('number') ?? '',
+      );
+    }).toList();
+  }
+
+  Stream<List<HouseChurches>> get houseChurches {
+    return houseChurchCollection.snapshots().map(_houseChurchFromSnapshot);
   }
 }
