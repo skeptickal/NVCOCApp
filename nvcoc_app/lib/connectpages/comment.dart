@@ -207,7 +207,7 @@ class _CommentScreenState extends State<CommentScreen> {
               child: Text(
                 'Comment/Prayer Request',
                 style: GoogleFonts.montserrat(
-                    color: const Color.fromARGB(248, 255, 255, 255)),
+                    color: Color.fromARGB(248, 255, 255, 255)),
               ),
             ),
             Padding(
