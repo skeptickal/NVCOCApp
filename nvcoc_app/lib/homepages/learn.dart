@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -44,6 +46,7 @@ class _LearnScreenState extends State<LearnScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ...screens.map((screen) => NovaTemplate(screen: screen)),
+                const SizedBox(height: 20.0),
                 IconButton(
                   onPressed: _launchUrl,
                   icon: Image.asset(
@@ -52,6 +55,17 @@ class _LearnScreenState extends State<LearnScreen> {
                     height: 70.0,
                   ),
                 ),
+                Center(
+                  //todo - make look prettier
+                  child: Text(
+                    'Watch us LIVE every Sunday @10AM!',
+                    style: GoogleFonts.montserrat(
+                        letterSpacing: 2.0,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: white),
+                  ),
+                )
               ],
             ),
           ],
