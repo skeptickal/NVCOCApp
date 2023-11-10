@@ -18,7 +18,7 @@ class ResourceScreen extends StatefulWidget {
 }
 
 class _ResourceScreenState extends State<ResourceScreen> {
-  final Uri _url = Uri.parse('https://www.nvcoc.church/churchcalendar');
+  final Uri _url = Uri.parse('https://www.nvcoc.church/seeker-studies');
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
       throw Exception('Could not launch $_url');
@@ -37,7 +37,6 @@ class _ResourceScreenState extends State<ResourceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 217, 216, 216),
       appBar: NovaAppBar(),
       floatingActionButton: NovaButton(),
       body: Container(
@@ -54,7 +53,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: Text(
-                  'CALENDAR',
+                  'RESOURCES',
                   style: GoogleFonts.montserrat(
                       color: Color(0xff04578f),
                       fontWeight: FontWeight.bold,
@@ -68,11 +67,10 @@ class _ResourceScreenState extends State<ResourceScreen> {
             padding: const EdgeInsets.fromLTRB(100, 0, 100, 20),
             child: ElevatedButton.icon(
               onPressed: _launchUrl,
-              icon: Icon(Icons.calendar_month_outlined),
-              label: Text('Online Calendar'),
+              icon: Icon(Icons.book_online),
+              label: Text('Seeker Studies'),
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Color(0xFF04578f))),
+                  backgroundColor: MaterialStateProperty.all<Color>(novaBlue)),
             ),
           ),
           /*Padding(
