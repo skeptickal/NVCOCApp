@@ -56,7 +56,7 @@ class _LearnScreenState extends State<LearnScreen> {
                   ),
                 ),
                 Center(
-                  //todo - make look prettier + bigger?
+                  //todo - make look prettier + bigger? . . .
                   child: Text(
                     'Watch us LIVE every Sunday @10AM!',
                     style: GoogleFonts.montserrat(
