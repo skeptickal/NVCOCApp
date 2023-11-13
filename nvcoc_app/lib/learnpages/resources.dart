@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/shared/constants.dart';
@@ -139,14 +141,18 @@ class _ResourceScreenState extends State<ResourceScreen> {
     });
   }
 
+  void _handlePdfError(dynamic error) {
+    print('Error loading PDF: $error');
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double pdfViewerHeight = screenHeight * 0.8;
 
     return Scaffold(
-      appBar: NovaAppBar(),
-      floatingActionButton: NovaButton(),
+      appBar: const NovaAppBar(),
+      floatingActionButton: const NovaButton(),
       body: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -202,7 +208,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Word of God',
                   style: GoogleFonts.montserrat(
@@ -213,12 +219,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showWordPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/TheWord-Study.pdf',
                     key: _wordPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -229,7 +236,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Discipleship',
                   style: GoogleFonts.montserrat(
@@ -240,12 +247,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showDiscipleshipPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Discipleship-Study.pdf',
                     key: _discipleshipPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -256,7 +264,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Sin',
                   style: GoogleFonts.montserrat(
@@ -267,12 +275,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showSinPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Sin-Study.pdf',
                     key: _sinPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -283,7 +292,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'The Cross',
                   style: GoogleFonts.montserrat(
@@ -294,12 +303,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showTheCrossPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Cross-Study.pdf',
                     key: _theCrossPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -310,7 +320,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Medical Account of the Crucifixion',
                   style: GoogleFonts.montserrat(
@@ -321,12 +331,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showMedicalPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Medical-Account.pdf',
                     key: _medicalPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -337,7 +348,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Repentance',
                   style: GoogleFonts.montserrat(
@@ -348,12 +359,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showRepentancePdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Repentance-Study.pdf',
                     key: _repentancePdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -364,7 +376,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Baptism 1',
                   style: GoogleFonts.montserrat(
@@ -375,12 +387,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showBaptism1Pdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Baptism-1-Study.pdf',
                     key: _baptism1PdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -391,7 +404,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Baptism 2',
                   style: GoogleFonts.montserrat(
@@ -402,12 +415,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showBaptism2Pdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Baptism-2-Study.pdf',
                     key: _baptism2PdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -418,7 +432,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'The Church',
                   style: GoogleFonts.montserrat(
@@ -429,12 +443,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showTheChurchPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Church-Study.pdf',
                     key: _theChurchPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -445,7 +460,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Counting The Cost',
                   style: GoogleFonts.montserrat(
@@ -456,19 +471,20 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showCountingTheCostPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Counting_Cost-Study.pdf',
                     key: _countingTheCostPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
             Card(
               elevation: 4.0,
               shape: const RoundedRectangleBorder(
-                  side: BorderSide(color: Color(0xFFF5c937))),
+                  side: BorderSide(color: novaYellow)),
               margin: const EdgeInsets.all(20.0),
               child: Padding(
                 padding: const EdgeInsets.all(6.0),
@@ -496,7 +512,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
                             fontSize: 12.0,
                             letterSpacing: 2.0,
                             fontStyle: FontStyle.italic,
-                            color: const Color(0xFF04578F),
+                            color: novaBlue,
                           ),
                         ),
                       ),
@@ -511,7 +527,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'The Book of John pt. 1',
                   style: GoogleFonts.montserrat(
@@ -522,12 +538,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showJohn1Pdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/John-Study-part1.pdf',
                     key: _john1PdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -538,7 +555,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'John 2',
                   style: GoogleFonts.montserrat(
@@ -549,12 +566,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showJohn2Pdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/John-Study-part2.pdf',
                     key: _john2PdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -565,7 +583,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Seeking God',
                   style: GoogleFonts.montserrat(
@@ -576,12 +594,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showSeekingGodPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Seeking_God-Study.pdf',
                     key: _seekingGodPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -592,7 +611,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Evidences',
                   style: GoogleFonts.montserrat(
@@ -603,12 +622,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showEvidencesPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Evidences-for-Jesus-Study.pdf',
                     key: _evidencesPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),
@@ -619,7 +639,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
               color: Colors.white,
               child: ListTile(
                 selectedTileColor: Colors.white,
-                leading: Icon(Icons.book, color: novaBlue),
+                leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
                   'Who Is Jesus',
                   style: GoogleFonts.montserrat(
@@ -630,12 +650,13 @@ class _ResourceScreenState extends State<ResourceScreen> {
             ),
             if (showWhoIsJesusPdf)
               Padding(
-                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                padding: const EdgeInsets.fromLTRB(8.0, 16, 8, 16),
                 child: Container(
                   height: pdfViewerHeight,
                   child: SfPdfViewer.network(
                     'https://www.nvcoc.church/s/Who-is-Jesus-study.pdf',
                     key: _whoIsJesusPdfViewerKey,
+                    onDocumentLoadFailed: _handlePdfError,
                   ),
                 ),
               ),

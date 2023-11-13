@@ -25,7 +25,7 @@ class _LearnScreenState extends State<LearnScreen> {
 
   List<NovaScreen> screens = [
     NovaScreen(
-        pic: 'resource.png', pagename: 'RESOURCES', pagenav: '/resource'),
+        pic: 'resource.png', pagename: 'BIBLE STUDIES', pagenav: '/resource'),
   ];
 
   @override
