@@ -1,14 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:googleapis/calendar/v3.dart';
 import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
-// ignore: unused_import
-import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class ResourceScreen extends StatefulWidget {
   const ResourceScreen({super.key});
@@ -18,118 +13,634 @@ class ResourceScreen extends StatefulWidget {
 }
 
 class _ResourceScreenState extends State<ResourceScreen> {
-  final Uri _url = Uri.parse('https://www.nvcoc.church/seeker-studies');
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
-    }
+  final GlobalKey<SfPdfViewerState> _wordPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _discipleshipPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _sinPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _theCrossPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _medicalPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _repentancePdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _baptism1PdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _baptism2PdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _theChurchPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _countingTheCostPdfViewerKey = GlobalKey();
+
+  final GlobalKey<SfPdfViewerState> _john1PdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _john2PdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _seekingGodPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _evidencesPdfViewerKey = GlobalKey();
+  final GlobalKey<SfPdfViewerState> _whoIsJesusPdfViewerKey = GlobalKey();
+
+  bool showWordPdf = false;
+  bool showDiscipleshipPdf = false;
+  bool showSinPdf = false;
+  bool showTheCrossPdf = false;
+  bool showMedicalPdf = false;
+  bool showRepentancePdf = false;
+  bool showBaptism1Pdf = false;
+  bool showBaptism2Pdf = false;
+  bool showTheChurchPdf = false;
+  bool showCountingTheCostPdf = false;
+
+  bool showJohn1Pdf = false;
+  bool showJohn2Pdf = false;
+  bool showSeekingGodPdf = false;
+  bool showEvidencesPdf = false;
+  bool showWhoIsJesusPdf = false;
+
+  double pfdViewerHeight = 200;
+
+  void _toggleWordPdf() {
+    setState(() {
+      showWordPdf = !showWordPdf;
+    });
   }
 
-  String dropdownValue = 'SELECT ONE';
-  void dropDownCallBack(String? selectedValue) {
-    if (selectedValue is String) {
-      setState(
-        () => dropdownValue = selectedValue,
-      );
-    }
+  void _toggleDiscipleshipPdf() {
+    setState(() {
+      showDiscipleshipPdf = !showDiscipleshipPdf;
+    });
+  }
+
+  void _toggleSinPdf() {
+    setState(() {
+      showSinPdf = !showSinPdf;
+    });
+  }
+
+  void _toggleTheCrossPdf() {
+    setState(() {
+      showTheCrossPdf = !showTheCrossPdf;
+    });
+  }
+
+  void _toggleMedicalPdf() {
+    setState(() {
+      showMedicalPdf = !showMedicalPdf;
+    });
+  }
+
+  void _toggleRepentancePdf() {
+    setState(() {
+      showRepentancePdf = !showRepentancePdf;
+    });
+  }
+
+  void _toggleBaptism1Pdf() {
+    setState(() {
+      showBaptism1Pdf = !showBaptism1Pdf;
+    });
+  }
+
+  void _toggleBaptism2Pdf() {
+    setState(() {
+      showBaptism2Pdf = !showBaptism2Pdf;
+    });
+  }
+
+  void _toggleTheChurchPdf() {
+    setState(() {
+      showTheChurchPdf = !showTheChurchPdf;
+    });
+  }
+
+  void _toggleCountingTheGhostPdf() {
+    setState(() {
+      showCountingTheCostPdf = !showCountingTheCostPdf;
+    });
+  }
+
+  void _toggleJohn1Pdf() {
+    setState(() {
+      showJohn1Pdf = !showJohn1Pdf;
+    });
+  }
+
+  void _toggleJohn2Pdf() {
+    setState(() {
+      showJohn2Pdf = !showJohn2Pdf;
+    });
+  }
+
+  void _toggleSeekingGodPdf() {
+    setState(() {
+      showSeekingGodPdf = !showSeekingGodPdf;
+    });
+  }
+
+  void _toggleEvidencesPdf() {
+    setState(() {
+      showEvidencesPdf = !showEvidencesPdf;
+    });
+  }
+
+  void _toggleWhoIsJesusPdf() {
+    setState(() {
+      showWhoIsJesusPdf = !showWhoIsJesusPdf;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double pdfViewerHeight = screenHeight * 0.8;
+
     return Scaffold(
       appBar: NovaAppBar(),
       floatingActionButton: NovaButton(),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: const [novaBlue, white])),
-        child: ListView(children: [
-          Card(
-            shape: RoundedRectangleBorder(side: BorderSide(color: novaYellow)),
-            margin: EdgeInsets.all(20),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Text(
-                  'RESOURCES',
-                  style: GoogleFonts.montserrat(
-                      color: Color(0xff04578f),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                      letterSpacing: 2.0),
+                colors: [novaBlue, white])),
+        child: ListView(
+          children: [
+            Card(
+              elevation: 4.0,
+              shape: const RoundedRectangleBorder(
+                  side: BorderSide(color: novaYellow)),
+              margin: const EdgeInsets.all(20.0),
+              child: Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Text(
+                        'BASIC STUDIES',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 22.0,
+                          letterSpacing: 2.0,
+                          fontWeight: FontWeight.bold,
+                          color: novaBlue,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          """These studies are a great place to start for anyone wanting to begin or examine their faith journey through the eyes of the Bible.""",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 12.0,
+                            letterSpacing: 2.0,
+                            fontStyle: FontStyle.italic,
+                            color: novaBlue,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(100, 0, 100, 20),
-            child: ElevatedButton.icon(
-              onPressed: _launchUrl,
-              icon: Icon(Icons.book_online),
-              label: Text('Seeker Studies'),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(novaBlue)),
+
+            // Word of God Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Word of God',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleWordPdf,
+              ),
             ),
-          ),
-          /*Padding(
-            padding: const EdgeInsets.fromLTRB(24, 0, 0, 12),
-            child: Text(
-              'Filter Calendars',
-              style: GoogleFonts.montserrat(
-                  color: white, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(24, 10, 50, 10),
-            child: DropdownButton<String>(
-              isExpanded: true,
-              value: dropdownValue,
-              icon: Icon(Icons.menu),
-              style: TextStyle(color: Colors.black),
-              underline: Container(height: 2, color: white),
-              items: const [
-                DropdownMenuItem<String>(
-                  value: 'SELECT ONE',
-                  child: Text(
-                    'SELECT ONE',
+            if (showWordPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/TheWord-Study.pdf',
+                    key: _wordPdfViewerKey,
                   ),
                 ),
-                DropdownMenuItem<String>(
-                  value: 'Church Wide',
-                  child: Text('Church Wide'),
+              ),
+
+// Discipleship Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Discipleship',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
                 ),
-                DropdownMenuItem<String>(
-                  value: 'Campus Ministry',
-                  child: Text('Campus Ministry'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'Single Professionals',
-                  child: Text('Single Professionals'),
-                ),
-                DropdownMenuItem<String>(
-                  value: 'Youth and Family',
-                  child: Text('Youth and Family'),
-                ),
-              ],
-              onChanged: dropDownCallBack,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(width: 2.0, color: Color(0xFFF5C937))),
-              child: SfCalendar(
-                view: CalendarView.timelineMonth,
-                backgroundColor: white,
-                cellBorderColor: Color(0xFF04578f),
-                onTap: (nvcoc) {},
+                onTap: _toggleDiscipleshipPdf,
               ),
             ),
-          ),*/
-        ]),
+            if (showDiscipleshipPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Discipleship-Study.pdf',
+                    key: _discipleshipPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Sin Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Sin',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleSinPdf,
+              ),
+            ),
+            if (showSinPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Sin-Study.pdf',
+                    key: _sinPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// The Cross Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'The Cross',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleTheCrossPdf,
+              ),
+            ),
+            if (showTheCrossPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Cross-Study.pdf',
+                    key: _theCrossPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Medical Ethics Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Medical Account of the Crucifixion',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleMedicalPdf,
+              ),
+            ),
+            if (showMedicalPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Medical-Account.pdf',
+                    key: _medicalPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Repentance Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Repentance',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleRepentancePdf,
+              ),
+            ),
+            if (showRepentancePdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Repentance-Study.pdf',
+                    key: _repentancePdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Baptism 1 Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Baptism 1',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleBaptism1Pdf,
+              ),
+            ),
+            if (showBaptism1Pdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Baptism-1-Study.pdf',
+                    key: _baptism1PdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Baptism 2 Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Baptism 2',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleBaptism2Pdf,
+              ),
+            ),
+            if (showBaptism2Pdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Baptism-2-Study.pdf',
+                    key: _baptism2PdfViewerKey,
+                  ),
+                ),
+              ),
+
+// The Church Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'The Church',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleTheChurchPdf,
+              ),
+            ),
+            if (showTheChurchPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Church-Study.pdf',
+                    key: _theChurchPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Counting The Ghost Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Counting The Cost',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleCountingTheGhostPdf,
+              ),
+            ),
+            if (showCountingTheCostPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Counting_Cost-Study.pdf',
+                    key: _countingTheCostPdfViewerKey,
+                  ),
+                ),
+              ),
+            Card(
+              elevation: 4.0,
+              shape: const RoundedRectangleBorder(
+                  side: BorderSide(color: Color(0xFFF5c937))),
+              margin: const EdgeInsets.all(20.0),
+              child: Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Text(
+                        'BRING TO FAITH STUDIES',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 22.0,
+                          letterSpacing: 2.0,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF04578F),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          """These studies are meant for people questioning or skeptical about God, to gently lead them to a place where God makes sense and is worth seeking. .""",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 12.0,
+                            letterSpacing: 2.0,
+                            fontStyle: FontStyle.italic,
+                            color: const Color(0xFF04578F),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+// John 1 Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'The Book of John pt. 1',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleJohn1Pdf,
+              ),
+            ),
+            if (showJohn1Pdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/John-Study-part1.pdf',
+                    key: _john1PdfViewerKey,
+                  ),
+                ),
+              ),
+
+// John 2 Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'John 2',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleJohn2Pdf,
+              ),
+            ),
+            if (showJohn2Pdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/John-Study-part2.pdf',
+                    key: _john2PdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Seeking God Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Seeking God',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleSeekingGodPdf,
+              ),
+            ),
+            if (showSeekingGodPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Seeking_God-Study.pdf',
+                    key: _seekingGodPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Evidences Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Evidences',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleEvidencesPdf,
+              ),
+            ),
+            if (showEvidencesPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Evidences-for-Jesus-Study.pdf',
+                    key: _evidencesPdfViewerKey,
+                  ),
+                ),
+              ),
+
+// Who Is Jesus Study
+            Card(
+              elevation: 0,
+              color: Colors.white,
+              child: ListTile(
+                selectedTileColor: Colors.white,
+                leading: Icon(Icons.book, color: novaBlue),
+                title: Text(
+                  'Who Is Jesus',
+                  style: GoogleFonts.montserrat(
+                      letterSpacing: 2.0, color: novaBlue),
+                ),
+                onTap: _toggleWhoIsJesusPdf,
+              ),
+            ),
+            if (showWhoIsJesusPdf)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2.0, 16, 8, 16),
+                child: Container(
+                  height: pdfViewerHeight,
+                  child: SfPdfViewer.network(
+                    'https://www.nvcoc.church/s/Who-is-Jesus-study.pdf',
+                    key: _whoIsJesusPdfViewerKey,
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
