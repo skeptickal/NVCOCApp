@@ -557,7 +557,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
                 selectedTileColor: Colors.white,
                 leading: const Icon(Icons.book, color: novaBlue),
                 title: Text(
-                  'John 2',
+                  'The Book of John pt. 2',
                   style: GoogleFonts.montserrat(
                       letterSpacing: 2.0, color: novaBlue),
                 ),
