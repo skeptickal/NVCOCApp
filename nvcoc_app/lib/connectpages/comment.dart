@@ -206,9 +206,8 @@ class _CommentScreenState extends State<CommentScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(22.0, 0, 0, 0),
               child: Text(
-                'Comment/Prayer Request',
-                style: GoogleFonts.montserrat(
-                    color: Color.fromARGB(248, 255, 255, 255)),
+                'Comment/Prayer Request', //change this to something that can ask for info about ministries as well?
+                style: GoogleFonts.montserrat(color: white),
               ),
             ),
             Padding(
@@ -221,7 +220,7 @@ class _CommentScreenState extends State<CommentScreen> {
                   hintText: 'Comment/Prayer Request',
                   border: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xfff5c937),
+                      color: novaYellow,
                     ),
                   ),
                   fillColor: Colors.white,
