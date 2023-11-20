@@ -18,5 +18,6 @@ void main() {
     expect(find.byType(SfPdfViewer), findsOneWidget);
 
     // Add more test cases based on your UI elements and interactions.
+    // check for the sf pdf viewer error, going back while it is open? State preservation issue?
   });
 }
