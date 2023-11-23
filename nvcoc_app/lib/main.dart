@@ -13,3 +13,4 @@ Future<void> main() async {
 
 //add Materializer? Consider for later, potentially only for bloc and cubit testing
 // use java + gradle backend? + practice with REST APIs
+// use json placeholder for practice?
