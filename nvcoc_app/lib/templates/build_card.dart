@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/shared/constants.dart';
 
-Widget buildCard(String title, String content) {
+Widget buildCard(String? title, String? content) {
   return Card(
     elevation: 4.0,
     shape: const RoundedRectangleBorder(
@@ -17,7 +17,7 @@ Widget buildCard(String title, String content) {
           Padding(
             padding: const EdgeInsets.all(6.0),
             child: Text(
-              title,
+              title!,
               style: GoogleFonts.montserrat(
                 fontSize: 22.0,
                 letterSpacing: 2.0,
@@ -31,7 +31,7 @@ Widget buildCard(String title, String content) {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: Text(
-                content,
+                content!,
                 style: GoogleFonts.montserrat(
                   fontSize: 12.0,
                   letterSpacing: 2.0,
