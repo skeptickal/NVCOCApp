@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/housechurches.dart';
 import 'package:nvcoc_app/templates/worship_info.dart';
 
@@ -65,12 +66,12 @@ class DatabaseService {
   List<Worship> _worshipInfoFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return Worship(
-        meetingPlace: doc.get('meeting place') ?? '',
-        meetingTime: doc.get('meeting time') ?? '',
-        whatToExpect: doc.get('what to expect') ?? '',
-        whatAboutKids: doc.get('what about kids') ?? '',
-        whatAboutMe: doc.get('what about me') ?? '',
-        unsure: doc.get('unsure') ?? '',
+        meetingPlace: doc.get('meeting place') ?? errorMessage,
+        meetingTime: doc.get('meeting time') ?? errorMessage,
+        whatToExpect: doc.get('what to expect') ?? errorMessage,
+        whatAboutKids: doc.get('what about kids') ?? errorMessage,
+        whatAboutMe: doc.get('what about me') ?? errorMessage,
+        unsure: doc.get('unsure') ?? errorMessage,
       );
     }).toList();
   }
