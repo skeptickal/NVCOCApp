@@ -51,6 +51,17 @@ class WorshipScreen extends StatelessWidget {
                     buildCard('WHERE WE MEET',
                         '${worship.meetingPlace}, ${worship.meetingTime}'),
                     buildCard('LIVE STREAM', 'We also meet online at 10:30AM'),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 24, 8, 8),
+                      child: IconButton(
+                        onPressed: _launchUrl,
+                        icon: Image.asset(
+                          'assets/yt.png',
+                          width: 70.0,
+                          height: 70.0,
+                        ),
+                      ),
+                    ),
                     buildCard('WHAT TO EXPECT', worship.whatToExpect),
                     buildCard('WHAT ABOUT MY KIDS', worship.whatAboutKids),
                     buildCard('WHAT IF I AM NOT VERY CHURCHY OR RELIGIOUS?',
