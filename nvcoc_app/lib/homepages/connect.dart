@@ -16,7 +16,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
     NovaScreen(
         pic: 'people.jpg', pagename: 'SMALL GROUPS', pagenav: '/smallgroups'),
     NovaScreen(
-        pic: 'cross.png', pagename: 'WORSHIP WITH US', pagenav: '/belief'),
+        pic: 'cross.png', pagename: 'WORSHIP WITH US', pagenav: '/worship'),
     NovaScreen(
         pic: 'comment.png', pagename: 'COMMENT CARDS', pagenav: '/comment'),
     NovaScreen(pic: 'evite.png', pagename: 'E-INVITES', pagenav: '/leaders'),

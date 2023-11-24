@@ -15,12 +15,12 @@ class _HouseChurchListState extends State<HouseChurchList> {
   Widget build(BuildContext context) {
     final houseChurches = Provider.of<List<HouseChurches>>(context);
 
-    houseChurches.forEach((houseChurch) {
+    /*houseChurches.forEach((houseChurch) {
       print(houseChurch.leaders);
       print(houseChurch.location);
       print(houseChurch.name);
       print(houseChurch.number);
-    });
+    }); */
     return ListView.builder(
       itemCount: houseChurches.length,
       itemBuilder: (context, index) {

@@ -263,7 +263,7 @@ class _LeadersScreenState extends State<LeadersScreen> {
                   ),
                 ),
               ),
-              Card(
+              /*Card(
                 elevation: 4.0,
                 shape: const RoundedRectangleBorder(
                     side: BorderSide(color: Color(0xFFF5c937))),
@@ -305,7 +305,7 @@ class _LeadersScreenState extends State<LeadersScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),*/
               Card(
                 elevation: 4.0,
                 shape: const RoundedRectangleBorder(

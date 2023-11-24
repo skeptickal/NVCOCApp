@@ -2,13 +2,39 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/firebase_options.dart';
 import 'package:nvcoc_app/router.dart';
+import 'package:nvcoc_app/services/database.dart';
+import 'package:nvcoc_app/templates/housechurches.dart';
+import 'package:nvcoc_app/templates/worship_info.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(MaterialApp.router(
-    routerConfig: router,
-  ));
+  runApp(MultiProvider(
+      providers: [
+        StreamProvider<List<Worship>>.value(
+          value: DatabaseService().worshipInfo,
+          catchError: (context, error) {
+            // Handle the error here
+            print("Error in stream: $error");
+            return [];
+          },
+          initialData: const [],
+        ),
+        StreamProvider<List<HouseChurches>>.value(
+          value: DatabaseService().houseChurches,
+          catchError: (context, error) {
+            // Handle the error here
+            print("Error in stream: $error");
+            return [];
+          },
+          initialData: const [],
+        ),
+        // Add other providers if necessary
+      ],
+      child: MaterialApp.router(
+        routerConfig: router,
+      )));
 }
 
 //add Materializer? Consider for later, potentially only for bloc and cubit testing

@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/connectpages/worship.dart';
 import 'package:nvcoc_app/homepages/home.dart';
 import 'package:nvcoc_app/homepages/calendar.dart';
 import 'package:nvcoc_app/homepages/about.dart';
@@ -60,6 +61,12 @@ final GoRouter router = GoRouter(
       path: '/who_we_are',
       builder: (BuildContext context, GoRouterState state) {
         return const WhoWeAreScreen();
+      },
+    ),
+    GoRoute(
+      path: '/worship',
+      builder: (BuildContext context, GoRouterState state) {
+        return WorshipScreen();
       },
     ),
     //give + related sub screens
