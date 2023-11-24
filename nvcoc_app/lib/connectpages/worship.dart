@@ -20,7 +20,7 @@ class WorshipScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Worship> worshipInfo = Provider.of<List<Worship>>(context);
+    List<Worship> worshipInfo = context.watch<List<Worship>>();
     return StreamProvider<List<Worship>>.value(
         value: DatabaseService().worshipInfo,
         catchError: (context, error) {
@@ -301,7 +301,7 @@ class WorshipScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40)
+                    const SizedBox(height: 40)
                   ],
                 );
               },
