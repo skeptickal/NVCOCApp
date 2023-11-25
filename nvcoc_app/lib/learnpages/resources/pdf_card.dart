@@ -13,7 +13,7 @@ class PdfCard extends StatelessWidget {
   final void Function()? onTap;
   final Function(dynamic) onDocumentLoadFailed;
 
-  PdfCard({
+  const PdfCard({super.key, 
     required this.title,
     required this.pdfUrl,
     required this.pdfViewerKey,
