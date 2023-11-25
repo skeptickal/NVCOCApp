@@ -59,7 +59,7 @@ class _GiveScreenState extends State<GiveScreen> {
                       ),
                     ),
                     Text(
-                      '''Use your bank's own "bill pay" feature:Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172
+                      '''Use your bank's own "bill pay" feature: Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172
 
 In the memo line, indicate: weekly, poor, mission, etc. The bill can be set up as one time or recurring''',
                       style: GoogleFonts.montserrat(

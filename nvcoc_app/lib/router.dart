@@ -16,6 +16,13 @@ import 'package:nvcoc_app/homepages/learn.dart';
 import 'package:nvcoc_app/connectpages/smallgroups.dart';
 import 'package:nvcoc_app/connectpages/comment.dart';
 import 'package:nvcoc_app/learnpages/resources/resources.dart';
+import 'package:nvcoc_app/ministriespages/campus.dart';
+import 'package:nvcoc_app/ministriespages/singles.dart';
+import 'package:nvcoc_app/ministriespages/teens/parents.dart';
+import 'package:nvcoc_app/ministriespages/teens/parents2.dart';
+import 'package:nvcoc_app/ministriespages/teens/parents3.dart';
+import 'package:nvcoc_app/ministriespages/teens/teens.dart';
+import 'package:nvcoc_app/ministriespages/teens/teens_resources.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
@@ -82,6 +89,48 @@ final GoRouter router = GoRouter(
       path: '/ministries',
       builder: (BuildContext context, GoRouterState state) {
         return const MinistriesScreen();
+      },
+    ),
+    GoRoute(
+      path: '/teens',
+      builder: (BuildContext context, GoRouterState state) {
+        return const TeensScreen();
+      },
+    ),
+    GoRoute(
+      path: '/teens2',
+      builder: (BuildContext context, GoRouterState state) {
+        return const TeensResourceScreen();
+      },
+    ),
+    GoRoute(
+      path: '/parents',
+      builder: (BuildContext context, GoRouterState state) {
+        return const ParentsScreen();
+      },
+    ),
+    GoRoute(
+      path: '/parents2',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Parents2Screen();
+      },
+    ),
+    GoRoute(
+      path: '/parents3',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Parents3Screen();
+      },
+    ),
+    GoRoute(
+      path: '/singles',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SinglesScreen();
+      },
+    ),
+    GoRoute(
+      path: '/campus',
+      builder: (BuildContext context, GoRouterState state) {
+        return const CampusScreen();
       },
     ),
     //learn + related sub screens
