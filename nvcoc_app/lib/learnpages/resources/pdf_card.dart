@@ -13,7 +13,8 @@ class PdfCard extends StatelessWidget {
   final void Function()? onTap;
   final Function(dynamic) onDocumentLoadFailed;
 
-  const PdfCard({super.key, 
+  const PdfCard({
+    super.key,
     required this.title,
     required this.pdfUrl,
     required this.pdfViewerKey,
@@ -44,6 +45,7 @@ class PdfCard extends StatelessWidget {
           ),
           if (showPdf)
             Container(
+              color: novaYellow,
               height: pdfViewerHeight,
               child: SfPdfViewer.network(
                 pdfUrl,
