@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/services/database.dart';
 import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/ebulletin_link.dart';
@@ -45,20 +47,81 @@ class EBulletinScreen extends StatelessWidget {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(100, 100, 100, 20),
-                        child: ElevatedButton.icon(
-                          onPressed: () {
-                            _launchUrl(eBulletin.eBulletinLink!);
-                          },
-                          icon: const Icon(Icons.menu_book),
-                          label: const Text('View eBulletin'),
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all<Color>(novaBlue)),
+                      GestureDetector(
+                        onTap: () => _launchUrl(eBulletin.eBulletinLink!),
+                        child: Container(
+                          width: 250,
+                          height: 250,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage('assets/newsletter.png'),
+                            fit: BoxFit.cover,
+                          )),
+                          child: Padding(
+                            padding: const EdgeInsets.all(6.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  ' VIEW E-BULLETIN',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30.0,
+                                  ),
+                                ),
+                                Text(
+                                  'UPDATED WEEKLY',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 40),
+                      GestureDetector(
+                        onTap: () =>
+                            _launchUrl('https://nvcoc.church/e-invites'),
+                        child: Container(
+                          width: 250,
+                          height: 250,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage('assets/evites.jpg'),
+                            fit: BoxFit.cover,
+                          )),
+                          child: Padding(
+                            padding: const EdgeInsets.all(6.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  ' VIEW E-INVITES',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30.0,
+                                  ),
+                                ),
+                                Text(
+                                  '',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   );
                 },

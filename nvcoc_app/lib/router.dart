@@ -15,7 +15,7 @@ import 'package:nvcoc_app/homepages/connect.dart';
 import 'package:nvcoc_app/homepages/learn.dart';
 import 'package:nvcoc_app/connectpages/smallgroups.dart';
 import 'package:nvcoc_app/connectpages/comment.dart';
-import 'package:nvcoc_app/learnpages/resources.dart';
+import 'package:nvcoc_app/learnpages/resources/resources.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
