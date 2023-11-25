@@ -90,17 +90,17 @@ In the memo line, indicate: weekly, poor, mission, etc. The bill can be set up a
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      '',
+                      'No Processing Fee, and can set up recurring payments. ',
                       style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 30.0,
+                        fontSize: 12.0,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0.0, 150, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0.0, 180, 0, 0),
                       child: Text(
-                        '''No Processing Fee, and can set up recurring payments. You can set Zelle up using the church's email address: admin@nvcoc.org''',
+                        '''You can set Zelle up using the church's email address: admin@nvcoc.org''',
                         style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
