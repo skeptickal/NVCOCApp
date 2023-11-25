@@ -21,7 +21,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
         pic: 'comment.png', pagename: 'COMMENT CARDS', pagenav: '/comment'),
     NovaScreen(pic: 'evite.png', pagename: 'E-INVITES', pagenav: '/leaders'),
     NovaScreen(
-        pic: 'bulletin.png', pagename: 'E-BULLETIN', pagenav: '/leaders'),
+        pic: 'bulletin.png', pagename: 'E-BULLETIN', pagenav: '/ebulletin'),
   ];
 
   @override

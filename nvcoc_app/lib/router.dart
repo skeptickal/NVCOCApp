@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/connectpages/ebulletin.dart';
 import 'package:nvcoc_app/connectpages/worship.dart';
 import 'package:nvcoc_app/homepages/home.dart';
 import 'package:nvcoc_app/homepages/calendar.dart';
@@ -113,6 +114,12 @@ final GoRouter router = GoRouter(
       path: '/comment',
       builder: (BuildContext context, GoRouterState state) {
         return const CommentScreen();
+      },
+    ),
+    GoRoute(
+      path: '/ebulletin',
+      builder: (BuildContext context, GoRouterState state) {
+        return EBulletinScreen();
       },
     ),
   ],

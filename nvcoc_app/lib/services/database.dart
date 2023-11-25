@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:nvcoc_app/shared/constants.dart';
+import 'package:nvcoc_app/templates/ebulletin_link.dart';
 import 'package:nvcoc_app/templates/housechurches.dart';
 import 'package:nvcoc_app/templates/worship_info.dart';
 
@@ -15,6 +16,8 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('house churches');
   final CollectionReference worshipInfoCollection =
       FirebaseFirestore.instance.collection('worship info');
+  final CollectionReference eBulletinCollection =
+      FirebaseFirestore.instance.collection('ebulletins');
 
 //when someone submits a comment card add doc
   Future submitCommentCard(
@@ -82,5 +85,15 @@ class DatabaseService {
 
   Stream<List<Worship>> get worshipInfo {
     return worshipInfoCollection.snapshots().map(_worshipInfoFromSnapshot);
+  }
+
+  List<EBulletin> _getEBulletinFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      return EBulletin(eBulletinLink: doc.get('ebulletin') ?? errorMessage);
+    }).toList();
+  }
+
+  Stream<List<EBulletin>> get eBulletinLink {
+    return eBulletinCollection.snapshots().map(_getEBulletinFromSnapshot);
   }
 }

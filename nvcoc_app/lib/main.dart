@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nvcoc_app/firebase_options.dart';
 import 'package:nvcoc_app/router.dart';
 import 'package:nvcoc_app/services/database.dart';
+import 'package:nvcoc_app/templates/ebulletin_link.dart';
 import 'package:nvcoc_app/templates/housechurches.dart';
 import 'package:nvcoc_app/templates/worship_info.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,15 @@ Future<void> main() async {
         ),
         StreamProvider<List<HouseChurches>>.value(
           value: DatabaseService().houseChurches,
+          catchError: (context, error) {
+            // Handle the error here
+            print("Error in stream: $error");
+            return [];
+          },
+          initialData: const [],
+        ),
+        StreamProvider<List<EBulletin>>.value(
+          value: DatabaseService().eBulletinLink,
           catchError: (context, error) {
             // Handle the error here
             print("Error in stream: $error");
