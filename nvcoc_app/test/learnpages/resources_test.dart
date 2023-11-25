@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nvcoc_app/learnpages/resources.dart';
+import 'package:nvcoc_app/learnpages/resources/resources.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart'; // Import the file you want to test
 
 void main() {
