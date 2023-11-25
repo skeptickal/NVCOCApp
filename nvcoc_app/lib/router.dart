@@ -119,7 +119,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/ebulletin',
       builder: (BuildContext context, GoRouterState state) {
-        return EBulletinScreen();
+        return const EBulletinScreen();
       },
     ),
   ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nvcoc_app/services/database.dart';
 import 'package:nvcoc_app/shared/constants.dart';
@@ -12,9 +11,9 @@ import 'package:url_launcher/url_launcher.dart';
 // ignore: must_be_immutable
 class EBulletinScreen extends StatelessWidget {
   const EBulletinScreen({super.key});
-  Future<void> _launchUrl(String _url) async {
-    if (!await launchUrl(Uri.parse(_url))) {
-      throw Exception('Could not launch $_url');
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(Uri.parse(url))) {
+      throw Exception('Could not launch $url');
     }
   }
 
@@ -32,7 +31,7 @@ class EBulletinScreen extends StatelessWidget {
         initialData: const [],
         child: Scaffold(
             appBar: const NovaAppBar(),
-            floatingActionButton: NovaButton(),
+            floatingActionButton: const NovaButton(),
             body: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(

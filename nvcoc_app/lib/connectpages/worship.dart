@@ -30,8 +30,8 @@ class WorshipScreen extends StatelessWidget {
         },
         initialData: const [],
         child: Scaffold(
-          appBar: NovaAppBar(),
-          floatingActionButton: NovaButton(),
+          appBar: const NovaAppBar(),
+          floatingActionButton: const NovaButton(),
           body: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
