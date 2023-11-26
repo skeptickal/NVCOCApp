@@ -8,6 +8,7 @@ import 'package:nvcoc_app/templates/housechurches.dart';
 import 'package:nvcoc_app/templates/worship_info.dart';
 import 'package:provider/provider.dart';
 
+// should I wrap in a multi stream provider somehow? Or should I find a way to seemlessly convert this to blocs/cubits
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
