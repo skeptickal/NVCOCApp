@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/shared/constants.dart';
 import 'package:nvcoc_app/templates/novabutton.dart';
 import 'package:nvcoc_app/templates/nova_appbar.dart';
 
@@ -32,7 +33,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                   Card(
                     elevation: 4.0,
                     shape: const RoundedRectangleBorder(
-                        side: BorderSide(color: Color(0xFFF5c937))),
+                        side: BorderSide(color: novaYellow)),
                     margin: const EdgeInsets.all(20.0),
                     child: Padding(
                       padding: const EdgeInsets.all(6.0),
@@ -47,7 +48,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                 fontSize: 22.0,
                                 letterSpacing: 2.0,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF04578F),
+                                color: novaBlue,
                               ),
                             ),
                           ),
@@ -60,7 +61,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                 letterSpacing: 2.0,
                                 fontSize: 12.0,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF04578F),
+                                color: novaBlue,
                               ),
                             ),
                           ),
@@ -82,7 +83,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                   fontSize: 12.0,
                                   letterSpacing: 2.0,
                                   fontStyle: FontStyle.italic,
-                                  color: const Color(0xFF04578F),
+                                  color: novaBlue,
                                 ),
                               ),
                             ),
@@ -94,7 +95,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                   Card(
                     elevation: 4.0,
                     shape: const RoundedRectangleBorder(
-                        side: BorderSide(color: Color(0xFFF5c937))),
+                        side: BorderSide(color: novaYellow)),
                     margin: const EdgeInsets.all(20.0),
                     child: Padding(
                       padding: const EdgeInsets.all(6.0),
@@ -109,7 +110,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                 fontSize: 22.0,
                                 letterSpacing: 2.0,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF04578F),
+                                color: novaBlue,
                               ),
                             ),
                           ),
@@ -123,7 +124,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                   fontSize: 12.0,
                                   letterSpacing: 2.0,
                                   fontStyle: FontStyle.italic,
-                                  color: const Color(0xFF04578F),
+                                  color: novaBlue,
                                 ),
                               ),
                             ),
@@ -135,7 +136,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                   Card(
                     elevation: 4.0,
                     shape: const RoundedRectangleBorder(
-                        side: BorderSide(color: Color(0xFFF5c937))),
+                        side: BorderSide(color: novaYellow)),
                     margin: const EdgeInsets.all(20.0),
                     child: Padding(
                       padding: const EdgeInsets.all(6.0),
@@ -150,7 +151,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                 fontSize: 22.0,
                                 letterSpacing: 2.0,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF04578F),
+                                color: novaBlue,
                               ),
                             ),
                           ),
@@ -170,7 +171,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                   fontSize: 12.0,
                                   letterSpacing: 2.0,
                                   fontStyle: FontStyle.italic,
-                                  color: const Color(0xFF04578F),
+                                  color: novaBlue,
                                 ),
                               ),
                             ),
@@ -182,7 +183,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                   Card(
                     elevation: 4.0,
                     shape: const RoundedRectangleBorder(
-                        side: BorderSide(color: Color(0xFFF5c937))),
+                        side: BorderSide(color: novaYellow)),
                     margin: const EdgeInsets.all(20.0),
                     child: Padding(
                       padding: const EdgeInsets.all(6.0),
@@ -197,7 +198,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                 fontSize: 22.0,
                                 letterSpacing: 2.0,
                                 fontWeight: FontWeight.bold,
-                                color: const Color(0xFF04578F),
+                                color: novaBlue,
                               ),
                             ),
                           ),
@@ -217,7 +218,7 @@ class _BeliefScreenState extends State<BeliefScreen> {
                                   fontSize: 12.0,
                                   letterSpacing: 2.0,
                                   fontStyle: FontStyle.italic,
-                                  color: const Color(0xFF04578F),
+                                  color: novaBlue,
                                 ),
                               ),
                             ),
