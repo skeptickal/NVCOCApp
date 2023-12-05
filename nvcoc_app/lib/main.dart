@@ -19,7 +19,7 @@ Future<void> main() async {
         StreamProvider<List<Worship>>.value(
           value: DatabaseService().worshipInfo,
           catchError: (context, error) {
-            // Handle the error here - work on a test for this? Or when I do bloc conversion? Wait for Trello Cards / delete useless note comments later
+            // Handle the error here - work on a test for this? Or when I do bloc conversion? Wait for Trello Cards / delete useless note comments later <-
             print("Error in stream: $error");
             return [];
           },
