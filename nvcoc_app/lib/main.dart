@@ -11,6 +11,8 @@ import 'package:provider/provider.dart';
 // should I wrap in a multi stream provider somehow? Or should I find a way to seemlessly convert this to blocs/cubits - DO WITH JEFF?
 // wait for Trello cards before further implementation
 // go to leadership and what we believe and modularize more/other pages/screens?
+
+//101
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
