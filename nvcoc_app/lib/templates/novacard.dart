@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nvcoc_app/shared/constants.dart';
 import 'novapages.dart';
 
 class NovaTemplate extends StatelessWidget {
@@ -15,12 +16,11 @@ class NovaTemplate extends StatelessWidget {
         elevation: 4.0,
         shape: const RoundedRectangleBorder(
           side: BorderSide(
-            color: Color(0xFF04578F),
+            color: novaBlue,
             width: 2.0,
           ),
         ),
-        color: const Color.fromARGB(255, 255, 255, 255),
-        //margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+        color: white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -35,12 +35,11 @@ class NovaTemplate extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () =>
-                  context.push(screen.pagenav),
+              onPressed: () => context.push(screen.pagenav),
               icon: Image.asset(
                 'assets/${screen.pic}',
-                width: 70.0,
-                height: 70.0,
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
               ),
             ),
           ],
