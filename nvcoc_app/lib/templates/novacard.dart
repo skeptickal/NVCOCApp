@@ -29,9 +29,7 @@ class NovaTemplate extends StatelessWidget {
               child: Text(
                 screen.pagename,
                 style: GoogleFonts.montserrat(
-                    fontSize: 14.0,
-                    color: const Color(0xff04578f),
-                    letterSpacing: 1.5),
+                    fontSize: 14.0, color: novaBlue, letterSpacing: 1.5),
               ),
             ),
             IconButton(
