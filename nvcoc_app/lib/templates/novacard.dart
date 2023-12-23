@@ -13,6 +13,7 @@ class NovaTemplate extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.push(screen.pagenav),
       child: Card(
+        color: white,
         elevation: 4.0,
         shape: const RoundedRectangleBorder(
           side: BorderSide(
@@ -20,7 +21,6 @@ class NovaTemplate extends StatelessWidget {
             width: 2.0,
           ),
         ),
-        color: white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
