@@ -74,7 +74,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               ),
               label: Text(
                 'Online Calendar',
-                style: TextStyle(color: white),
+                style: GoogleFonts.montserrat(color: white),
               ),
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(novaBlue)),

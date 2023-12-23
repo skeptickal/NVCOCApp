@@ -597,11 +597,10 @@ class _CommentScreenState extends State<CommentScreen> {
                     _phone.clear();
                     _email2.clear();
                   },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff04578f)),
+                  style: ElevatedButton.styleFrom(backgroundColor: novaBlue),
                   child: Text('SUBMIT',
-                      style:
-                          GoogleFonts.montserrat(fontWeight: FontWeight.bold))),
+                      style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold, color: white))),
             )
           ],
         ),
