@@ -68,11 +68,16 @@ class _CalendarScreenState extends State<CalendarScreen> {
             padding: const EdgeInsets.fromLTRB(100, 0, 100, 20),
             child: ElevatedButton.icon(
               onPressed: _launchUrl,
-              icon: Icon(Icons.calendar_month_outlined),
-              label: Text('Online Calendar'),
+              icon: Icon(
+                Icons.calendar_month_outlined,
+                color: white,
+              ),
+              label: Text(
+                'Online Calendar',
+                style: TextStyle(color: white),
+              ),
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Color(0xFF04578f))),
+                  backgroundColor: MaterialStateProperty.all<Color>(novaBlue)),
             ),
           ),
           /*Padding(
