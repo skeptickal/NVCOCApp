@@ -133,6 +133,7 @@ class _ResourceScreenState extends State<ResourceScreen> {
         child: ListView(
           children: [
             Card(
+              color: white,
               elevation: 4.0,
               shape: const RoundedRectangleBorder(
                   side: BorderSide(color: novaYellow)),

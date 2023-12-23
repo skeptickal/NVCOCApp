@@ -30,7 +30,7 @@ class PdfCard extends StatelessWidget {
 
     return Card(
       elevation: 0,
-      color: Colors.white,
+      color: white,
       child: Column(
         children: [
           ListTile(
