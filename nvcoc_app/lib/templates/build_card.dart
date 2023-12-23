@@ -22,7 +22,7 @@ Widget buildCard(String? title, String? content) {
                 fontSize: 22.0,
                 letterSpacing: 2.0,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFF04578F),
+                color: novaBlue,
               ),
             ),
           ),

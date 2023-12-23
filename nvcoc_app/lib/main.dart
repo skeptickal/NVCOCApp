@@ -19,8 +19,6 @@ Future<void> main() async {
         StreamProvider<List<Worship>>.value(
           value: DatabaseService().worshipInfo,
           catchError: (context, error) {
-            // Handle the error here
-            // - work on a test for this? Or when I do bloc conversion? Wait for Trello Cards / delete useless note comments later <-
             print("Error in stream: $error");
             return [];
           },
@@ -29,7 +27,6 @@ Future<void> main() async {
         StreamProvider<List<HouseChurches>>.value(
           value: DatabaseService().houseChurches,
           catchError: (context, error) {
-            // Handle the error here
             print("Error in stream: $error");
             return [];
           },
@@ -38,19 +35,13 @@ Future<void> main() async {
         StreamProvider<List<EBulletin>>.value(
           value: DatabaseService().eBulletinLink,
           catchError: (context, error) {
-            // Handle the error here
             print("Error in stream: $error");
             return [];
           },
           initialData: const [],
         ),
-        // Add other providers if necessary
       ],
       child: MaterialApp.router(
         routerConfig: router,
       )));
 }
-
-//add Materializer? Consider for later, potentially only for bloc and cubit testing
-// use java + gradle backend? + practice with REST APIs
-// use json placeholder for practice?
