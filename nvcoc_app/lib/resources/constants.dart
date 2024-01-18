@@ -6,8 +6,21 @@ const Color black = Colors.black;
 const Color novaBlue = Color(0xff04578f);
 const Color novaYellow = Color(0xfff5c937);
 TextStyle montserrat = GoogleFonts.montserrat();
+SizedBox seperation = const SizedBox(height: 10);
 
 //Text Field Format
+
+const textInputDecoration = InputDecoration(
+  fillColor: white,
+  filled: true,
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: novaBlue, width: 2.0),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: novaYellow, width: 2.0),
+  ),
+);
+
 class CustomTextBox extends StatelessWidget {
   final EdgeInsets padding;
   final TextEditingController controller;
@@ -19,20 +32,11 @@ class CustomTextBox extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: padding,
-        child: TextField(
+        child: TextFormField(
           controller: controller,
           maxLines: null,
           keyboardType: TextInputType.multiline,
-          decoration: InputDecoration(
-            hintText: hintText,
-            border: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: novaYellow,
-              ),
-            ),
-            fillColor: white,
-            filled: true,
-          ),
+          decoration: textInputDecoration.copyWith(hintText: hintText),
         ),
       ),
     );

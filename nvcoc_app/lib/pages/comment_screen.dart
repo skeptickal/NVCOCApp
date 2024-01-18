@@ -21,6 +21,29 @@ class CommentScreen extends StatelessWidget with CommentMixin {
           final String dropdownValue1 = state.dropDownValue1 ?? 'Select One';
           return ListView(
             children: [
+              Center(
+                child: Text(
+                  'Online Comment Cards',
+                  style: montserrat.copyWith(
+                    color: novaBlue,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              seperation,
+              Padding(
+                padding: rowPadding,
+                child: Text(
+                    'Welcome to our online comment card and prayer request system. '
+                    'Whether you’re a member or a guest to our church, our online '
+                    'comment card allows you to place membership, change/update '
+                    'existing membership information, and much more! To get started'
+                    'just click on the start button below and we’ll guide you each '
+                    'step of the way.',
+                    style: montserrat.copyWith(color: novaBlue)),
+              ),
+              seperation,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -117,7 +140,12 @@ class CommentScreen extends StatelessWidget with CommentMixin {
               CustomTextBox(padding: textBoxPadding, controller: phone, hintText: 'Phone'),
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Email'),
               CustomTextBox(padding: textBoxPadding, controller: email, hintText: 'Email'),
-              TextButton(onPressed: () => addCommentData(context), child: const Text('Submit Comment'))
+              TextButton(
+                  onPressed: () => addCommentData(context),
+                  child: Text(
+                    'Submit Comment',
+                    style: montserrat.copyWith(color: novaBlue),
+                  ))
             ],
           );
         },
@@ -159,9 +187,12 @@ class CommentScreen extends StatelessWidget with CommentMixin {
     phone.clear();
     email2.clear();
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Comment Submitted'),
-        duration: Duration(
+      SnackBar(
+        content: Text(
+          'Comment Submitted',
+          style: montserrat,
+        ),
+        duration: const Duration(
           seconds: 1,
         ),
       ),
