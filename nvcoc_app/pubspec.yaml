@@ -51,6 +51,10 @@ dependencies:
   googleapis_auth: ^1.4.1
   google_sign_in: ^6.1.6
   syncfusion_flutter_pdfviewer: ^23.1.44
+  bloc_test: ^9.1.5
+  mocktail: ^1.0.2
+  bloc: ^8.1.2
+  meta: ^1.10.0
 
 dev_dependencies:
   flutter_test:
