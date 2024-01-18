@@ -127,21 +127,22 @@ class CommentScreen extends StatelessWidget with CommentMixin {
 
   void addCommentData(BuildContext context) {
     Comment comment = Comment(
-        'comments',
-        firstName.text,
-        lastName.text,
-        email.text,
-        commenter.text,
-        context.read<CommentCubit>().state.dropDownValue,
-        context.read<CommentCubit>().state.dropDownValue1,
-        context.read<CommentCubit>().state.code?.code,
-        address1.text,
-        address2.text,
-        city.text,
-        stateSelector.text,
-        zip.text,
-        phone.text,
-        email2.text);
+      'comments',
+      firstName.text,
+      lastName.text,
+      email.text,
+      commenter.text,
+      context.read<CommentCubit>().state.dropDownValue,
+      context.read<CommentCubit>().state.dropDownValue1,
+      context.read<CommentCubit>().state.code?.code,
+      address1.text,
+      address2.text,
+      city.text,
+      stateSelector.text,
+      zip.text,
+      phone.text,
+      email2.text,
+    );
     context.read<CommentCubit>().addComment(comment);
     firstName.clear();
     lastName.clear();
@@ -161,7 +162,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
       const SnackBar(
         content: Text('Comment Submitted'),
         duration: Duration(
-          milliseconds: 1000,
+          seconds: 1,
         ),
       ),
     );
