@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nvcoc_app/cubit/nova_cubit.dart';
+import 'package:nvcoc_app/cubit/comment_cubit.dart';
 import 'mocks.dart';
 
 class Materializer extends StatelessWidget {
-  final List<NovaCubit> mockCubits;
+  final List<CommentCubit> mockCubits;
   final MockGoRouter mockGoRouter;
   final Widget child;
 
@@ -29,5 +29,5 @@ class Materializer extends StatelessWidget {
     );
   }
 
-  List<BlocProvider> buildProviders() => mockCubits.map((NovaCubit cubit) => BlocProvider(create: (_) => cubit)).toList();
+  List<BlocProvider> buildProviders() => mockCubits.map((CommentCubit cubit) => BlocProvider(create: (_) => cubit)).toList();
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nvcoc_app/cubit/nova_cubit.dart';
+import 'package:nvcoc_app/cubit/comment_cubit.dart';
 
 class NovaBlocProvider extends StatelessWidget {
   final Widget child;
@@ -11,7 +11,7 @@ class NovaBlocProvider extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => NovaCubit(),
+          create: (context) => CommentCubit(),
         ),
       ],
       child: child,

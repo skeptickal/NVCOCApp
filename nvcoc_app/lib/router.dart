@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 
 final GoRouter router = GoRouter(
@@ -137,12 +138,12 @@ final GoRouter router = GoRouter(
     //     return const SmallGroupScreen();
     //   },
     // ),
-    // GoRoute(
-    //   path: '/comment',
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const CommentScreen();
-    //   },
-    // ),
+    GoRoute(
+      path: '/comment_card',
+      builder: (BuildContext context, GoRouterState state) {
+        return CommentScreen();
+      },
+    ),
     // GoRoute(
     //   path: '/ebulletin',
     //   builder: (BuildContext context, GoRouterState state) {
