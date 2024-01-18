@@ -13,8 +13,6 @@ mixin CommentMixin {
   final TextEditingController zip = TextEditingController();
   final TextEditingController phone = TextEditingController();
   final TextEditingController email2 = TextEditingController();
-  final String country = 'US';
-  final bool value = false;
   final EdgeInsets sideBySideText = const EdgeInsets.fromLTRB(8.0, 0, 8, 0);
   final EdgeInsets rowPadding = const EdgeInsets.all(12.0);
   final EdgeInsets leftPadding = const EdgeInsets.only(left: 20);
