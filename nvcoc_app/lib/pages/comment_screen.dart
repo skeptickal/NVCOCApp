@@ -22,12 +22,15 @@ class CommentScreen extends StatelessWidget with CommentMixin {
           return ListView(
             children: [
               Center(
-                child: Text(
-                  'Online Comment Cards',
-                  style: montserrat.copyWith(
-                    color: novaBlue,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Text(
+                    'Online Comment Cards',
+                    style: montserrat.copyWith(
+                      color: novaBlue,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
