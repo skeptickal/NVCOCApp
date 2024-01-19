@@ -22,6 +22,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
           final String dropdownValue = state.dropDownValue ?? 'Select One';
           final String dropdownValue1 = state.dropDownValue1 ?? 'Select One';
           return ListView(
+            shrinkWrap: true,
             children: [
               Center(
                 child: Padding(
