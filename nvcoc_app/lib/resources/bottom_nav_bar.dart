@@ -13,15 +13,29 @@ class BottomNavBar extends StatelessWidget {
       backgroundColor: novaBlue,
       destinations: [
         IconButton(
+            onPressed: () => context.push('/bible_verse_lookup'),
+            icon: const Icon(
+              Icons.menu_book,
+              color: white,
+            )),
+        IconButton(
             onPressed: () => context.push('/worship_with_us'),
             icon: const Icon(
               Icons.church,
               color: white,
             )),
         IconButton(
-            onPressed: () => context.push('/'),
+          onPressed: () => context.go('/'),
+          icon: const Icon(
+            Icons.home,
+            color: white,
+          ),
+          iconSize: 40,
+        ),
+        IconButton(
+            onPressed: () => context.push('/calendar'),
             icon: const Icon(
-              Icons.home,
+              Icons.calendar_month,
               color: white,
             )),
         IconButton(

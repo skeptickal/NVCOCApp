@@ -43,9 +43,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                     'Welcome to our online comment card and prayer request system. '
                     'Whether you’re a member or a guest to our church, our online '
                     'comment card allows you to place membership, change/update '
-                    'existing membership information, and much more! To get started'
-                    'just click on the start button below and we’ll guide you each '
-                    'step of the way.',
+                    'existing membership information, and much more!',
                     style: montserrat.copyWith(color: novaBlue)),
               ),
               seperation,
