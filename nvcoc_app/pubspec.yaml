@@ -57,6 +57,7 @@ dependencies:
   meta: ^1.10.0
   equatable: ^2.0.5
   flutter_phone_direct_caller: ^2.1.1
+  webview_flutter: ^4.4.4
 
 dev_dependencies:
   flutter_test:

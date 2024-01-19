@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
+import 'package:nvcoc_app/pages/ebullevites_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 import 'package:nvcoc_app/pages/house_church_screen.dart';
 import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
@@ -121,12 +122,12 @@ final GoRouter router = GoRouter(
     //     return const LearnScreen();
     //   },
     // ),
-    // GoRoute(
-    //   path: '/resource',
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const ResourceScreen();
-    //   },
-    // ),
+    GoRoute(
+      path: '/ebullevites',
+      builder: (BuildContext context, GoRouterState state) {
+        return const EBullevitesScreen();
+      },
+    ),
     // //connect + related sub screens
     GoRoute(
       path: '/worship_with_us',
