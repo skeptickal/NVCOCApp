@@ -14,7 +14,7 @@ class WorshipCubit extends Cubit<WorshipState> {
         super(WorshipInitial());
 
   Future<void> getWorshipDetails() async {
-    final List<WorshipDetails> worshipDetails = await novaService.getWorshipDetails();
-    emit(state.copyWith(worshipDetails: [...worshipDetails]));
+    final WorshipDetails? worshipDetails = await novaService.getWorshipDetails();
+    emit(state.copyWith(worshipDetails: worshipDetails));
   }
 }

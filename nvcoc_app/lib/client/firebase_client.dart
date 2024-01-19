@@ -10,4 +10,15 @@ class FirebaseClient {
     CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);
     return collection.get();
   }
+
+  Future<dynamic> getDoc({required String collectionName, required String docId}) async {
+    CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);
+    DocumentSnapshot<Object?> documentSnapshot = await collection.doc(docId).get();
+
+    if (documentSnapshot.exists) {
+      return documentSnapshot.data();
+    } else {
+      return null;
+    }
+  }
 }
