@@ -12,7 +12,7 @@ class CommentCubit extends Cubit<CommentState> {
 
   CommentCubit({NovaService? novaService})
       : novaService = novaService ?? NovaService(),
-        super(NovaInitial());
+        super(CommentInitial());
 
   Future<void> addComment(Comment comment) async {
     await novaService.addComment(comment: comment);

@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextButton(
-              onPressed: () => context.go('/house_churches'),
+              onPressed: () => context.go('/housechurches'),
               child: const Text('House Churches'),
             ),
             TextButton(

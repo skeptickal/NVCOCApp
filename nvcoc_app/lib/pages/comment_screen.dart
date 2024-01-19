@@ -1,7 +1,7 @@
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nvcoc_app/cubits/comment_cubit.dart';
+import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/models/comment.dart';
 import 'package:nvcoc_app/resources/constants.dart';
 import 'package:nvcoc_app/resources/nova_appbar.dart';

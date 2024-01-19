@@ -27,4 +27,4 @@ class CommentState extends Equatable {
   List<Object?> get props => [comment, dropDownValue, dropDownValue1, code];
 }
 
-final class NovaInitial extends CommentState {}
+final class CommentInitial extends CommentState {}
