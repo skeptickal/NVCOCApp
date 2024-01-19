@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
 
 import 'package:nvcoc_app/models/ebulletin.dart';
+import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
 import 'package:nvcoc_app/resources/constants.dart';
 import 'package:nvcoc_app/resources/nova_appbar.dart';
 
@@ -46,6 +47,7 @@ class EBullevitesScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          bottomNavigationBar: const BottomNavBar(),
           appBar: const NovaAppBar(),
           body: ListView(
             children: [

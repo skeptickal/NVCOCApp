@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -172,6 +173,28 @@ class ConnectColumn extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class HomeNavCard extends StatelessWidget {
+  final String image;
+  final String route;
+  const HomeNavCard({super.key, required this.image, required this.route});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => context.push(route),
+      child: Container(
+        width: 250,
+        height: 250,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage('assets/$image'),
+          fit: BoxFit.cover,
+        )),
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
 import 'package:nvcoc_app/resources/constants.dart';
 import 'package:nvcoc_app/resources/nova_appbar.dart';
 
@@ -9,27 +9,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: const BottomNavBar(),
         backgroundColor: white,
         appBar: const NovaAppBar(),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextButton(
-              onPressed: () => context.go('/housechurches'),
-              child: const Text('House Churches'),
-            ),
-            TextButton(
-              onPressed: () => context.go('/comment_card'),
-              child: const Text('Comment Card'),
-            ),
-            TextButton(
-              onPressed: () => context.go('/worship_with_us'),
-              child: const Text('Worship With Us'),
-            ),
-            TextButton(
-              onPressed: () => context.go('/ebullevites'),
-              child: const Text('eBullevites'),
-            ),
+        body: ListView(
+          children: const [
+            HomeNavCard(image: 'connect.png', route: '/housechurches'),
+            HomeNavCard(image: 'events.png', route: '/calendar'),
+            HomeNavCard(image: 'learn.png', route: '/learn'),
+            HomeNavCard(image: 'beliefs.png', route: '/beliefs'),
+            HomeNavCard(image: 'missions.png', route: '/missions'),
+            HomeNavCard(image: 'give.png', route: '/give'),
           ],
         ));
   }
