@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const Color white = Colors.white;
 const Color black = Colors.black;
@@ -121,5 +122,64 @@ class CustomDropdown extends StatelessWidget {
         onChanged: onChanged,
       ),
     );
+  }
+}
+
+//ListTiles for Connect With Us
+class ConnectTile extends StatelessWidget {
+  final String detail;
+  final String leading;
+
+  const ConnectTile({super.key, required this.detail, required this.leading});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+        leading: Text(
+          leading,
+          style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold),
+        ),
+        title: Text(
+          detail,
+          style: montserrat.copyWith(fontSize: 14),
+        ));
+  }
+}
+
+class ConnectColumn extends StatelessWidget {
+  final String detail;
+  final String title;
+  final EdgeInsets padding;
+  const ConnectColumn({super.key, required this.detail, required this.title, required this.padding});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            title,
+            style: montserrat.copyWith(fontWeight: FontWeight.bold, fontSize: 16, color: novaBlue),
+          ),
+        ),
+        seperation,
+        Padding(
+          padding: padding,
+          child: Text(
+            detail,
+            style: montserrat,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+//URL Launching
+Future<void> canLaunchUrl(String url) async {
+  Uri url0 = Uri.parse(url);
+  if (!await launchUrl(url0)) {
+    throw Exception('Could Not Launch $url0');
   }
 }
