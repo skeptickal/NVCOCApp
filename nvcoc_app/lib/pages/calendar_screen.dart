@@ -29,26 +29,17 @@ class CalendarScreen extends StatelessWidget {
                 subTitleText: 'Click any Calendar option below to view our online Calendars',
               ),
             ),
-            TextButton(
-              onPressed: () => canLaunchUrl('https://www.nvcoc.church/churchcalendar'),
-              child: Text(
-                'Church Calendar',
-                style: montserrat.copyWith(fontWeight: FontWeight.bold, color: novaBlue),
-              ),
+            const CustomTextLaunchButton(
+              url: 'https://www.nvcoc.church/churchcalendar',
+              title: 'Church Calendar',
             ),
-            TextButton(
-              onPressed: () => canLaunchUrl('https://www.nvcoc.church/featured-events'),
-              child: Text(
-                'Featured Events',
-                style: montserrat.copyWith(fontWeight: FontWeight.bold, color: novaBlue),
-              ),
+            const CustomTextLaunchButton(
+              url: 'https://www.nvcoc.church/featured-events',
+              title: 'Featured Events',
             ),
-            TextButton(
-              onPressed: () => canLaunchUrl('https://docs.google.com/spreadsheets/d/1sdPuWX3xtC9JKrvL_UVVMPz56Oh0iDqThtkXHTL6xmo/edit#gid=0'),
-              child: Text(
-                'Google Sheet - Year Calendar',
-                style: montserrat.copyWith(fontWeight: FontWeight.bold, color: novaBlue),
-              ),
+            const CustomTextLaunchButton(
+              url: 'https://docs.google.com/spreadsheets/d/1sdPuWX3xtC9JKrvL_UVVMPz56Oh0iDqThtkXHTL6xmo/edit#gid=0',
+              title: 'Google Sheet - Year Calendar',
             ),
           ],
         ),

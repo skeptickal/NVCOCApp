@@ -6,6 +6,8 @@ import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/ebullevites_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 import 'package:nvcoc_app/pages/house_church_screen.dart';
+import 'package:nvcoc_app/pages/learn_screen.dart';
+import 'package:nvcoc_app/pages/ministries_screen.dart';
 import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
 
 final GoRouter router = GoRouter(
@@ -44,13 +46,25 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/calendar',
       builder: (BuildContext context, GoRouterState state) {
-        return CalendarScreen();
+        return const CalendarScreen();
       },
     ),
     GoRoute(
       path: '/bible_verse_lookup',
       builder: (BuildContext context, GoRouterState state) {
         return BibleLookupScreen();
+      },
+    ),
+    GoRoute(
+      path: '/learn',
+      builder: (BuildContext context, GoRouterState state) {
+        return const LearnScreen();
+      },
+    ),
+    GoRoute(
+      path: '/ministries',
+      builder: (BuildContext context, GoRouterState state) {
+        return const MinistriesScreen();
       },
     ),
   ],
