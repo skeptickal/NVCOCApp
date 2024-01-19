@@ -9,6 +9,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(NovaBlocProvider(
     child: MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: router,
     ),
   ));
