@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/bible_lookup_screen.dart';
+import 'package:nvcoc_app/pages/calendar_screen.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/ebullevites_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
@@ -37,6 +39,18 @@ final GoRouter router = GoRouter(
       path: '/comment_card',
       builder: (BuildContext context, GoRouterState state) {
         return CommentScreen();
+      },
+    ),
+    GoRoute(
+      path: '/calendar',
+      builder: (BuildContext context, GoRouterState state) {
+        return CalendarScreen();
+      },
+    ),
+    GoRoute(
+      path: '/bible_verse_lookup',
+      builder: (BuildContext context, GoRouterState state) {
+        return BibleLookupScreen();
       },
     ),
   ],

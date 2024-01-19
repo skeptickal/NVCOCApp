@@ -59,6 +59,7 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   webview_flutter: ^4.4.4
   sliding_clipped_nav_bar: ^3.1.0+4
+  bible: ^1.0.0
 
 dev_dependencies:
   flutter_test:
