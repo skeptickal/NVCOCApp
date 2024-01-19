@@ -60,18 +60,15 @@ class WorshipWithUsScreen extends StatelessWidget {
               ),
             ),
             meetingPlace,
-            seperation,
-            GestureDetector(
-              onTap: () => canLaunchUrl('https://www.youtube.com/@NorthernVirginiaChurchofChrist'),
-              child: Image(
-                image: const AssetImage(
-                  'assets/yt.png',
-                ),
-                width: MediaQuery.of(context).size.width * 0.2,
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
-            ),
             meetingTime,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconImageSearch(url: 'https://www.instagram.com/nova.churchofchrist', image: 'insta.png'),
+                IconImageSearch(url: 'https://www.youtube.com/@NorthernVirginiaChurchofChrist', image: 'yt.png'),
+                IconImageSearch(url: 'https://www.facebook.com/NorthernVAChurch/', image: 'fb.png'),
+              ],
+            ),
             seperation,
             whatToExpect,
             seperation,

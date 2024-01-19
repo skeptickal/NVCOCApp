@@ -206,3 +206,24 @@ Future<void> canLaunchUrl(String url) async {
     throw Exception('Could Not Launch $url0');
   }
 }
+
+class IconImageSearch extends StatelessWidget {
+  final String url;
+  final String image;
+
+  const IconImageSearch({super.key, required this.url, required this.image});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => canLaunchUrl(url),
+      child: Image(
+        image: AssetImage(
+          'assets/$image',
+        ),
+        width: MediaQuery.of(context).size.width * 0.2,
+        height: MediaQuery.of(context).size.height * 0.05,
+      ),
+    );
+  }
+}
