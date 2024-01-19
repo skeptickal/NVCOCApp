@@ -10,12 +10,12 @@ class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-          onPressed: () => context.push('/ministries'),
-          icon: const Icon(
-            Icons.people,
-          )),
       actions: [
+        IconButton(
+            onPressed: () => context.push('/ministries'),
+            icon: const Icon(
+              Icons.people,
+            )),
         IconButton(
             onPressed: () => context.push('/ebullevites'),
             icon: const Icon(

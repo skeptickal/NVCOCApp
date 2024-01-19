@@ -14,12 +14,12 @@ class HomeScreen extends StatelessWidget {
         appBar: const NovaAppBar(),
         body: ListView(
           children: const [
-            HomeNavCard(image: 'connect.png', route: '/housechurches'),
-            HomeNavCard(image: 'events.png', route: '/calendar'),
-            HomeNavCard(image: 'learn.png', route: '/learn'),
-            HomeNavCard(image: 'beliefs.png', route: '/beliefs'),
-            HomeNavCard(image: 'missions.png', route: '/missions'),
-            HomeNavCard(image: 'give.png', route: '/give'),
+            HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
+            HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
+            HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
+            HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
+            HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
+            HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
           ],
         ));
   }

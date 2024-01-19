@@ -130,20 +130,24 @@ class CustomDropdown extends StatelessWidget {
 class ConnectTile extends StatelessWidget {
   final String detail;
   final String leading;
+  final String? url;
 
-  const ConnectTile({super.key, required this.detail, required this.leading});
+  const ConnectTile({super.key, required this.detail, required this.leading, this.url});
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-        leading: Text(
-          leading,
-          style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold),
-        ),
-        title: Text(
-          detail,
-          style: montserrat.copyWith(fontSize: 14),
-        ));
+    return GestureDetector(
+      onTap: url != null ? () => canLaunchUrl(url!) : null,
+      child: ListTile(
+          leading: Text(
+            leading,
+            style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold),
+          ),
+          title: Text(
+            detail,
+            style: montserrat.copyWith(fontSize: 14),
+          )),
+    );
   }
 }
 
@@ -227,3 +231,27 @@ class IconImageSearch extends StatelessWidget {
     );
   }
 }
+
+class CustomTextLaunchButton extends StatelessWidget {
+  const CustomTextLaunchButton({super.key, required this.url, required this.title});
+  final String url;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => canLaunchUrl(url),
+      child: Text(
+        title,
+        style: montserrat.copyWith(fontWeight: FontWeight.bold, color: novaBlue),
+      ),
+    );
+  }
+}
+
+Container horizontalLine = Container(
+  padding: const EdgeInsets.only(top: 10),
+  decoration: const BoxDecoration(
+    border: Border(bottom: BorderSide(color: novaBlue)),
+  ),
+);

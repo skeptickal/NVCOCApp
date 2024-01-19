@@ -15,5 +15,5 @@ class BibleState extends Equatable {
 }
 
 final class BibleInitial extends BibleState {
-  BibleInitial() : super(verse: '');
+  const BibleInitial() : super(verse: '');
 }

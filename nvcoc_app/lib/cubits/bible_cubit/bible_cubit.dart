@@ -9,7 +9,7 @@ class BibleCubit extends Cubit<BibleState> {
   final BibleQuery bibleQuery;
   BibleCubit({BibleQuery? bibleQuery})
       : bibleQuery = bibleQuery ?? BibleQuery(),
-        super(BibleInitial());
+        super(const BibleInitial());
 
   Future<void> searchVerse(String searchTerm) async {
     try {
