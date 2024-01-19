@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 import 'package:nvcoc_app/pages/house_church_screen.dart';
+import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
@@ -127,12 +128,12 @@ final GoRouter router = GoRouter(
     //   },
     // ),
     // //connect + related sub screens
-    // GoRoute(
-    //   path: '/connect',
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const ConnectScreen();
-    //   },
-    // ),
+    GoRoute(
+      path: '/worship_with_us',
+      builder: (BuildContext context, GoRouterState state) {
+        return const WorshipWithUsScreen();
+      },
+    ),
     GoRoute(
       path: '/housechurches',
       builder: (BuildContext context, GoRouterState state) {
