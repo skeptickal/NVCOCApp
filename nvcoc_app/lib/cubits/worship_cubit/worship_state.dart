@@ -15,5 +15,14 @@ class WorshipState extends Equatable {
 }
 
 final class WorshipInitial extends WorshipState {
-  WorshipInitial() : super(worshipDetails: WorshipDetails(meetingPlace: '1', meetingTime: '2', unsure: '3', whatAboutKids: '4', whatAboutMe: '5', whatToExpect: '6'));
+  WorshipInitial()
+      : super(
+            worshipDetails: WorshipDetails(
+          meetingPlace: 'Details',
+          meetingTime: 'Unavailable',
+          unsure: 'Check',
+          whatAboutKids: 'Back',
+          whatAboutMe: 'Later',
+          whatToExpect: ':)',
+        ));
 }

@@ -16,44 +16,66 @@ class WorshipWithUsScreen extends StatelessWidget {
       builder: (context, state) {
         WorshipDetails worshipDetails = state.worshipDetails!;
 
-        Text meetingPlace = Text(
-          worshipDetails.meetingPlace,
-          style: montserrat,
+        ConnectTile meetingPlace = ConnectTile(
+          leading: 'WHERE',
+          detail: worshipDetails.meetingPlace,
         );
-        Text meetingTime = Text(
-          worshipDetails.meetingTime,
-          style: montserrat,
+        ConnectTile meetingTime = ConnectTile(
+          leading: 'WHEN',
+          detail: worshipDetails.meetingTime,
         );
-        Text unsure = Text(
-          worshipDetails.unsure,
-          style: montserrat,
+        ConnectColumn whatToExpect = ConnectColumn(
+          detail: worshipDetails.whatToExpect,
+          title: 'WHAT TO EXPECT',
+          padding: cardPadding,
         );
-        Text whatAboutKids = Text(
-          worshipDetails.whatAboutKids,
-          style: montserrat,
+        ConnectColumn whatAboutMyKids = ConnectColumn(
+          detail: worshipDetails.whatAboutKids,
+          title: 'WHAT ABOUT MY KIDS?',
+          padding: cardPadding,
         );
-        Text whatAboutMe = Text(
-          worshipDetails.whatAboutMe,
-          style: montserrat,
+        ConnectColumn unsure = ConnectColumn(
+          detail: worshipDetails.unsure,
+          title: 'STILL FEELING UNSURE?',
+          padding: cardPadding,
         );
-        Text whatToExpect = Text(
-          worshipDetails.whatToExpect,
-          style: montserrat,
+        ConnectColumn whatAboutMe = ConnectColumn(
+          detail: worshipDetails.whatAboutMe,
+          title: 'WHAT IF I\'M NOT VERY "CHURCHY" OR RELIGIOUS?',
+          padding: cardPadding,
         );
 
         return Scaffold(
           appBar: const NovaAppBar(),
           body: ListView(children: [
-            Text(
-              'CONNECT WITH US',
-              style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+            Padding(
+              padding: cardPadding,
+              child: Center(
+                child: Text(
+                  'CONNECT WITH US',
+                  style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+                ),
+              ),
             ),
             meetingPlace,
+            seperation,
+            GestureDetector(
+              onTap: () => canLaunchUrl('https://www.youtube.com/@NorthernVirginiaChurchofChrist'),
+              child: Image(
+                image: const AssetImage(
+                  'assets/yt.png',
+                ),
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+            ),
             meetingTime,
-            unsure,
-            whatAboutKids,
-            whatAboutMe,
+            seperation,
             whatToExpect,
+            seperation,
+            whatAboutMyKids,
+            whatAboutMe,
+            unsure,
           ]),
         );
       },
