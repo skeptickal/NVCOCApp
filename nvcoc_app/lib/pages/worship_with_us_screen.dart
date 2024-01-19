@@ -14,39 +14,30 @@ class WorshipWithUsScreen extends StatelessWidget {
     context.read<WorshipCubit>().getWorshipDetails();
     return BlocBuilder<WorshipCubit, WorshipState>(
       builder: (context, state) {
-        List<WorshipDetails>? worshipDetails = state.worshipDetails;
-
-        if (worshipDetails == null || worshipDetails.isEmpty) {
-          return const Scaffold(
-            appBar: NovaAppBar(),
-            body: Center(
-              child: Text('No worship details available.'),
-            ),
-          );
-        }
+        WorshipDetails worshipDetails = state.worshipDetails!;
 
         Text meetingPlace = Text(
-          worshipDetails[0].meetingPlace,
+          worshipDetails.meetingPlace,
           style: montserrat,
         );
         Text meetingTime = Text(
-          worshipDetails[0].meetingTime,
+          worshipDetails.meetingTime,
           style: montserrat,
         );
         Text unsure = Text(
-          worshipDetails[0].unsure,
+          worshipDetails.unsure,
           style: montserrat,
         );
         Text whatAboutKids = Text(
-          worshipDetails[0].whatAboutKids,
+          worshipDetails.whatAboutKids,
           style: montserrat,
         );
         Text whatAboutMe = Text(
-          worshipDetails[0].whatAboutMe,
+          worshipDetails.whatAboutMe,
           style: montserrat,
         );
         Text whatToExpect = Text(
-          worshipDetails[0].whatToExpect,
+          worshipDetails.whatToExpect,
           style: montserrat,
         );
 

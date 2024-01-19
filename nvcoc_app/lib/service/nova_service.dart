@@ -21,8 +21,12 @@ class NovaService {
   }
 
   //Worship Details
-  Future<List<WorshipDetails>> getWorshipDetails() async {
-    QuerySnapshot<Map<String, dynamic>> data = await client.getData(collectionName: 'worship info');
-    return data.docs.map((doc) => WorshipDetails.fromJson(doc.data())).toList();
+  Future<WorshipDetails?> getWorshipDetails() async {
+    dynamic data = await client.getDoc(collectionName: 'worship info', docId: 'Worship With Us');
+    if (data != null) {
+      return WorshipDetails.fromJson(data);
+    } else {
+      return null;
+    }
   }
 }
