@@ -27,8 +27,8 @@ class HomeScreen extends StatelessWidget {
               child: const Text('Worship With Us'),
             ),
             TextButton(
-              onPressed: () => context.go('/ebulletin'),
-              child: const Text('eBulletin'),
+              onPressed: () => context.go('/ebullevites'),
+              child: const Text('eBullevites'),
             ),
           ],
         ));
