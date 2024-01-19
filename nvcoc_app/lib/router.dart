@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
+import 'package:nvcoc_app/pages/house_church_screen.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
@@ -132,12 +133,12 @@ final GoRouter router = GoRouter(
     //     return const ConnectScreen();
     //   },
     // ),
-    // GoRoute(
-    //   path: '/smallgroups',
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const SmallGroupScreen();
-    //   },
-    // ),
+    GoRoute(
+      path: '/housechurches',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HouseChurchScreen();
+      },
+    ),
     GoRoute(
       path: '/comment_card',
       builder: (BuildContext context, GoRouterState state) {

@@ -5,4 +5,9 @@ class FirebaseClient {
     CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);
     await collection.doc().set(body);
   }
+
+  Future<dynamic> getData({required String collectionName}) async {
+    CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);
+    return collection.get();
+  }
 }
