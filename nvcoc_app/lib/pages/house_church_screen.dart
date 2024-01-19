@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
+import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
 import 'package:nvcoc_app/resources/constants.dart';
 import 'package:nvcoc_app/resources/nova_appbar.dart';
 
@@ -50,6 +51,7 @@ class HouseChurchScreen extends StatelessWidget {
         },
       ).toList();
       return Scaffold(
+          bottomNavigationBar: const BottomNavBar(),
           appBar: const NovaAppBar(),
           body: ListView.builder(
             itemCount: houseChurches.length + 1,

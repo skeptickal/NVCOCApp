@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/models/comment.dart';
+import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
 import 'package:nvcoc_app/resources/constants.dart';
 import 'package:nvcoc_app/resources/nova_appbar.dart';
 
@@ -14,6 +15,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const BottomNavBar(),
       appBar: const NovaAppBar(),
       body: BlocBuilder<CommentCubit, CommentState>(
         builder: (context, state) {

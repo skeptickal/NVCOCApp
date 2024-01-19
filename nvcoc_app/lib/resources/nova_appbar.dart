@@ -10,6 +10,13 @@ class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      actions: [
+        IconButton(
+            onPressed: () => context.push('/ebullevites'),
+            icon: const Icon(
+              Icons.inventory_outlined,
+            ))
+      ],
       elevation: 4.0,
       iconTheme: const IconThemeData(color: novaBlue),
       backgroundColor: white,
