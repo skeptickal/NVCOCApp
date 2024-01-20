@@ -15,10 +15,5 @@ class MessageState extends Equatable {
 }
 
 final class MessageInitial extends MessageState {
-  MessageInitial()
-      : super(
-            message: Message(
-          messageTitle: 'No Message right now!',
-          message: 'Have a blessed Day',
-        ));
+  const MessageInitial() : super(message: null);
 }

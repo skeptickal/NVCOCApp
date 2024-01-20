@@ -11,9 +11,36 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<MessageCubit>().getMessage();
+    return Scaffold(
+        bottomNavigationBar: const BottomNavBar(),
+        backgroundColor: white,
+        appBar: const NovaAppBar(),
+        body: ListView(
+          key: const Key('home_screen_list'),
+          children: const [
+            _BannerMessage(),
+            HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
+            HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
+            HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
+            HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
+            HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
+            HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
+          ],
+        ));
+  }
+}
+
+class _BannerMessage extends StatelessWidget {
+  const _BannerMessage();
+
+  @override
+  Widget build(BuildContext context) {
     return BlocBuilder<MessageCubit, MessageState>(
       builder: (context, state) {
-        Container messager = Container(
+        if (state.message == null) {
+          return const SizedBox();
+        }
+        return Container(
           color: novaYellow,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
@@ -31,22 +58,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         );
-        return Scaffold(
-            bottomNavigationBar: const BottomNavBar(),
-            backgroundColor: white,
-            appBar: const NovaAppBar(),
-            body: ListView(
-              key: const Key('home_screen_list'),
-              children: [
-                messager,
-                const HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
-                const HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
-                const HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
-                const HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
-                const HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
-                const HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
-              ],
-            ));
       },
     );
   }
