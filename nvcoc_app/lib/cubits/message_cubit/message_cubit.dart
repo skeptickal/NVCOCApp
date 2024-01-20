@@ -11,7 +11,7 @@ class MessageCubit extends Cubit<MessageState> {
 
   MessageCubit({NovaService? novaService})
       : novaService = novaService ?? NovaService(),
-        super(MessageInitial());
+        super(const MessageInitial());
 
   Future<void> getMessage() async {
     final Message? message = await novaService.getMessage();
