@@ -12,9 +12,10 @@ class BibleQuery {
       final Uri url = Uri.http('bible-api.com', searchTerm);
       var response = await httpClient.get(url);
       dynamic data = jsonDecode(response.body);
+      print(data);
 
       if (data is Map<String, dynamic> && data.containsKey('text')) {
-        return data['text'].toString();
+        return '${data['reference'].toString()}\n${data['text'].toString()}';
       } else {
         throw Exception('Unexpected response format: $data');
       }
