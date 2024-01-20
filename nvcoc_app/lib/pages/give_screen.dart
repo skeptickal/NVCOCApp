@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+
+import '../constants/bars.dart';
+import '../constants/connect_with_us_widgets.dart';
+import '../constants/other_widgets.dart';
+import '../constants/spacing.dart';
 
 class GiveScreen extends StatelessWidget {
   const GiveScreen({super.key});
@@ -22,9 +24,8 @@ class GiveScreen extends StatelessWidget {
             const GiveBox(
               image: 'online_bill_pay.png',
               label: 'ONLINE BILL PAY',
-              subtext: '''Use your bank's own "bill pay" feature: Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172
-
-In the memo line, indicate: weekly, poor, mission, etc. The bill can be set up as one time or recurring''',
+              subtext:
+                  '''Use your bank's own "bill pay" feature: Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172 \n\nIn the memo line, indicate: weekly, poor, mission, etc. The bill can be set up as one time or recurring''',
             ),
             const GiveBox(
               image: 'zelle.png',

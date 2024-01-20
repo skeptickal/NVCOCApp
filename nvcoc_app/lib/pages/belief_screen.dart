@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+import 'package:nvcoc_app/constants/bars.dart';
+
+import 'package:nvcoc_app/constants/connect_with_us_widgets.dart';
+
+import 'package:nvcoc_app/constants/spacing.dart';
 
 class BeliefScreen extends StatelessWidget {
   const BeliefScreen({super.key});

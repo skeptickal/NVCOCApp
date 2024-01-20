@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/colors.dart';
 import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
-import 'package:nvcoc_app/resources/bible_lookup_mixin.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+
+
+import '../constants/bars.dart';
+import '../constants/input_decorations.dart';
+import '../constants/mixins.dart';
+import '../constants/spacing.dart';
+import '../constants/sub_titles.dart';
+import '../constants/text_styles.dart';
 
 class BibleLookupScreen extends StatelessWidget with BibleLookupMixin {
   BibleLookupScreen({super.key});
