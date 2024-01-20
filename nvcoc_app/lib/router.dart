@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/pages/belief_screen.dart';
 import 'package:nvcoc_app/pages/bible_lookup_screen.dart';
 import 'package:nvcoc_app/pages/calendar_screen.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
@@ -65,6 +66,12 @@ final GoRouter router = GoRouter(
       path: '/ministries',
       builder: (BuildContext context, GoRouterState state) {
         return const MinistriesScreen();
+      },
+    ),
+    GoRoute(
+      path: '/beliefs',
+      builder: (BuildContext context, GoRouterState state) {
+        return const BeliefScreen();
       },
     ),
   ],
