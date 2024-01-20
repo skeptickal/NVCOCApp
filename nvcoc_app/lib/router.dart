@@ -1,139 +1,63 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/connectpages/ebulletin.dart';
-import 'package:nvcoc_app/connectpages/worship.dart';
-import 'package:nvcoc_app/homepages/home.dart';
-import 'package:nvcoc_app/homepages/calendar.dart';
-import 'package:nvcoc_app/homepages/about.dart';
-import 'package:nvcoc_app/homepages/give.dart';
-import 'package:nvcoc_app/homepages/ministries.dart';
-import 'package:nvcoc_app/aboutpages/belief.dart';
-import 'package:nvcoc_app/aboutpages/who_we_are.dart';
-import 'package:nvcoc_app/aboutpages/leaders.dart';
-import 'package:nvcoc_app/homepages/realhome.dart';
-import 'package:nvcoc_app/homepages/connect.dart';
-import 'package:nvcoc_app/homepages/learn.dart';
-import 'package:nvcoc_app/connectpages/smallgroups.dart';
-import 'package:nvcoc_app/connectpages/comment.dart';
-import 'package:nvcoc_app/learnpages/resources/resources.dart';
-import 'package:nvcoc_app/ministriespages/campus.dart';
-import 'package:nvcoc_app/ministriespages/singles.dart';
-import 'package:nvcoc_app/ministriespages/teens/parents.dart';
-import 'package:nvcoc_app/ministriespages/teens/parents2.dart';
-import 'package:nvcoc_app/ministriespages/teens/parents3.dart';
-import 'package:nvcoc_app/ministriespages/teens/teens.dart';
-import 'package:nvcoc_app/ministriespages/teens/teens_resources.dart';
+import 'package:nvcoc_app/pages/belief_screen.dart';
+import 'package:nvcoc_app/pages/bible_lookup_screen.dart';
+import 'package:nvcoc_app/pages/calendar_screen.dart';
+import 'package:nvcoc_app/pages/comment_screen.dart';
+import 'package:nvcoc_app/pages/ebullevites_screen.dart';
+import 'package:nvcoc_app/pages/give_screen.dart';
+import 'package:nvcoc_app/pages/home_screen.dart';
+import 'package:nvcoc_app/pages/house_church_screen.dart';
+import 'package:nvcoc_app/pages/learn_screen.dart';
+import 'package:nvcoc_app/pages/ministries_screen.dart';
+import 'package:nvcoc_app/pages/missions_screen.dart';
+import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
 
 final GoRouter router = GoRouter(
+  initialLocation: '/',
   routes: <RouteBase>[
-    //home screens
-    GoRoute(
-      path: '/realhome',
-      builder: (BuildContext context, GoRouterState state) {
-        return const RealHomeScreen();
-      },
-    ),
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
       },
     ),
-    //calendar + related subscreens
+    GoRoute(
+      path: '/ebullevites',
+      builder: (BuildContext context, GoRouterState state) {
+        return const EBullevitesScreen();
+      },
+    ),
+    GoRoute(
+      path: '/worship_with_us',
+      builder: (BuildContext context, GoRouterState state) {
+        return const WorshipWithUsScreen();
+      },
+    ),
+    GoRoute(
+      path: '/housechurches',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HouseChurchScreen();
+      },
+    ),
+    GoRoute(
+      path: '/comment_card',
+      builder: (BuildContext context, GoRouterState state) {
+        return CommentScreen();
+      },
+    ),
     GoRoute(
       path: '/calendar',
       builder: (BuildContext context, GoRouterState state) {
         return const CalendarScreen();
       },
     ),
-    //about + related subscreens
     GoRoute(
-      path: '/about',
+      path: '/bible_verse_lookup',
       builder: (BuildContext context, GoRouterState state) {
-        return const AboutScreen();
+        return BibleLookupScreen();
       },
     ),
-    GoRoute(
-      path: '/belief',
-      builder: (BuildContext context, GoRouterState state) {
-        return const BeliefScreen();
-      },
-    ),
-    GoRoute(
-      path: '/leaders',
-      builder: (BuildContext context, GoRouterState state) {
-        return const LeadersScreen();
-      },
-    ),
-    GoRoute(
-      path: '/who_we_are',
-      builder: (BuildContext context, GoRouterState state) {
-        return const WhoWeAreScreen();
-      },
-    ),
-    GoRoute(
-      path: '/worship',
-      builder: (BuildContext context, GoRouterState state) {
-        return WorshipScreen();
-      },
-    ),
-    //give + related sub screens
-    GoRoute(
-      path: '/give',
-      builder: (BuildContext context, GoRouterState state) {
-        return const GiveScreen();
-      },
-    ),
-    //ministries + related sub screens
-    GoRoute(
-      path: '/ministries',
-      builder: (BuildContext context, GoRouterState state) {
-        return const MinistriesScreen();
-      },
-    ),
-    GoRoute(
-      path: '/teens',
-      builder: (BuildContext context, GoRouterState state) {
-        return const TeensScreen();
-      },
-    ),
-    GoRoute(
-      path: '/teens2',
-      builder: (BuildContext context, GoRouterState state) {
-        return const TeensResourceScreen();
-      },
-    ),
-    GoRoute(
-      path: '/parents',
-      builder: (BuildContext context, GoRouterState state) {
-        return const ParentsScreen();
-      },
-    ),
-    GoRoute(
-      path: '/parents2',
-      builder: (BuildContext context, GoRouterState state) {
-        return const Parents2Screen();
-      },
-    ),
-    GoRoute(
-      path: '/parents3',
-      builder: (BuildContext context, GoRouterState state) {
-        return const Parents3Screen();
-      },
-    ),
-    GoRoute(
-      path: '/singles',
-      builder: (BuildContext context, GoRouterState state) {
-        return const SinglesScreen();
-      },
-    ),
-    GoRoute(
-      path: '/campus',
-      builder: (BuildContext context, GoRouterState state) {
-        return const CampusScreen();
-      },
-    ),
-    //learn + related sub screens
     GoRoute(
       path: '/learn',
       builder: (BuildContext context, GoRouterState state) {
@@ -141,36 +65,28 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/resource',
+      path: '/ministries',
       builder: (BuildContext context, GoRouterState state) {
-        return const ResourceScreen();
-      },
-    ),
-    //connect + related sub screens
-    GoRoute(
-      path: '/connect',
-      builder: (BuildContext context, GoRouterState state) {
-        return const ConnectScreen();
+        return const MinistriesScreen();
       },
     ),
     GoRoute(
-      path: '/smallgroups',
+      path: '/beliefs',
       builder: (BuildContext context, GoRouterState state) {
-        return const SmallGroupScreen();
+        return const BeliefScreen();
       },
     ),
     GoRoute(
-      path: '/comment',
+      path: '/missions',
       builder: (BuildContext context, GoRouterState state) {
-        return const CommentScreen();
+        return const MissionsScreen();
       },
     ),
     GoRoute(
-      path: '/ebulletin',
+      path: '/give',
       builder: (BuildContext context, GoRouterState state) {
-        return const EBulletinScreen();
+        return const GiveScreen();
       },
     ),
   ],
-  initialLocation: '/realhome',
 );
