@@ -15,6 +15,7 @@ class BibleLookupScreen extends StatelessWidget with BibleLookupMixin {
       builder: (context, state) {
         TextButton searcher = TextButton(
           onPressed: () async {
+            FocusScope.of(context).unfocus();
             context.read<BibleCubit>().searchVerse('${bookLookup.text}+${verseLookup.text}');
           },
           child: const Text('Fetch Bible Verse'),

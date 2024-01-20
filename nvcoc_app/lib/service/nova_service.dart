@@ -3,6 +3,7 @@ import 'package:nvcoc_app/client/firebase_client.dart';
 import 'package:nvcoc_app/models/comment.dart';
 import 'package:nvcoc_app/models/ebulletin.dart';
 import 'package:nvcoc_app/models/housechurch.dart';
+import 'package:nvcoc_app/models/message.dart';
 import 'package:nvcoc_app/models/worship_details.dart';
 
 class NovaService {
@@ -26,6 +27,16 @@ class NovaService {
     dynamic data = await client.getDoc(collectionName: 'worship info', docId: 'Worship With Us');
     if (data != null) {
       return WorshipDetails.fromJson(data);
+    } else {
+      return null;
+    }
+  }
+
+  //Message
+  Future<Message?> getMessage() async {
+    dynamic data = await client.getDoc(collectionName: 'message', docId: 'message');
+    if (data != null) {
+      return Message.fromJson(data);
     } else {
       return null;
     }

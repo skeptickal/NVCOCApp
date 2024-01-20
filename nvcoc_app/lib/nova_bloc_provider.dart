@@ -6,6 +6,7 @@ import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
+import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
 import 'package:nvcoc_app/cubits/worship_cubit/worship_cubit.dart';
 
 class NovaBlocProvider extends StatelessWidget {
@@ -31,6 +32,9 @@ class NovaBlocProvider extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => BibleCubit(),
+        ),
+        BlocProvider(
+          create: (context) => MessageCubit(),
         ),
       ],
       child: child,
