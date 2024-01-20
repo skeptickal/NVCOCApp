@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const Color white = Colors.white;
@@ -138,7 +142,7 @@ class ConnectTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: url != null ? () => canLaunchUrl(url!) : null,
+      onTap: url != null ? () => (url!) : null,
       child: ListTile(
           leading: Text(
             leading,
@@ -383,6 +387,60 @@ class GiveBox extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ShareButton extends StatelessWidget {
+  const ShareButton({super.key, required this.title, this.onPressed});
+  final String title;
+  final Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: onPressed, child: Text(title));
+  }
+}
+
+class ShareIconButtom extends StatelessWidget {
+  final String imageName;
+  final String name;
+  final String jpegOrPng;
+  final String subject;
+  final Color iconColor;
+
+  const ShareIconButtom({
+    super.key,
+    required this.iconColor,
+    required this.imageName,
+    required this.name,
+    required this.jpegOrPng,
+    required this.subject,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    IconData icon = Platform.isAndroid ? Icons.share : Icons.ios_share;
+    return IconButton(
+      icon: Icon(icon, color: iconColor),
+      onPressed: () async {
+        final image = await rootBundle.load('assets/$imageName');
+        final buffer = image.buffer;
+
+        Share.shareXFiles(
+          [
+            XFile.fromData(
+              buffer.asUint8List(
+                image.offsetInBytes,
+                image.lengthInBytes,
+              ),
+              name: name,
+              mimeType: 'image/$jpegOrPng',
+            ),
+          ],
+          subject: subject,
+        );
+      },
     );
   }
 }

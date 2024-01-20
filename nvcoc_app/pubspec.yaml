@@ -50,6 +50,7 @@ dependencies:
   meta: ^1.10.0
   equatable: ^2.0.5
   flutter_phone_direct_caller: ^2.1.1
+  share_plus: ^7.2.1
 
 dev_dependencies:
   flutter_test:
