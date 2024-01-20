@@ -14,7 +14,7 @@ class HouseChurchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<HousechurchCubit>().getHouseChurches();
     return BlocBuilder<HousechurchCubit, HousechurchState>(builder: (context, state) {
-      List<Widget> houseChurches = state.houseChurches!.map(
+      List<Card> houseChurches = state.houseChurches!.map(
         (houseChurch) {
           return Card(
             margin: cardPadding,
