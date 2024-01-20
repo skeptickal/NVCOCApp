@@ -5,10 +5,12 @@ import 'package:nvcoc_app/pages/bible_lookup_screen.dart';
 import 'package:nvcoc_app/pages/calendar_screen.dart';
 import 'package:nvcoc_app/pages/comment_screen.dart';
 import 'package:nvcoc_app/pages/ebullevites_screen.dart';
+import 'package:nvcoc_app/pages/give_screen.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 import 'package:nvcoc_app/pages/house_church_screen.dart';
 import 'package:nvcoc_app/pages/learn_screen.dart';
 import 'package:nvcoc_app/pages/ministries_screen.dart';
+import 'package:nvcoc_app/pages/missions_screen.dart';
 import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
 
 final GoRouter router = GoRouter(
@@ -72,6 +74,18 @@ final GoRouter router = GoRouter(
       path: '/beliefs',
       builder: (BuildContext context, GoRouterState state) {
         return const BeliefScreen();
+      },
+    ),
+    GoRoute(
+      path: '/missions',
+      builder: (BuildContext context, GoRouterState state) {
+        return const MissionsScreen();
+      },
+    ),
+    GoRoute(
+      path: '/give',
+      builder: (BuildContext context, GoRouterState state) {
+        return const GiveScreen();
       },
     ),
   ],

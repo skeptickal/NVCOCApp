@@ -337,3 +337,52 @@ class LeadershipCard extends StatelessWidget {
     );
   }
 }
+
+class GiveBox extends StatelessWidget {
+  const GiveBox({super.key, required this.image, required this.label, required this.subtext, this.url});
+  final String image;
+  final String label;
+  final String subtext;
+  final String? url;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: url != null ? () => canLaunchUrl(url!) : null,
+      child: Container(
+        width: 250,
+        height: 250,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage('assets/$image'),
+          fit: BoxFit.cover,
+        )),
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                label,
+                style: montserrat.copyWith(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0,
+                ),
+              ),
+              Text(
+                subtext,
+                style: montserrat.copyWith(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
