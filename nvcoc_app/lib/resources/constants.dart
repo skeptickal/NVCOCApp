@@ -7,16 +7,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// Colors
 const Color white = Colors.white;
 const Color black = Colors.black;
 const Color novaBlue = Color(0xff04578f);
 const Color novaYellow = Color(0xfff5c937);
+
+// Text Styles
 TextStyle montserrat = GoogleFonts.montserrat();
+
+// Spacing
 SizedBox seperation = const SizedBox(height: 10);
 const EdgeInsets cardPadding = EdgeInsets.all(14);
 
-//Text Field Format
-
+// Input Decoration
 const textInputDecoration = InputDecoration(
   fillColor: white,
   filled: true,
@@ -28,11 +32,28 @@ const textInputDecoration = InputDecoration(
   ),
 );
 
+// URL Launching
+Future<void> canLaunchUrl(String url) async {
+  Uri url0 = Uri.parse(url);
+  if (!await launchUrl(url0)) {
+    throw Exception('Could Not Launch $url0');
+  }
+}
+
+// Widgets
+
+// Text Fields
 class CustomTextBox extends StatelessWidget {
   final EdgeInsets padding;
   final TextEditingController controller;
   final String hintText;
-  const CustomTextBox({required this.padding, required this.controller, required this.hintText, super.key});
+
+  const CustomTextBox({
+    required this.padding,
+    required this.controller,
+    required this.hintText,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +71,12 @@ class CustomTextBox extends StatelessWidget {
   }
 }
 
-//Sub Titles for Text Boxes
+// Sub Titles
 class SubTitle extends StatelessWidget {
   final EdgeInsets padding;
   final TextStyle textStyle;
   final String subTitleText;
+
   const SubTitle({
     required this.padding,
     required this.textStyle,
@@ -97,6 +119,7 @@ class SpacedSubTitle extends StatelessWidget {
   }
 }
 
+// Dropdown
 class CustomDropdown extends StatelessWidget {
   final String value;
   final List<String> items;
@@ -131,27 +154,33 @@ class CustomDropdown extends StatelessWidget {
   }
 }
 
-//ListTiles for Connect With Us
+// Connect With Us Widgets
 class ConnectTile extends StatelessWidget {
   final String detail;
   final String leading;
   final String? url;
 
-  const ConnectTile({super.key, required this.detail, required this.leading, this.url});
+  const ConnectTile({
+    super.key,
+    required this.detail,
+    required this.leading,
+    this.url,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: url != null ? () => canLaunchUrl(url!) : null,
       child: ListTile(
-          leading: Text(
-            leading,
-            style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold),
-          ),
-          title: Text(
-            detail,
-            style: montserrat.copyWith(fontSize: 14),
-          )),
+        leading: Text(
+          leading,
+          style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold),
+        ),
+        title: Text(
+          detail,
+          style: montserrat.copyWith(fontSize: 14),
+        ),
+      ),
     );
   }
 }
@@ -160,7 +189,13 @@ class ConnectColumn extends StatelessWidget {
   final String detail;
   final String title;
   final EdgeInsets padding;
-  const ConnectColumn({super.key, required this.detail, required this.title, required this.padding});
+
+  const ConnectColumn({
+    super.key,
+    required this.detail,
+    required this.title,
+    required this.padding,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -180,7 +215,7 @@ class ConnectColumn extends StatelessWidget {
             detail,
             style: montserrat,
           ),
-        )
+        ),
       ],
     );
   }
@@ -189,7 +224,12 @@ class ConnectColumn extends StatelessWidget {
 class HomeNavCard extends StatelessWidget {
   final String image;
   final String route;
-  const HomeNavCard({super.key, required this.image, required this.route});
+
+  const HomeNavCard({
+    super.key,
+    required this.image,
+    required this.route,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -199,28 +239,33 @@ class HomeNavCard extends StatelessWidget {
         width: 250,
         height: 250,
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/$image'),
-          fit: BoxFit.cover,
-        )),
+          image: DecorationImage(
+            image: AssetImage('assets/$image'),
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
 }
 
-//URL Launching
-Future<void> canLaunchUrl(String url) async {
-  Uri url0 = Uri.parse(url);
-  if (!await launchUrl(url0)) {
-    throw Exception('Could Not Launch $url0');
-  }
-}
+// URL Launching Widgets
+Container horizontalLine = Container(
+  padding: const EdgeInsets.only(top: 10),
+  decoration: const BoxDecoration(
+    border: Border(bottom: BorderSide(color: novaBlue)),
+  ),
+);
 
 class IconImageSearch extends StatelessWidget {
   final String url;
   final String image;
 
-  const IconImageSearch({super.key, required this.url, required this.image});
+  const IconImageSearch({
+    super.key,
+    required this.url,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -238,7 +283,12 @@ class IconImageSearch extends StatelessWidget {
 }
 
 class CustomTextLaunchButton extends StatelessWidget {
-  const CustomTextLaunchButton({super.key, required this.url, required this.title});
+  const CustomTextLaunchButton({
+    super.key,
+    required this.url,
+    required this.title,
+  });
+
   final String url;
   final String title;
 
@@ -254,15 +304,17 @@ class CustomTextLaunchButton extends StatelessWidget {
   }
 }
 
-Container horizontalLine = Container(
-  padding: const EdgeInsets.only(top: 10),
-  decoration: const BoxDecoration(
-    border: Border(bottom: BorderSide(color: novaBlue)),
-  ),
-);
+// Other Widgets
 
 class MinistriesBox extends StatelessWidget {
-  const MinistriesBox({super.key, required this.url, required this.image, required this.title, required this.fontSize});
+  const MinistriesBox({
+    super.key,
+    required this.url,
+    required this.image,
+    required this.title,
+    required this.fontSize,
+  });
+
   final String url;
   final String image;
   final String title;
@@ -276,10 +328,11 @@ class MinistriesBox extends StatelessWidget {
         width: 250,
         height: 250,
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/$image'),
-          fit: BoxFit.cover,
-        )),
+          image: DecorationImage(
+            image: AssetImage('assets/$image'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(6.0),
           child: Column(
@@ -298,7 +351,13 @@ class MinistriesBox extends StatelessWidget {
 }
 
 class LeadershipCard extends StatelessWidget {
-  const LeadershipCard({super.key, required this.leaders, required this.role, required this.image});
+  const LeadershipCard({
+    super.key,
+    required this.leaders,
+    required this.role,
+    required this.image,
+  });
+
   final String leaders;
   final String role;
   final String image;
@@ -325,7 +384,7 @@ class LeadershipCard extends StatelessWidget {
                   TextSpan(
                     text: role,
                     style: montserrat.copyWith(color: black, fontStyle: FontStyle.italic),
-                  )
+                  ),
                 ]),
               ),
             ),
@@ -343,7 +402,14 @@ class LeadershipCard extends StatelessWidget {
 }
 
 class GiveBox extends StatelessWidget {
-  const GiveBox({super.key, required this.image, required this.label, required this.subtext, this.url});
+  const GiveBox({
+    super.key,
+    required this.image,
+    required this.label,
+    required this.subtext,
+    this.url,
+  });
+
   final String image;
   final String label;
   final String subtext;
@@ -357,10 +423,11 @@ class GiveBox extends StatelessWidget {
         width: 250,
         height: 250,
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/$image'),
-          fit: BoxFit.cover,
-        )),
+          image: DecorationImage(
+            image: AssetImage('assets/$image'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(6.0),
           child: Column(
@@ -392,7 +459,12 @@ class GiveBox extends StatelessWidget {
 }
 
 class ShareButton extends StatelessWidget {
-  const ShareButton({super.key, required this.title, this.onPressed});
+  const ShareButton({
+    super.key,
+    required this.title,
+    this.onPressed,
+  });
+
   final String title;
   final Function()? onPressed;
 
