@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 
@@ -7,7 +7,7 @@ import '../mocks.dart';
 
 void main() {
   //final MockGoRouter mockGoRouter = MockGoRouter();
-  final MockCommentCubit mockCommentCubit = MockCommentCubit();
+  final MockHousechurchCubit mockHousechurchCubit = MockHousechurchCubit();
 
   group(
     'Home Screen',
@@ -15,9 +15,11 @@ void main() {
       testWidgets(
         'Nav Cards are Displayed',
         (WidgetTester tester) async {
+          tester.view.physicalSize = const Size(2000, 2000);
+          tester.view.devicePixelRatio = 1.0;
           await tester.pumpWidget(Materializer(
             mockCubits: [
-              mockCommentCubit,
+              mockHousechurchCubit,
             ],
             child: const HomeScreen(),
           ));

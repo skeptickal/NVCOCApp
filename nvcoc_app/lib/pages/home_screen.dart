@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: white,
         appBar: const NovaAppBar(),
         body: ListView(
+          key: const Key('home_screen_list'),
           children: const [
             HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
             HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),

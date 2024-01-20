@@ -62,6 +62,7 @@ class HouseChurchScreen extends StatelessWidget {
                     Padding(
                       padding: cardPadding,
                       child: Text(
+                        key: const Key('house_church_title'),
                         'FIND A HOUSE CHURCH NEAR YOU',
                         style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold, fontSize: 18),
                       ),
