@@ -39,18 +39,17 @@ dependencies:
   url_launcher: ^6.1.14
   go_router: ^11.1.4
   country_list_pick: ^1.0.1+6
-  syncfusion_flutter_calendar: ^23.1.38
-  googleapis: ^11.4.0
   flutter_bloc: ^8.1.3
-  mockito: ^5.4.2
   firebase: ^9.0.3
   firebase_core: ^2.21.0
   firebase_auth: ^4.12.1
   cloud_firestore: ^4.12.2
-  provider: ^6.0.5
-  googleapis_auth: ^1.4.1
-  google_sign_in: ^6.1.6
-  syncfusion_flutter_pdfviewer: ^23.1.44
+  bloc_test: ^9.1.5
+  mocktail: ^1.0.2
+  bloc: ^8.1.2
+  meta: ^1.10.0
+  equatable: ^2.0.5
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:
