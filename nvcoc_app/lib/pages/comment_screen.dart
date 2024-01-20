@@ -143,7 +143,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Phone'),
               CustomTextBox(padding: textBoxPadding, controller: phone, hintText: 'Phone'),
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Email'),
-              CustomTextBox(padding: textBoxPadding, controller: email, hintText: 'Email (if changed)'),
+              CustomTextBox(padding: textBoxPadding, controller: email2, hintText: 'Email (if changed)'),
               TextButton(
                   onPressed: () => addCommentData(context),
                   child: Text(
