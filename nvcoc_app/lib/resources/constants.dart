@@ -142,7 +142,7 @@ class ConnectTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: url != null ? () => (url!) : null,
+      onTap: url != null ? () => canLaunchUrl(url!) : null,
       child: ListTile(
           leading: Text(
             leading,
