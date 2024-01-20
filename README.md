@@ -7,11 +7,15 @@ NVCOCApp is a mobile application developed for our church community to simplify 
 
 ## Features:
 
-1. Event Calendar Integration: Access and display upcoming events and services from the church calendar.
+1. Website Companion: Seamlessly integrate with www.nvcoc.church, providing easy access to the church website for comprehensive information.
 
-2. House Church Locator: Find house church locations nearby for convenient access to local gatherings.
+2. Event Calendar Integration: View and explore upcoming events and services directly from the church calendar, enhancing engagement and awareness.
 
-3. Remote Contribution Module: Enable secure remote contribution functionality for users to make financial contributions from their mobile devices.
+3. Bible Verse Search: Access a dedicated Bible Verse search feature, enabling users to explore and find specific verses easily.
+
+4. Comment Card Submitter: Provide a user-friendly platform for submitting comment cards, allowing members to share feedback, suggestions, and thoughts with the church.
+
+5. House Church Contact Info Finder: Easily locate contact information for house churches, promoting communication and connectivity within the community.
 
 ## Installation:
 
