@@ -29,6 +29,8 @@ class CalendarScreen extends StatelessWidget {
                 subTitleText: 'Click any Calendar option below to view our online Calendars',
               ),
             ),
+            horizontalLine,
+            seperation,
             const CustomTextLaunchButton(
               url: 'https://www.nvcoc.church/churchcalendar',
               title: 'Church Calendar',
