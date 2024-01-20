@@ -8,7 +8,6 @@ import 'package:nvcoc_app/resources/nova_appbar.dart';
 
 class WorshipWithUsScreen extends StatelessWidget {
   const WorshipWithUsScreen({super.key});
-  final EdgeInsets cardPadding = const EdgeInsets.all(14);
 
   @override
   Widget build(BuildContext context) {

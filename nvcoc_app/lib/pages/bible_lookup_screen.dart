@@ -41,7 +41,7 @@ class BibleLookupScreen extends StatelessWidget with BibleLookupMixin {
                 child: SubTitle(
                     padding: textBoxPadding,
                     textStyle: montserrat.copyWith(color: novaBlue),
-                    subTitleText: 'Look up a scripture by it\'s notation! \nVersion: World English Bible, (WEB)'),
+                    subTitleText: 'Look up a scripture by it\'s notation! \nVersion: World English Bible (WEB)'),
               ),
               SubTitle(padding: textBoxPadding, textStyle: montserrat, subTitleText: 'Book'),
               Padding(
