@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+
+
+import '../constants/bars.dart';
+import '../constants/colors.dart';
+import '../constants/connect_with_us_widgets.dart';
+import '../constants/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

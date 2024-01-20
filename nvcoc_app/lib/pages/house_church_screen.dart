@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+
+import '../constants/bars.dart';
+import '../constants/colors.dart';
+import '../constants/spacing.dart';
+import '../constants/text_styles.dart';
 
 class HouseChurchScreen extends StatelessWidget {
   const HouseChurchScreen({super.key});

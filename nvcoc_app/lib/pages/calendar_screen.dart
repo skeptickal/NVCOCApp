@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/resources/bottom_nav_bar.dart';
-import 'package:nvcoc_app/resources/constants.dart';
-import 'package:nvcoc_app/resources/nova_appbar.dart';
+import '../constants/bars.dart';
+import '../constants/colors.dart';
+import '../constants/spacing.dart';
+import '../constants/sub_titles.dart';
+import '../constants/text_styles.dart';
+import '../constants/url_launching_widgets.dart';
 
 class CalendarScreen extends StatelessWidget {
   const CalendarScreen({super.key});
