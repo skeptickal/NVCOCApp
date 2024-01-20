@@ -11,6 +11,17 @@ class WorshipWithUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: const BottomNavBar(),
+      appBar: const NovaAppBar(),
+      body: _WorshipDetailsWidget(),
+    );
+  }
+}
+
+class _WorshipDetailsWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     context.read<WorshipCubit>().getWorshipDetails();
     return BlocBuilder<WorshipCubit, WorshipState>(
       builder: (context, state) {
@@ -45,10 +56,8 @@ class WorshipWithUsScreen extends StatelessWidget {
           padding: cardPadding,
         );
 
-        return Scaffold(
-          bottomNavigationBar: const BottomNavBar(),
-          appBar: const NovaAppBar(),
-          body: ListView(children: [
+        return ListView(
+          children: [
             Padding(
               padding: cardPadding,
               child: Center(
@@ -74,7 +83,7 @@ class WorshipWithUsScreen extends StatelessWidget {
             whatAboutMyKids,
             whatAboutMe,
             unsure,
-          ]),
+          ],
         );
       },
     );
