@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
 
 import 'package:nvcoc_app/models/ebulletin.dart';
 
 import 'package:nvcoc_app/constants/share_buttons.dart';
 
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/spacing.dart';
 import '../constants/text_styles.dart';
@@ -19,10 +19,8 @@ class EBullevitesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      appBar: const NovaAppBar(),
-      body: ListView(
+    return ScreenWrapper(
+      child: ListView(
         children: [
           Padding(
             padding: cardPadding,

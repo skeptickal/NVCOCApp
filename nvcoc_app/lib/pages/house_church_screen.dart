@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
 
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/spacing.dart';
 import '../constants/text_styles.dart';
@@ -15,10 +15,8 @@ class HouseChurchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      appBar: const NovaAppBar(),
-      body: _HouseChurchList(),
+    return ScreenWrapper(
+      child: _HouseChurchList(),
     );
   }
 }

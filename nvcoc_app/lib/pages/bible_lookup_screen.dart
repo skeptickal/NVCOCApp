@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/constants/colors.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
 
-import '../constants/bars.dart';
 import '../constants/input_decorations.dart';
 import '../constants/mixins.dart';
 import '../constants/spacing.dart';
@@ -15,10 +15,8 @@ class BibleLookupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const NovaAppBar(),
-      bottomNavigationBar: const BottomNavBar(),
-      body: _BibleVerseLookup(),
+    return ScreenWrapper(
+      child: _BibleVerseLookup(),
     );
   }
 }
@@ -91,5 +89,14 @@ class _BibleVerseLookup extends StatelessWidget with BibleLookupMixin {
         );
       },
     );
+  }
+}
+
+class _TitleAndIntro extends StatelessWidget {
+  const _TitleAndIntro();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

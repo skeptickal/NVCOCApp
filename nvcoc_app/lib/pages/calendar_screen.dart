@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/bars.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import '../constants/colors.dart';
 import '../constants/spacing.dart';
 import '../constants/sub_titles.dart';
@@ -11,10 +11,8 @@ class CalendarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const NovaAppBar(),
-      bottomNavigationBar: const BottomNavBar(),
-      body: Center(
+    return ScreenWrapper(
+      child: Center(
         child: Column(
           children: [
             seperation,
