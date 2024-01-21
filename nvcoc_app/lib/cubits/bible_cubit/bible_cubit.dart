@@ -14,10 +14,18 @@ class BibleCubit extends Cubit<BibleState> {
   Future<void> searchVerse(String searchTerm) async {
     try {
       final String verseText = await bibleQuery.getPassage(searchTerm);
-      emit(BibleState(verse: verseText));
+      emit(state.copyWith(verse: verseText));
     } catch (e) {
       handleError(e);
     }
+  }
+
+  void setSelectedBook({required String selectedBook}) {
+    emit(state.copyWith(selectedBook: selectedBook));
+  }
+
+  void setSelectedVerse({required String selectedVerse}) {
+    emit(state.copyWith(selectedVerse: selectedVerse));
   }
 
   void handleError(dynamic error) {
