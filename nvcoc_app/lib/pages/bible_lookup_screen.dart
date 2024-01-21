@@ -11,7 +11,9 @@ import '../constants/sub_titles.dart';
 import '../constants/text_styles.dart';
 
 class BibleLookupScreen extends StatelessWidget {
-  const BibleLookupScreen({super.key});
+  BibleLookupScreen({super.key});
+  final TextEditingController bookLookup = TextEditingController();
+  final TextEditingController verseLookup = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,9 @@ class BibleLookupScreen extends StatelessWidget {
         child: ListView(
       children: [
         _TitleAndIntro(),
-        _BookInput(),
-        _ChapterVerseInput(),
-        _BibleVerseFetchButtonAndReader(),
+        _BookInput(bookLookup: bookLookup),
+        _ChapterVerseInput(verseLookup: verseLookup),
+        _BibleVerseFetchButtonAndReader(verseLookup: verseLookup, bookLookup: bookLookup),
       ],
     ));
   }
@@ -53,7 +55,8 @@ class _TitleAndIntro extends StatelessWidget with BibleLookupMixin {
 }
 
 class _BookInput extends StatelessWidget with BibleLookupMixin {
-  _BookInput();
+  final TextEditingController bookLookup;
+  _BookInput({required this.bookLookup});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -82,8 +85,8 @@ class _BookInput extends StatelessWidget with BibleLookupMixin {
 }
 
 class _ChapterVerseInput extends StatelessWidget with BibleLookupMixin {
-  _ChapterVerseInput();
-
+  _ChapterVerseInput({required this.verseLookup});
+  final TextEditingController verseLookup;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -104,8 +107,10 @@ class _ChapterVerseInput extends StatelessWidget with BibleLookupMixin {
   }
 }
 
-class _SearchButton extends StatelessWidget with BibleLookupMixin {
-  _SearchButton();
+class _SearchButton extends StatelessWidget {
+  final TextEditingController bookLookup;
+  final TextEditingController verseLookup;
+  const _SearchButton({required this.bookLookup, required this.verseLookup});
 
   @override
   Widget build(BuildContext context) {
@@ -119,9 +124,9 @@ class _SearchButton extends StatelessWidget with BibleLookupMixin {
   }
 }
 
-class _ScriptureOutput extends StatelessWidget with BibleLookupMixin {
+class _ScriptureOutput extends StatelessWidget {
   final BibleState state;
-  _ScriptureOutput({required this.state});
+  const _ScriptureOutput({required this.state});
 
   @override
   Widget build(BuildContext context) {
@@ -135,8 +140,10 @@ class _ScriptureOutput extends StatelessWidget with BibleLookupMixin {
   }
 }
 
-class _BibleVerseFetchButtonAndReader extends StatelessWidget with BibleLookupMixin {
-  _BibleVerseFetchButtonAndReader();
+class _BibleVerseFetchButtonAndReader extends StatelessWidget {
+  final TextEditingController bookLookup;
+  final TextEditingController verseLookup;
+  const _BibleVerseFetchButtonAndReader({required this.bookLookup, required this.verseLookup});
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +151,10 @@ class _BibleVerseFetchButtonAndReader extends StatelessWidget with BibleLookupMi
       builder: (BuildContext context, BibleState state) {
         return Column(
           children: [
-            _SearchButton(),
+            _SearchButton(
+              bookLookup: bookLookup,
+              verseLookup: verseLookup,
+            ),
             _ScriptureOutput(state: state),
           ],
         );

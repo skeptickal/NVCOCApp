@@ -25,8 +25,6 @@ mixin CommentMixin {
 
 mixin BibleLookupMixin {
   final EdgeInsets textBoxPadding = const EdgeInsets.fromLTRB(20.0, 12, 20, 12);
-  final TextEditingController bookLookup = TextEditingController();
-  final TextEditingController verseLookup = TextEditingController();
   final List<String> booksOfTheBible = [
     'Select a book',
     'Genesis',
