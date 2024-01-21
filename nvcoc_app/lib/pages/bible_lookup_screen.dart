@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/constants/colors.dart';
 import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
 
-
 import '../constants/bars.dart';
 import '../constants/input_decorations.dart';
 import '../constants/mixins.dart';
@@ -11,9 +10,20 @@ import '../constants/spacing.dart';
 import '../constants/sub_titles.dart';
 import '../constants/text_styles.dart';
 
-class BibleLookupScreen extends StatelessWidget with BibleLookupMixin {
-  BibleLookupScreen({super.key});
+class BibleLookupScreen extends StatelessWidget {
+  const BibleLookupScreen({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const NovaAppBar(),
+      bottomNavigationBar: const BottomNavBar(),
+      body: _BibleVerseLookup(),
+    );
+  }
+}
+
+class _BibleVerseLookup extends StatelessWidget with BibleLookupMixin {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BibleCubit, BibleState>(
@@ -30,58 +40,54 @@ class BibleLookupScreen extends StatelessWidget with BibleLookupMixin {
           style: montserrat,
         );
 
-        return Scaffold(
-          appBar: const NovaAppBar(),
-          bottomNavigationBar: const BottomNavBar(),
-          body: ListView(
-            children: [
-              seperation,
-              Center(
-                child: Text(
-                  'BIBLE VERSE LOOKUP',
-                  style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
-                ),
+        return ListView(
+          children: [
+            seperation,
+            Center(
+              child: Text(
+                'BIBLE VERSE LOOKUP',
+                style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
               ),
-              Center(
-                child: SubTitle(
-                    padding: textBoxPadding,
-                    textStyle: montserrat.copyWith(color: novaBlue),
-                    subTitleText: 'Look up a scripture by it\'s notation! \nVersion: World English Bible (WEB)'),
+            ),
+            Center(
+              child: SubTitle(
+                  padding: textBoxPadding,
+                  textStyle: montserrat.copyWith(color: novaBlue),
+                  subTitleText: 'Look up a scripture by its notation! \nVersion: World English Bible (WEB)'),
+            ),
+            SubTitle(padding: textBoxPadding, textStyle: montserrat, subTitleText: 'Book'),
+            Padding(
+              padding: textBoxPadding,
+              child: DropdownButtonFormField<String>(
+                value: 'Select a book',
+                items: booksOfTheBible.map((book) {
+                  return DropdownMenuItem<String>(
+                    value: book,
+                    child: Text(book),
+                  );
+                }).toList(),
+                onChanged: (String? value) {
+                  bookLookup.text = value ?? '';
+                },
+                decoration: textInputDecoration.copyWith(hintText: 'Select a book'),
               ),
-              SubTitle(padding: textBoxPadding, textStyle: montserrat, subTitleText: 'Book'),
-              Padding(
-                padding: textBoxPadding,
-                child: DropdownButtonFormField<String>(
-                  value: 'Select a book',
-                  items: booksOfTheBible.map((book) {
-                    return DropdownMenuItem<String>(
-                      value: book,
-                      child: Text(book),
-                    );
-                  }).toList(),
-                  onChanged: (String? value) {
-                    bookLookup.text = value ?? '';
-                  },
-                  decoration: textInputDecoration.copyWith(hintText: 'Select a book'),
-                ),
+            ),
+            SubTitle(padding: textBoxPadding, textStyle: montserrat, subTitleText: 'Chapter + Verse(s)'),
+            Padding(
+              padding: textBoxPadding,
+              child: TextFormField(
+                controller: verseLookup,
+                maxLines: null,
+                keyboardType: TextInputType.multiline,
+                decoration: textInputDecoration.copyWith(hintText: 'e.g. 3:16-17'),
               ),
-              SubTitle(padding: textBoxPadding, textStyle: montserrat, subTitleText: 'Chaper + Verse(s)'),
-              Padding(
-                padding: textBoxPadding,
-                child: TextFormField(
-                  controller: verseLookup,
-                  maxLines: null,
-                  keyboardType: TextInputType.multiline,
-                  decoration: textInputDecoration.copyWith(hintText: 'e.g. 3:16-17'),
-                ),
-              ),
-              searcher,
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: bibleVerseReader,
-              ),
-            ],
-          ),
+            ),
+            searcher,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: bibleVerseReader,
+            ),
+          ],
         );
       },
     );
