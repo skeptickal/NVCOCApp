@@ -45,36 +45,39 @@ class _MinistryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      seperation,
-      const ConnectColumn(
-          detail: 'Check out our Ministries by clicking their photo, and scroll further to view our leadership team!',
-          title: 'MINISTRIES + LEADERSHIP',
-          padding: cardPadding),
-      const MinistriesBox(
-        url: 'https://www.nvcoc.church/youthandfamily',
-        image: 'yf.jpeg',
-        title: 'YOUTH AND FAMILY MINISTRY',
-        fontSize: 23,
-      ),
-      seperation,
-      const MinistriesBox(
-        url: 'https://www.nvcoc.church/campus',
-        image: 'campus1.jpg',
-        title: 'CAMPUS',
-        fontSize: 50,
-      ),
-      seperation,
-      const MinistriesBox(
-        url: 'https://www.nvcoc.church/mosaic',
-        image: 'mosaic.png',
-        title: 'MOSAIC',
-        fontSize: 50,
-      ),
-      seperation,
-      horizontalLine,
-      seperation,
-      seperation,
-    ]);
+    return Align(
+      alignment: Alignment.center,
+      child: Column(children: [
+        seperation,
+        const ConnectColumn(
+            detail: 'Check out our Ministries by clicking their photo, and scroll further to view our leadership team!',
+            title: 'MINISTRIES + LEADERSHIP',
+            padding: cardPadding),
+        const MinistriesBox(
+          url: 'https://www.nvcoc.church/youthandfamily',
+          image: 'yf.jpeg',
+          title: 'YOUTH AND FAMILY MINISTRY',
+          fontSize: 23,
+        ),
+        seperation,
+        const MinistriesBox(
+          url: 'https://www.nvcoc.church/campus',
+          image: 'campus1.jpg',
+          title: 'CAMPUS',
+          fontSize: 50,
+        ),
+        seperation,
+        const MinistriesBox(
+          url: 'https://www.nvcoc.church/mosaic',
+          image: 'mosaic.png',
+          title: 'MOSAIC',
+          fontSize: 50,
+        ),
+        seperation,
+        horizontalLine,
+        seperation,
+        seperation,
+      ]),
+    );
   }
 }
