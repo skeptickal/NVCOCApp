@@ -55,7 +55,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/bible_verse_lookup',
       builder: (BuildContext context, GoRouterState state) {
-        return const BibleLookupScreen();
+        return  BibleLookupScreen();
       },
     ),
     GoRoute(
