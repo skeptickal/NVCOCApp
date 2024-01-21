@@ -21,7 +21,7 @@ class BibleLookupScreen extends StatelessWidget {
         _TitleAndIntro(),
         _BookInput(),
         _ChapterVerseInput(),
-        const _BibleVerseFetchButtonAndReader(),
+        _BibleVerseFetchButtonAndReader(),
       ],
     ));
   }
@@ -105,8 +105,7 @@ class _ChapterVerseInput extends StatelessWidget with BibleLookupMixin {
 }
 
 class _SearchButton extends StatelessWidget with BibleLookupMixin {
-  final BibleState state;
-  _SearchButton({required this.state});
+  _SearchButton();
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +119,9 @@ class _SearchButton extends StatelessWidget with BibleLookupMixin {
   }
 }
 
-class _ScriptureOutput extends StatelessWidget {
+class _ScriptureOutput extends StatelessWidget with BibleLookupMixin {
   final BibleState state;
-  const _ScriptureOutput({required this.state});
+  _ScriptureOutput({required this.state});
 
   @override
   Widget build(BuildContext context) {
@@ -136,8 +135,8 @@ class _ScriptureOutput extends StatelessWidget {
   }
 }
 
-class _BibleVerseFetchButtonAndReader extends StatelessWidget {
-  const _BibleVerseFetchButtonAndReader();
+class _BibleVerseFetchButtonAndReader extends StatelessWidget with BibleLookupMixin {
+  _BibleVerseFetchButtonAndReader();
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +144,7 @@ class _BibleVerseFetchButtonAndReader extends StatelessWidget {
       builder: (BuildContext context, BibleState state) {
         return Column(
           children: [
-            _SearchButton(state: state),
+            _SearchButton(),
             _ScriptureOutput(state: state),
           ],
         );

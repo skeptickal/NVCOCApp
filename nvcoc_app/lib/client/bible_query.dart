@@ -11,13 +11,20 @@ class BibleQuery {
     try {
       final Uri url = Uri.http('bible-api.com', searchTerm);
       var response = await httpClient.get(url);
-      dynamic data = jsonDecode(response.body);
-      print(data);
+      print('Request URL: $url');
 
-      if (data is Map<String, dynamic> && data.containsKey('text')) {
-        return '${data['reference'].toString()}\n${data['text'].toString()}';
+      if (response.statusCode == 200) {
+        dynamic data = jsonDecode(response.body);
+        print(data);
+
+        if (data is Map<String, dynamic> && data.containsKey('text')) {
+          return '${data['reference'].toString()}\n${data['text'].toString()}';
+        } else {
+          throw Exception('Unexpected response format: $data');
+        }
       } else {
-        throw Exception('Unexpected response format: $data');
+        print('HTTP Error: ${response.statusCode}, ${response.reasonPhrase}');
+        throw Exception('HTTP Error: ${response.statusCode}, ${response.reasonPhrase}');
       }
     } catch (e) {
       print('Error fetching passage: $e');
