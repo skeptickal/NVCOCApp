@@ -3,6 +3,7 @@ import 'package:nvcoc_app/client/firebase_client.dart';
 import 'package:nvcoc_app/models/comment.dart';
 import 'package:nvcoc_app/models/ebulletin.dart';
 import 'package:nvcoc_app/models/housechurch.dart';
+import 'package:nvcoc_app/models/leader.dart';
 import 'package:nvcoc_app/models/message.dart';
 import 'package:nvcoc_app/models/worship_details.dart';
 
@@ -20,6 +21,12 @@ class NovaService {
   Future<List<Housechurch>> getHouseChurches() async {
     QuerySnapshot<Map<String, dynamic>> data = await client.getData(collectionName: 'house churches');
     return data.docs.map((doc) => Housechurch.fromJson(doc.data())).toList();
+  }
+
+  //Leadership
+  Future<List<Leader>> getLeaders() async {
+    QuerySnapshot<Map<String, dynamic>> data = await client.getData(collectionName: 'leaders');
+    return data.docs.map((doc) => Leader.fromJson(doc.data())).toList();
   }
 
   //Worship Details

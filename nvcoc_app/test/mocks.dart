@@ -5,6 +5,7 @@ import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
+import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
 import 'package:nvcoc_app/cubits/worship_cubit/worship_cubit.dart';
 import 'package:nvcoc_app/service/nova_service.dart';
 
@@ -18,6 +19,8 @@ class MockEbulletinCubit extends MockCubit<EbulletinState> implements EbulletinC
 class MockBibleCubit extends MockCubit<BibleState> implements BibleCubit {}
 
 class MockWorshipCubit extends MockCubit<WorshipState> implements WorshipCubit {}
+
+class MockMessageCubit extends MockCubit<MessageState> implements MessageCubit {}
 
 // Services
 class MockTaskService extends Mock implements NovaService {}
