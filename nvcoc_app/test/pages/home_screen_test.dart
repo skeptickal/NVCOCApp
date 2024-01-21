@@ -1,24 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:nvcoc_app/client/firebase_client.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 
 import '../materializer.dart';
 import '../mocks.dart';
 
+class MockFirebaseClient extends Mock implements FirebaseClient {}
+
 void main() {
   //final MockGoRouter mockGoRouter = MockGoRouter();
+  final MockMessageCubit mockMessageCubit = MockMessageCubit();
+  final MockBibleCubit mockBibleCubit = MockBibleCubit();
+  final MockWorshipCubit mockWorshipCubit = MockWorshipCubit();
+  final MockCommentCubit mockCommentCubit = MockCommentCubit();
+  final MockEbulletinCubit mockEbulletinCubit = MockEbulletinCubit();
   final MockHousechurchCubit mockHousechurchCubit = MockHousechurchCubit();
+  late MockFirebaseClient testClient;
 
   group(
     'Home Screen',
     () {
+      setUp(() {
+        testClient = MockFirebaseClient();
+      });
       testWidgets(
         'Nav Cards are Displayed',
         (WidgetTester tester) async {
           tester.view.physicalSize = const Size(2000, 2000);
           tester.view.devicePixelRatio = 1.0;
+          when(() => testClient.getDoc(
+                collectionName: any(named: 'collectionName'),
+                docId: any(named: 'docId'),
+              )).thenAnswer(
+            (_) => Future.value(),
+          );
           await tester.pumpWidget(Materializer(
             mockCubits: [
+              mockMessageCubit,
+              mockBibleCubit,
+              mockWorshipCubit,
+              mockCommentCubit,
+              mockEbulletinCubit,
               mockHousechurchCubit,
             ],
             child: const HomeScreen(),
