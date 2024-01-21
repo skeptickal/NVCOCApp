@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
 
-
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/connect_with_us_widgets.dart';
 import '../constants/text_styles.dart';
@@ -14,22 +13,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<MessageCubit>().getMessage();
-    return Scaffold(
-        bottomNavigationBar: const BottomNavBar(),
-        backgroundColor: white,
-        appBar: const NovaAppBar(),
-        body: ListView(
-          key: const Key('home_screen_list'),
-          children: const [
-            _BannerMessage(),
-            HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
-            HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
-            HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
-            HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
-            HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
-            HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
-          ],
-        ));
+    return ScreenWrapper(
+        child: ListView(
+      key: const Key('home_screen_list'),
+      children: const [
+        _BannerMessage(),
+        HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
+        HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
+        HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
+        HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
+        HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
+        HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
+      ],
+    ));
   }
 }
 

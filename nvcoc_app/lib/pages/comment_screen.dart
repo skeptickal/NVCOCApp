@@ -1,11 +1,11 @@
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/models/comment.dart';
 
 
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/dropdown.dart';
 import '../constants/mixins.dart';
@@ -19,10 +19,8 @@ class CommentScreen extends StatelessWidget with CommentMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      appBar: const NovaAppBar(),
-      body: BlocBuilder<CommentCubit, CommentState>(
+    return ScreenWrapper(
+      child: BlocBuilder<CommentCubit, CommentState>(
         builder: (context, state) {
           final String dropdownValue = state.dropDownValue ?? 'Select One';
           final String dropdownValue1 = state.dropDownValue1 ?? 'Select One';

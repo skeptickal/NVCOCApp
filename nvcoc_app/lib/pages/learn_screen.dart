@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 
-
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/connect_with_us_widgets.dart';
 import '../constants/spacing.dart';
@@ -14,10 +13,8 @@ class LearnScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const NovaAppBar(),
-      bottomNavigationBar: const BottomNavBar(),
-      body: ListView(
+    return ScreenWrapper(
+      child: ListView(
         children: [
           seperation,
           Center(

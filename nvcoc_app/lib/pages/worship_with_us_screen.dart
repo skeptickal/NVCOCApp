@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/worship_cubit/worship_cubit.dart';
 import 'package:nvcoc_app/models/worship_details.dart';
 
-import '../constants/bars.dart';
 import '../constants/colors.dart';
 import '../constants/connect_with_us_widgets.dart';
 import '../constants/spacing.dart';
@@ -15,10 +15,8 @@ class WorshipWithUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      appBar: const NovaAppBar(),
-      body: _WorshipDetailsWidget(),
+    return ScreenWrapper(
+      child: _WorshipDetailsWidget(),
     );
   }
 }

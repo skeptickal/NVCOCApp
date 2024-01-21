@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nvcoc_app/constants/bars.dart';
 
 import 'package:nvcoc_app/constants/connect_with_us_widgets.dart';
+import 'package:nvcoc_app/constants/screen_wrapper.dart';
 
 import 'package:nvcoc_app/constants/spacing.dart';
 
@@ -18,20 +18,18 @@ class BeliefScreen extends StatelessWidget {
       'No matter who you are, where you live, or where you are spiritually, we welcome you into the community. Whatever goals you have or questions to ask spiritually, we want to help the Bible become alive and active in your life as it has in ours. We want you to experience life to the full, overcome the challenges of life, and embrace God\'s purpose for your life.';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const NovaAppBar(),
-        bottomNavigationBar: const BottomNavBar(),
-        body: ListView(
-          children: [
-            seperation,
-            ConnectColumn(detail: acts2, title: 'OUR BELIEFS', padding: cardPadding),
-            seperation,
-            ConnectColumn(detail: him, title: 'HIM', padding: cardPadding),
-            seperation,
-            ConnectColumn(detail: us, title: 'US', padding: cardPadding),
-            seperation,
-            ConnectColumn(detail: you, title: 'YOU', padding: cardPadding)
-          ],
-        ));
+    return ScreenWrapper(
+        child: ListView(
+      children: [
+        seperation,
+        ConnectColumn(detail: acts2, title: 'OUR BELIEFS', padding: cardPadding),
+        seperation,
+        ConnectColumn(detail: him, title: 'HIM', padding: cardPadding),
+        seperation,
+        ConnectColumn(detail: us, title: 'US', padding: cardPadding),
+        seperation,
+        ConnectColumn(detail: you, title: 'YOU', padding: cardPadding)
+      ],
+    ));
   }
 }
