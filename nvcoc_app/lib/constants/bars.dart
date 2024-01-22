@@ -79,7 +79,7 @@ class BottomNavBar extends StatelessWidget {
         IconButton(
             onPressed: () => context.push('/comment_card'),
             icon: const Icon(
-              Icons.comment,
+              Icons.mode_comment,
               color: white,
             )),
       ],
