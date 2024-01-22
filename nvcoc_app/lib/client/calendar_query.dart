@@ -15,6 +15,7 @@ class CalendarQuery {
     try {
       var response = await http.get(Uri.parse(apiUrl));
       dynamic data = jsonDecode(response.body);
+      print(data);
 
       if (data.containsKey('items')) {
         List<CalendarEvent> eventsList = [];
