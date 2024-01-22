@@ -11,6 +11,7 @@ import 'package:nvcoc_app/pages/house_church_screen.dart';
 import 'package:nvcoc_app/pages/learn_screen.dart';
 import 'package:nvcoc_app/pages/ministries_screen.dart';
 import 'package:nvcoc_app/pages/missions_screen.dart';
+import 'package:nvcoc_app/pages/practice_screen.dart';
 import 'package:nvcoc_app/pages/worship_with_us_screen.dart';
 
 final GoRouter router = GoRouter(
@@ -86,6 +87,13 @@ final GoRouter router = GoRouter(
       path: '/give',
       builder: (BuildContext context, GoRouterState state) {
         return const GiveScreen();
+      },
+    ),
+    //practice new functionality on this screen
+    GoRoute(
+      path: '/practice',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Calendar1Screen();
       },
     ),
   ],

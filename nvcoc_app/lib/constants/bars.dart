@@ -26,7 +26,7 @@ class NovaAppBar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: const IconThemeData(color: novaBlue),
       backgroundColor: white,
       title: GestureDetector(
-        onTap: () => context.go('/'),
+        onTap: () => context.go('/practice'),
         child: Image.asset(
           'assets/novalogo.png',
           scale: 20,

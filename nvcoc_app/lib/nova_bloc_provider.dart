@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
+import 'package:nvcoc_app/cubits/calendar_cubit/calendar_cubit.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
@@ -27,6 +28,7 @@ class NovaBlocProvider extends StatelessWidget {
         BlocProvider(create: (context) => BibleCubit()),
         BlocProvider(create: (context) => MessageCubit()),
         BlocProvider(create: (context) => LeaderCubit()),
+        BlocProvider(create: (context) => CalendarCubit()),
       ],
       child: child,
     );
