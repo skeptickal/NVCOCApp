@@ -7,10 +7,12 @@ import 'package:nvcoc_app/router.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(NovaBlocProvider(
-    child: MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+  runApp(
+    NovaBlocProvider(
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: router,
+      ),
     ),
-  ));
+  );
 }

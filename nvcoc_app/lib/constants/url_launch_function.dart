@@ -7,3 +7,7 @@ Future<void> canLaunchUrl(String url) async {
     throw Exception('Could Not Launch $url0');
   }
 }
+
+const Map<String, String> headers = {
+  'Content-Type': 'application/json; charset=UTF-8',
+};
