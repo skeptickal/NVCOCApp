@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
+import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
 import 'mocks.dart';
 
 class Materializer extends StatelessWidget {
-  final List<Cubit> mockCubits;
+  final List<HousechurchCubit> mockCubits;
   final MockGoRouter mockGoRouter;
   final Widget child;
 
@@ -28,5 +30,5 @@ class Materializer extends StatelessWidget {
     );
   }
 
-  List<BlocProvider> buildProviders() => mockCubits.map((Cubit cubit) => BlocProvider(create: (_) => cubit)).toList();
+  List<BlocProvider> buildProviders() => mockCubits.map((HousechurchCubit cubit) => BlocProvider(create: (_) => cubit)).toList();
 }
