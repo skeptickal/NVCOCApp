@@ -28,5 +28,5 @@ class Materializer extends StatelessWidget {
     );
   }
 
-  List<BlocProvider> buildProviders() => mockCubits.map((mockCubit) => BlocProvider(create: (_) => mockCubit)).toList();
+  List<BlocProvider> buildProviders() => mockCubits.map((Cubit cubit) => BlocProvider(create: (_) => cubit)).toList();
 }

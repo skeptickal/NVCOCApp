@@ -1,6 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:nvcoc_app/client/bible_query.dart';
+import 'package:nvcoc_app/client/firebase_client.dart';
 import 'package:nvcoc_app/cubits/bible_cubit/bible_cubit.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/cubits/ebulletin_cubit/ebulletin_cubit.dart';
@@ -27,3 +29,8 @@ class MockTaskService extends Mock implements NovaService {}
 
 // Other
 class MockGoRouter extends Mock implements GoRouter {}
+
+//client(s)
+class MockFirebaseClient extends Mock implements FirebaseClient {}
+
+class MockBibleQuery extends Mock implements BibleQuery {}
