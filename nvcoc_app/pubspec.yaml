@@ -52,6 +52,7 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   share_plus: ^7.2.1
   googleapis: ^12.0.0
+  mocktail_image_network: ^1.1.0
 
 dev_dependencies:
   flutter_test:

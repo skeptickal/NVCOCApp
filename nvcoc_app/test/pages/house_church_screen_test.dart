@@ -17,7 +17,7 @@ void main() {
     'House Church Screen',
     () {
       testWidgets(
-        'House Church Cards Visible',
+        'House Church Title and Cards Visible',
         (WidgetTester tester) async {
           tester.view.physicalSize = const Size(2000, 2000);
           tester.view.devicePixelRatio = 1.0;
@@ -32,6 +32,9 @@ void main() {
 
           final titleKeyFinder = find.byKey(const Key('house_church_title'));
           expect(titleKeyFinder, findsOneWidget);
+
+          final infoKeyFinder = find.byKey(const Key('house_church_info_card'));
+          expect(infoKeyFinder, findsOneWidget);
         },
       );
     },

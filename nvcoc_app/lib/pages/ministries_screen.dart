@@ -50,10 +50,12 @@ class _MinistryList extends StatelessWidget {
       child: Column(children: [
         seperation,
         const ConnectColumn(
+            key: Key('ministries_and_leaders_title'),
             detail: 'Check out our Ministries by clicking their photo, and scroll further to view our leadership team!',
             title: 'MINISTRIES + LEADERSHIP',
             padding: cardPadding),
         const MinistriesBox(
+          key: Key('youth_and_family'),
           url: 'https://www.nvcoc.church/youthandfamily',
           image: 'yf.jpeg',
           title: 'YOUTH AND FAMILY MINISTRY',
@@ -61,6 +63,7 @@ class _MinistryList extends StatelessWidget {
         ),
         seperation,
         const MinistriesBox(
+          key: Key('campus'),
           url: 'https://www.nvcoc.church/campus',
           image: 'campus1.jpg',
           title: 'CAMPUS',
@@ -68,6 +71,7 @@ class _MinistryList extends StatelessWidget {
         ),
         seperation,
         const MinistriesBox(
+          key: Key('mosaic'),
           url: 'https://www.nvcoc.church/mosaic',
           image: 'mosaic.png',
           title: 'MOSAIC',
