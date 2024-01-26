@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:nvcoc_app/client/firebase_client.dart';
+import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
+import 'package:nvcoc_app/models/message.dart';
 import 'package:nvcoc_app/pages/home_screen.dart';
 
 import '../materializer.dart';
@@ -12,6 +14,7 @@ class MockFirebaseClient extends Mock implements FirebaseClient {}
 void main() {
   //final MockGoRouter mockGoRouter = MockGoRouter();
   late MockFirebaseClient testClient;
+  Message message = Message(message: 'hello', messageTitle: 'example title');
 
   group(
     'Home Screen',
@@ -31,6 +34,8 @@ void main() {
               )).thenAnswer(
             (_) => Future.value(),
           );
+          when(() => mockMessageCubit.state).thenReturn(MessageState(message: message));
+          when(() => mockMessageCubit.getMessage()).thenAnswer((_) => Future.value());
           await tester.pumpWidget(Materializer(
             mockCubits: [
               mockMessageCubit,
