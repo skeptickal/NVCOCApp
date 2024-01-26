@@ -30,6 +30,7 @@ class _HouseChurchList extends StatelessWidget {
         List<Card> houseChurches = state.houseChurches!.map(
           (houseChurch) {
             return Card(
+              key: const Key('house_church_info_card'),
               margin: cardPadding,
               elevation: 4.0,
               shape: const RoundedRectangleBorder(
