@@ -1,5 +1,4 @@
 import 'dart:convert';
-// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import '../models/calendar_event.dart';
@@ -20,28 +19,26 @@ class CalendarQuery {
       if (data.containsKey('items')) {
         List<CalendarEvent> eventsList = [];
         for (var event in data['items']) {
+          print(event);
           String startTimeString = event['start']['dateTime'] ?? 'Start Time N/A';
 
-          if (startTimeString != 'Start Time N/A') {
-            DateTime startTime = DateTime.parse(startTimeString).toLocal();
-            if (startTime.isAfter(DateTime.now())) {
-              String eventName = event['summary'] ?? 'Event Name N/A';
-              print(eventName);
-              String endTimeString = event['end']['dateTime'] ?? 'End Time N/A';
-              DateTime endTime = DateTime.parse(endTimeString).toLocal();
-              String formattedStartTime = DateFormat('MM-dd-yyyy hh:mm a').format(startTime);
-              print(formattedStartTime);
-              String formattedEndTime = DateFormat('MM-dd-yyyy hh:mm a').format(endTime);
-              print(formattedEndTime);
+          if (startTimeString != 'Start Time N/A' && (DateTime.parse(startTimeString).isAfter(now) || isEventUpdatedAfterNow(event))) {
+            String eventName = event['summary'] ?? 'Event Name N/A';
+            print(eventName);
+            String endTimeString = event['end']['dateTime'] ?? 'End Time N/A';
+            DateTime endTime = DateTime.parse(endTimeString).toLocal();
+            String formattedStartTime = DateFormat('MM-dd-yyyy hh:mm a').format(DateTime.parse(startTimeString).toLocal());
+            print(formattedStartTime);
+            String formattedEndTime = DateFormat('MM-dd-yyyy hh:mm a').format(endTime);
+            print(formattedEndTime);
 
-              eventsList.add(
-                CalendarEvent(
-                  eventName: eventName,
-                  startTime: formattedStartTime,
-                  endTime: formattedEndTime,
-                ),
-              );
-            }
+            eventsList.add(
+              CalendarEvent(
+                eventName: eventName,
+                startTime: formattedStartTime,
+                endTime: formattedEndTime,
+              ),
+            );
           }
         }
         eventsList.sort((a, b) => a.startTime.compareTo(b.startTime));
@@ -56,5 +53,10 @@ class CalendarQuery {
       print('Error during API request: $e');
       return [];
     }
+  }
+
+  bool isEventUpdatedAfterNow(dynamic event) {
+    String updatedTimeString = event['updated'] ?? 'Updated Time N/A';
+    return updatedTimeString != 'Updated Time N/A' && DateTime.parse(updatedTimeString).isAfter(DateTime.now());
   }
 }
