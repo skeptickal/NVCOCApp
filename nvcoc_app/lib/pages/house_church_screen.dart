@@ -64,38 +64,43 @@ class _HouseChurchList extends StatelessWidget {
             );
           },
         ).toList();
-        return ListView.builder(
-          itemCount: houseChurches.length + 1,
-          itemBuilder: (context, index) {
-            if (index == 0) {
-              return Column(
-                children: [
-                  Padding(
-                    padding: cardPadding,
-                    child: Text(
-                      key: const Key('house_church_title'),
-                      'FIND A HOUSE CHURCH NEAR YOU',
-                      style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold, fontSize: 18),
+        return RefreshIndicator(
+          onRefresh: () => context.read<HousechurchCubit>().getHouseChurches(),
+          color: novaBlue,
+          backgroundColor: white,
+          child: ListView.builder(
+            itemCount: houseChurches.length + 1,
+            itemBuilder: (context, index) {
+              if (index == 0) {
+                return Column(
+                  children: [
+                    Padding(
+                      padding: cardPadding,
+                      child: Text(
+                        key: const Key('house_church_title'),
+                        'FIND A HOUSE CHURCH NEAR YOU',
+                        style: montserrat.copyWith(color: novaBlue, fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: cardPadding,
-                    child: Text(
-                      'The NOVA Church of Christ believes that you experience what '
-                      'we’re all about in community. In order to do that we are '
-                      'organized into small groups that we call House Churches. We'
-                      ' would love for you to connect with a house church near you '
-                      ' and experience the Kingdom of God in community. Check the list '
-                      'below for the closest house church and contact information. ',
-                      style: montserrat.copyWith(color: novaBlue),
+                    Padding(
+                      padding: cardPadding,
+                      child: Text(
+                        'The NOVA Church of Christ believes that you experience what '
+                        'we’re all about in community. In order to do that we are '
+                        'organized into small groups that we call House Churches. We'
+                        ' would love for you to connect with a house church near you '
+                        ' and experience the Kingdom of God in community. Check the list '
+                        'below for the closest house church and contact information. ',
+                        style: montserrat.copyWith(color: novaBlue),
+                      ),
                     ),
-                  ),
-                ],
-              );
-            } else {
-              return houseChurches[index - 1];
-            }
-          },
+                  ],
+                );
+              } else {
+                return houseChurches[index - 1];
+              }
+            },
+          ),
         );
       },
     );

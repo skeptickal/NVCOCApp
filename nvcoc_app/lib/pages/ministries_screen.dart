@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nvcoc_app/constants/colors.dart';
 import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/leader_cubit/leader_cubit.dart';
 
@@ -13,11 +14,16 @@ class MinistriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
-      child: ListView(
-        children: const [
-          _MinistryList(),
-          _LeaderList(),
-        ],
+      child: RefreshIndicator(
+        onRefresh: () => context.read<LeaderCubit>().getLeaders(),
+        color: novaBlue,
+        backgroundColor: white,
+        child: ListView(
+          children: const [
+            _MinistryList(),
+            _LeaderList(),
+          ],
+        ),
       ),
     );
   }

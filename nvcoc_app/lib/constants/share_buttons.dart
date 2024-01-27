@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
-
-
-
 class ShareIconButtom extends StatelessWidget {
   final String imageName;
   final String name;

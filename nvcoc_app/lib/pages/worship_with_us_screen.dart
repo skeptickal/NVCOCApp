@@ -58,34 +58,39 @@ class _WorshipDetailsWidget extends StatelessWidget {
           padding: cardPadding,
         );
 
-        return ListView(
-          children: [
-            Padding(
-              padding: cardPadding,
-              child: Center(
-                child: Text(
-                  'CONNECT WITH US',
-                  style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+        return RefreshIndicator(
+          onRefresh: () => context.read<WorshipCubit>().getWorshipDetails(),
+          color: novaBlue,
+          backgroundColor: white,
+          child: ListView(
+            children: [
+              Padding(
+                padding: cardPadding,
+                child: Center(
+                  child: Text(
+                    'CONNECT WITH US',
+                    style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+                  ),
                 ),
               ),
-            ),
-            meetingPlace,
-            meetingTime,
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconImageSearch(url: 'https://www.instagram.com/nova.churchofchrist', image: 'insta.png'),
-                IconImageSearch(url: 'https://www.youtube.com/@NorthernVirginiaChurchofChrist', image: 'yt.png'),
-                IconImageSearch(url: 'https://www.facebook.com/NorthernVAChurch/', image: 'fb.png'),
-              ],
-            ),
-            seperation,
-            whatToExpect,
-            seperation,
-            whatAboutMyKids,
-            whatAboutMe,
-            unsure,
-          ],
+              meetingPlace,
+              meetingTime,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconImageSearch(url: 'https://www.instagram.com/nova.churchofchrist', image: 'insta.png'),
+                  IconImageSearch(url: 'https://www.youtube.com/@NorthernVirginiaChurchofChrist', image: 'yt.png'),
+                  IconImageSearch(url: 'https://www.facebook.com/NorthernVAChurch/', image: 'fb.png'),
+                ],
+              ),
+              seperation,
+              whatToExpect,
+              seperation,
+              whatAboutMyKids,
+              whatAboutMe,
+              unsure,
+            ],
+          ),
         );
       },
     );

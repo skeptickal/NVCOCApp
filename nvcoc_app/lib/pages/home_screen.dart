@@ -14,17 +14,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<MessageCubit>().getMessage();
     return ScreenWrapper(
-        child: ListView(
-      key: const Key('home_screen_list'),
-      children: const [
-        _BannerMessage(),
-        HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
-        HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
-        HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
-        HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
-        HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
-        HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
-      ],
+        child: RefreshIndicator(
+      color: novaBlue,
+      backgroundColor: white,
+      onRefresh: () => context.read<MessageCubit>().getMessage(),
+      child: ListView(
+        key: const Key('home_screen_list'),
+        children: const [
+          _BannerMessage(),
+          HomeNavCard(image: 'connect.png', route: '/housechurches', key: Key('connect')),
+          HomeNavCard(image: 'events.png', route: '/calendar', key: Key('events')),
+          HomeNavCard(image: 'learn.png', route: '/learn', key: Key('learn')),
+          HomeNavCard(image: 'beliefs.png', route: '/beliefs', key: Key('beliefs')),
+          HomeNavCard(image: 'missions.png', route: '/missions', key: Key('missions')),
+          HomeNavCard(image: 'give.png', route: '/give', key: Key('give')),
+        ],
+      ),
     ));
   }
 }
