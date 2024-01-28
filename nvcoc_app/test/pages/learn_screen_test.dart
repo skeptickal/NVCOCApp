@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
-import 'package:nvcoc_app/client/firebase_client.dart';
 import 'package:nvcoc_app/pages/learn_screen.dart';
 
 import '../materializer.dart';

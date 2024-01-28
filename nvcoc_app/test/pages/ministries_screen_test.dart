@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:mocktail_image_network/mocktail_image_network.dart';
 
 import 'package:nvcoc_app/cubits/leader_cubit/leader_cubit.dart';
 
@@ -27,12 +28,12 @@ void main() {
           when(() => mockLeaderCubit.state).thenReturn(LeaderState(leaders: [leaders]));
           when(() => mockLeaderCubit.getLeaders()).thenAnswer((_) => Future.value());
           when(() => client.getData(collectionName: any(named: 'collectionName'))).thenAnswer((invocation) => Future.value());
-          await tester.pumpWidget(
-            Materializer(
-              mockCubits: [mockLeaderCubit],
-              child: const MinistriesScreen(),
-            ),
-          );
+          await mockNetworkImages(() async => await tester.pumpWidget(
+                Materializer(
+                  mockCubits: [mockLeaderCubit],
+                  child: const MinistriesScreen(),
+                ),
+              ));
 
           final titleKeyFinder = find.byKey(const Key('ministries_and_leaders_title'));
           expect(titleKeyFinder, findsOneWidget);
