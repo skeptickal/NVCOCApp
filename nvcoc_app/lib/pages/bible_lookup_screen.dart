@@ -38,12 +38,14 @@ class _TitleAndIntro extends StatelessWidget with BibleLookupMixin {
       children: [
         seperation,
         Center(
+          key: const Key('lookup_title'),
           child: Text(
             'BIBLE VERSE LOOKUP',
             style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
           ),
         ),
         Center(
+          key: const Key('lookup_subtitle'),
           child: SubTitle(
               padding: textBoxPadding,
               textStyle: montserrat.copyWith(color: novaBlue),
@@ -66,6 +68,7 @@ class _BookInput extends StatelessWidget with BibleLookupMixin {
         Padding(
           padding: textBoxPadding,
           child: DropdownButtonFormField<String>(
+            key: const Key('book_dropdown'),
             value: 'Select a book',
             items: booksOfTheBible.map((book) {
               return DropdownMenuItem<String>(
@@ -96,6 +99,7 @@ class _ChapterVerseInput extends StatelessWidget with BibleLookupMixin {
         Padding(
           padding: textBoxPadding,
           child: TextFormField(
+            key: const Key('verse_field'),
             controller: verseLookup,
             maxLines: null,
             keyboardType: TextInputType.multiline,
@@ -115,6 +119,7 @@ class _SearchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      key: const Key('search_button'),
       onPressed: () async {
         FocusScope.of(context).unfocus();
         context.read<BibleCubit>().searchVerse('${bookLookup.text}+${verseLookup.text}');
