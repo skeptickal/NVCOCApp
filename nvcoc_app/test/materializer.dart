@@ -4,11 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
 import 'package:nvcoc_app/cubits/leader_cubit/leader_cubit.dart';
 import 'package:nvcoc_app/cubits/message_cubit/message_cubit.dart';
-
 import 'mocks.dart';
 
 class Materializer extends StatelessWidget {
-  final List<LeaderCubit> mockCubits;
+  final List<Cubit> mockCubits;
   final MockGoRouter mockGoRouter;
   final Widget child;
 
@@ -32,5 +31,18 @@ class Materializer extends StatelessWidget {
     );
   }
 
-  List<BlocProvider> buildProviders() => mockCubits.map((LeaderCubit cubit) => BlocProvider(create: (_) => cubit)).toList();
+  List<BlocProvider<dynamic>> buildProviders() {
+    final List<BlocProvider<dynamic>> providers = [];
+    for (Cubit cubit in mockCubits) {
+      switch (cubit.runtimeType) {
+        case MockHousechurchCubit:
+          providers.add(BlocProvider<HousechurchCubit>(create: (_) => cubit as HousechurchCubit));
+        case MockLeaderCubit:
+          providers.add(BlocProvider<LeaderCubit>(create: (_) => cubit as LeaderCubit));
+        case MockMessageCubit:
+          providers.add(BlocProvider<MessageCubit>(create: (_) => cubit as MessageCubit));
+      }
+    }
+    return providers;
+  }
 }
