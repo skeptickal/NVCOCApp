@@ -22,13 +22,13 @@ class BeliefScreen extends StatelessWidget {
         child: ListView(
       children: [
         seperation,
-        ConnectColumn(detail: acts2, title: 'OUR BELIEFS', padding: cardPadding),
+        ConnectColumn(detail: acts2, title: 'OUR BELIEFS', padding: cardPadding, key: const Key('our_beliefs')),
         seperation,
-        ConnectColumn(detail: him, title: 'HIM', padding: cardPadding),
+        ConnectColumn(detail: him, title: 'HIM', padding: cardPadding, key: const Key('him_block')),
         seperation,
-        ConnectColumn(detail: us, title: 'US', padding: cardPadding),
+        ConnectColumn(detail: us, title: 'US', padding: cardPadding, key: const Key('us_block')),
         seperation,
-        ConnectColumn(detail: you, title: 'YOU', padding: cardPadding)
+        ConnectColumn(detail: you, title: 'YOU', padding: cardPadding, key: const Key('you_block'))
       ],
     ));
   }
