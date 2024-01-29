@@ -26,13 +26,15 @@ class EBullevitesScreen extends StatelessWidget {
             padding: cardPadding,
             child: Center(
               child: Text(
+                key: const Key('ebulletin_title'),
                 'EBULLETIN & EVITES',
                 style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
               ),
             ),
           ),
-          const _Ebulletin(),
+          const _Ebulletin(key: Key('ebulletin')),
           const Stack(
+            key: Key('churchWhite_evite'),
             children: [
               Image(image: AssetImage('assets/church.png')),
               Positioned(
@@ -49,6 +51,7 @@ class EBullevitesScreen extends StatelessWidget {
             ],
           ),
           const Stack(
+            key: Key('churchGrey_evite'),
             children: [
               Image(image: AssetImage('assets/churchGrey.png')),
               Positioned(
@@ -71,7 +74,7 @@ class EBullevitesScreen extends StatelessWidget {
 }
 
 class _Ebulletin extends StatelessWidget {
-  const _Ebulletin();
+  const _Ebulletin({super.key});
   @override
   Widget build(BuildContext context) {
     context.read<EbulletinCubit>().getEbulletin();
