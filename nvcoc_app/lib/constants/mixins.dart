@@ -20,7 +20,7 @@ mixin CommentMixin {
   final EdgeInsets leftPadding = const EdgeInsets.only(left: 20);
   final EdgeInsets textBoxPadding = const EdgeInsets.fromLTRB(20.0, 12, 20, 12);
   final EdgeInsets dropDownPadding = const EdgeInsets.fromLTRB(24, 10, 50, 10);
-  final TextStyle subTitleStyle = montserrat.copyWith(color: black, fontSize: 12, fontStyle: FontStyle.italic);
+  final TextStyle subTitleStyle = montserrat.copyWith(color: black, fontSize: 14, fontStyle: FontStyle.italic);
 }
 
 mixin BibleLookupMixin {

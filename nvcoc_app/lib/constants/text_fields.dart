@@ -10,12 +10,14 @@ class CustomTextBox extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final String subtitle;
+  final int? minLines;
 
   const CustomTextBox({
     required this.padding,
     required this.controller,
     required this.hintText,
     required this.subtitle,
+    this.minLines,
     super.key,
   });
 
@@ -24,11 +26,13 @@ class CustomTextBox extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(subtitle, style: montserrat),
+          Text(subtitle, style: montserrat.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
           TextFormField(
             controller: controller,
+            minLines: minLines,
             maxLines: null,
             keyboardType: TextInputType.multiline,
             decoration: textInputDecoration.copyWith(hintText: hintText),
