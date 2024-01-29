@@ -125,6 +125,9 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                   context.read<CommentCubit>().selectDropdown1(value!);
                 },
               ),
+              horizontalLine,
+              seperation,
+              seperation,
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'I am a member and my contact info has changed:'),
               CountryListPick(
                 appBar: AppBar(

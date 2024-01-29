@@ -26,7 +26,7 @@ class CustomTextBox extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(subtitle, style: montserrat.copyWith(fontSize: 14, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
