@@ -5,7 +5,6 @@ import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/comment_cubit/comment_cubit.dart';
 import 'package:nvcoc_app/models/comment.dart';
 
-
 import '../constants/colors.dart';
 import '../constants/dropdown.dart';
 import '../constants/mixins.dart';
@@ -31,6 +30,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                 child: Padding(
                   padding: const EdgeInsets.all(14),
                   child: Text(
+                    key: const Key('comment_cards_title'),
                     'Online Comment Cards',
                     style: montserrat.copyWith(
                       color: novaBlue,
@@ -44,6 +44,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
               Padding(
                 padding: rowPadding,
                 child: Text(
+                    key: const Key('comment_cards_subtitle'),
                     'Welcome to our online comment card and prayer request system. '
                     'Whether you’re a member or a guest to our church, our online '
                     'comment card allows you to place membership, change/update '
@@ -51,28 +52,48 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                     style: montserrat.copyWith(color: novaBlue)),
               ),
               seperation,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SpacedSubTitle(subTitleText: 'First Name', textStyle: subTitleStyle),
-                  SpacedSubTitle(subTitleText: 'Last Name', textStyle: subTitleStyle),
-                ],
-              ),
               Padding(
                 padding: rowPadding,
                 child: Row(
                   children: [
-                    CustomTextBox(padding: sideBySideText, controller: firstName, hintText: 'First Name'),
-                    CustomTextBox(padding: sideBySideText, controller: lastName, hintText: 'Last Name'),
+                    Flexible(
+                      child: CustomTextBox(
+                        padding: sideBySideText,
+                        controller: firstName,
+                        hintText: 'First Name',
+                        subtitle: 'First Name',
+                        key: const Key('first_name'),
+                      ),
+                    ),
+                    Flexible(
+                      child: CustomTextBox(
+                        padding: sideBySideText,
+                        controller: lastName,
+                        hintText: 'Last Name',
+                        subtitle: 'Last Name',
+                        key: const Key('last_name'),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Email Address'),
-              CustomTextBox(padding: textBoxPadding, controller: email, hintText: 'emailaddress@email.com'),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Comment/Prayer Request'),
-              CustomTextBox(padding: textBoxPadding, controller: commenter, hintText: 'Comment/Prayer Request'),
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: email,
+                hintText: 'emailaddress@email.com',
+                subtitle: 'Email',
+                key: const Key('email'),
+              ),
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: commenter,
+                hintText: 'Comment/Prayer Request',
+                subtitle: 'Comment',
+                key: const Key('comment'),
+              ),
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'I would Like to. . .'),
               CustomDropdown(
+                key: const Key('join_dropdown'),
                 value: dropdownValue,
                 items: const [
                   'Select One',
@@ -88,6 +109,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
               ),
               SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'I am. . .'),
               CustomDropdown(
+                key: const Key('iAm_dropdown'),
                 value: dropdownValue1,
                 items: const [
                   'Select One',
@@ -121,33 +143,70 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                   context.read<CommentCubit>().selectCode(code!);
                 },
               ),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Address Line 1'),
-              CustomTextBox(padding: textBoxPadding, controller: address1, hintText: '1234 Example St.'),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Address Line 2'),
-              CustomTextBox(padding: textBoxPadding, controller: address2, hintText: 'APT #'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SpacedSubTitle(subTitleText: 'City', textStyle: subTitleStyle),
-                  SpacedSubTitle(subTitleText: 'State', textStyle: subTitleStyle),
-                  SpacedSubTitle(subTitleText: 'Zip', textStyle: subTitleStyle),
-                ],
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: address1,
+                hintText: '1234 Example St.',
+                subtitle: 'Address Line 1',
+                key: const Key('address1'),
+              ),
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: address2,
+                hintText: 'APT #',
+                subtitle: 'Address Line 2',
+                key: const Key('address2'),
               ),
               Padding(
                 padding: rowPadding,
                 child: Row(
                   children: [
-                    CustomTextBox(padding: sideBySideText, controller: city, hintText: 'City'),
-                    CustomTextBox(padding: sideBySideText, controller: stateSelector, hintText: 'State'),
-                    CustomTextBox(padding: sideBySideText, controller: zip, hintText: 'Zip Code'),
+                    Flexible(
+                      child: CustomTextBox(
+                        padding: sideBySideText,
+                        controller: city,
+                        hintText: 'City',
+                        subtitle: 'City',
+                        key: const Key('city'),
+                      ),
+                    ),
+                    Flexible(
+                      child: CustomTextBox(
+                        padding: sideBySideText,
+                        controller: stateSelector,
+                        subtitle: 'State',
+                        hintText: 'State',
+                        key: const Key('state'),
+                      ),
+                    ),
+                    Flexible(
+                      child: CustomTextBox(
+                        padding: sideBySideText,
+                        controller: zip,
+                        hintText: 'Zip Code',
+                        subtitle: 'ZIP',
+                        key: const Key('zip'),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Phone'),
-              CustomTextBox(padding: textBoxPadding, controller: phone, hintText: 'Phone'),
-              SubTitle(padding: leftPadding, textStyle: subTitleStyle, subTitleText: 'Email'),
-              CustomTextBox(padding: textBoxPadding, controller: email2, hintText: 'Email (if changed)'),
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: phone,
+                hintText: 'Phone',
+                subtitle: 'Phone',
+                key: const Key('phone'),
+              ),
+              CustomTextBox(
+                padding: textBoxPadding,
+                controller: email2,
+                hintText: 'Email (if changed)',
+                subtitle: 'Email',
+                key: const Key('email1'),
+              ),
               TextButton(
+                  key: const Key('submit_button'),
                   onPressed: () => addCommentData(context),
                   child: Text(
                     'Submit Comment',

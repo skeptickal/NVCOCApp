@@ -24,26 +24,3 @@ class SubTitle extends StatelessWidget {
     );
   }
 }
-
-class SpacedSubTitle extends StatelessWidget {
-  final String subTitleText;
-  final TextStyle textStyle;
-
-  const SpacedSubTitle({
-    required this.subTitleText,
-    required this.textStyle,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: Text(
-          subTitleText,
-          style: textStyle,
-        ),
-      ),
-    );
-  }
-}
