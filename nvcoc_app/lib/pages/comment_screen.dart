@@ -85,6 +85,7 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                 key: const Key('email'),
               ),
               CustomTextBox(
+                minLines: 5,
                 padding: textBoxPadding,
                 controller: commenter,
                 hintText: 'Comment/Prayer Request',
