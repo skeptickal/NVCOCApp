@@ -32,13 +32,13 @@ void main() {
   );
 
   group(
-    'Home Screen',
+    'Comment Cards Screen',
     () {
       setUp(() {
         testClient = MockFirebaseClient();
       });
       testWidgets(
-        'Nav Cards are Displayed',
+        'Comment Title and Fields are Displayed',
         (WidgetTester tester) async {
           tester.view.physicalSize = const Size(2000, 2000);
           tester.view.devicePixelRatio = 1.0;
@@ -58,18 +58,38 @@ void main() {
             child: CommentScreen(),
           ));
 
-          final connectKeyFinder = find.byKey(const Key('connect'));
-          expect(connectKeyFinder, findsOneWidget);
-          final eventsKeyFinder = find.byKey(const Key('events'));
-          expect(eventsKeyFinder, findsOneWidget);
-          final learnKeyFinder = find.byKey(const Key('learn'));
-          expect(learnKeyFinder, findsOneWidget);
-          final beliefsKeyFinder = find.byKey(const Key('beliefs'));
-          expect(beliefsKeyFinder, findsOneWidget);
-          final missionsKeyFinder = find.byKey(const Key('missions'));
-          expect(missionsKeyFinder, findsOneWidget);
-          final giveKeyFinder = find.byKey(const Key('give'));
-          expect(giveKeyFinder, findsOneWidget);
+          final titleKeyFinder = find.byKey(const Key('comment_cards_title'));
+          expect(titleKeyFinder, findsOneWidget);
+          final subtitleKeyFinder = find.byKey(const Key('comment_cards_subtitle'));
+          expect(subtitleKeyFinder, findsOneWidget);
+          final firstNameKeyFinder = find.byKey(const Key('first_name'));
+          expect(firstNameKeyFinder, findsOneWidget);
+          final lastNameKeyFinder = find.byKey(const Key('last_name'));
+          expect(lastNameKeyFinder, findsOneWidget);
+          final emailKeyFinder = find.byKey(const Key('email'));
+          expect(emailKeyFinder, findsOneWidget);
+          final commentKeyFinder = find.byKey(const Key('comment'));
+          expect(commentKeyFinder, findsOneWidget);
+          final joinKeyFinder = find.byKey(const Key('join_dropdown'));
+          expect(joinKeyFinder, findsOneWidget);
+          final iAmKeyFinder = find.byKey(const Key('iAm_dropdown'));
+          expect(iAmKeyFinder, findsOneWidget);
+          final address1KeyFinder = find.byKey(const Key('address1'));
+          expect(address1KeyFinder, findsOneWidget);
+          final address2KeyFinder = find.byKey(const Key('address2'));
+          expect(address2KeyFinder, findsOneWidget);
+          final cityKeyFinder = find.byKey(const Key('city'));
+          expect(cityKeyFinder, findsOneWidget);
+          final stateKeyFinder = find.byKey(const Key('state'));
+          expect(stateKeyFinder, findsOneWidget);
+          final zipKeyFinder = find.byKey(const Key('zip'));
+          expect(zipKeyFinder, findsOneWidget);
+          final phoneKeyFinder = find.byKey(const Key('phone'));
+          expect(phoneKeyFinder, findsOneWidget);
+          final email1KeyFinder = find.byKey(const Key('email1'));
+          expect(email1KeyFinder, findsOneWidget);
+          final submitKeyFinder = find.byKey(const Key('submit_button'));
+          expect(submitKeyFinder, findsOneWidget);
         },
       );
     },
