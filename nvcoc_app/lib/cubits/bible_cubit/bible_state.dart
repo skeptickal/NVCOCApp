@@ -6,6 +6,10 @@ class BibleState extends Equatable {
 
   const BibleState({this.verse});
 
+  BibleState copyWith({verse}) {
+    return BibleState(verse: verse ?? this.verse);
+  }
+
   @override
   List<Object?> get props => [verse];
 }
