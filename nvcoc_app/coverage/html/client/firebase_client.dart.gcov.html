@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">11</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-30 11:38:05</td>
+            <td class="headerValue">2024-01-30 13:51:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -63,27 +63,37 @@
 <a name="1"><span class="lineNum">       1 </span>            : import 'package:cloud_firestore/cloud_firestore.dart';</a>
 <a name="2"><span class="lineNum">       2 </span>            : </a>
 <a name="3"><span class="lineNum">       3 </span>            : class FirebaseClient {</a>
-<a name="4"><span class="lineNum">       4 </span><span class="lineNoCov">          0 :   Future&lt;dynamic&gt; setData({required String collectionName, dynamic body}) async {</span></a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineNoCov">          0 :     CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineNoCov">          0 :     await collection.doc().set(body);</span></a>
-<a name="7"><span class="lineNum">       7 </span>            :   }</a>
-<a name="8"><span class="lineNum">       8 </span>            : </a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineNoCov">          0 :   Future&lt;dynamic&gt; getData({required String collectionName}) async {</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 :     CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineNoCov">          0 :     return collection.get();</span></a>
-<a name="12"><span class="lineNum">      12 </span>            :   }</a>
-<a name="13"><span class="lineNum">      13 </span>            : </a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineNoCov">          0 :   Future&lt;dynamic&gt; getDoc({required String collectionName, required String docId}) async {</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineNoCov">          0 :     CollectionReference collection = FirebaseFirestore.instance.collection(collectionName);</span></a>
-<a name="16"><span class="lineNum">      16 </span><span class="lineNoCov">          0 :     DocumentSnapshot&lt;Object?&gt; documentSnapshot = await collection.doc(docId).get();</span></a>
-<a name="17"><span class="lineNum">      17 </span>            : </a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineNoCov">          0 :     if (documentSnapshot.exists) {</span></a>
-<a name="19"><span class="lineNum">      19 </span><span class="lineNoCov">          0 :       return documentSnapshot.data();</span></a>
-<a name="20"><span class="lineNum">      20 </span>            :     } else {</a>
-<a name="21"><span class="lineNum">      21 </span>            :       return null;</a>
-<a name="22"><span class="lineNum">      22 </span>            :     }</a>
-<a name="23"><span class="lineNum">      23 </span>            :   }</a>
-<a name="24"><span class="lineNum">      24 </span>            : }</a>
+<a name="4"><span class="lineNum">       4 </span>            :   final FirebaseFirestore firestore;</a>
+<a name="5"><span class="lineNum">       5 </span>            : </a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">          1 :   FirebaseClient({FirebaseFirestore? firestore}) : firestore = firestore ?? FirebaseFirestore.instance;</span></a>
+<a name="7"><span class="lineNum">       7 </span>            : </a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          1 :   Future&lt;dynamic&gt; setData({required String collectionName, dynamic body}) async {</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          2 :     CollectionReference collection = firestore.collection(collectionName);</span></a>
+<a name="10"><span class="lineNum">      10 </span>            : </a>
+<a name="11"><span class="lineNum">      11 </span>            :     try {</a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          2 :       await collection.doc().set(body);</span></a>
+<a name="13"><span class="lineNum">      13 </span>            :       return 'Success';</a>
+<a name="14"><span class="lineNum">      14 </span>            :     } catch (e) {</a>
+<a name="15"><span class="lineNum">      15 </span>            :       return null;</a>
+<a name="16"><span class="lineNum">      16 </span>            :     }</a>
+<a name="17"><span class="lineNum">      17 </span>            :   }</a>
+<a name="18"><span class="lineNum">      18 </span>            : </a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">          1 :   Future&lt;dynamic&gt; getData({required String collectionName}) async {</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          2 :     CollectionReference collection = firestore.collection(collectionName);</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     return collection.get();</span></a>
+<a name="22"><span class="lineNum">      22 </span>            :   }</a>
+<a name="23"><span class="lineNum">      23 </span>            : </a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          1 :   Future&lt;dynamic&gt; getDoc({required String collectionName, required String docId}) async {</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          2 :     CollectionReference collection = firestore.collection(collectionName);</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          2 :     DocumentSnapshot&lt;Object?&gt; documentSnapshot = await collection.doc(docId).get();</span></a>
+<a name="27"><span class="lineNum">      27 </span>            : </a>
+<a name="28"><span class="lineNum">      28 </span><span class="lineCov">          1 :     if (documentSnapshot.exists) {</span></a>
+<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          1 :       return documentSnapshot.data();</span></a>
+<a name="30"><span class="lineNum">      30 </span>            :     } else {</a>
+<a name="31"><span class="lineNum">      31 </span>            :       return null;</a>
+<a name="32"><span class="lineNum">      32 </span>            :     }</a>
+<a name="33"><span class="lineNum">      33 </span>            :   }</a>
+<a name="34"><span class="lineNum">      34 </span>            : }</a>
 </pre>
       </td>
     </tr>
