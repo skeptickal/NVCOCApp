@@ -30,6 +30,7 @@ class _WorshipDetailsWidget extends StatelessWidget {
         WorshipDetails worshipDetails = state.worshipDetails!;
 
         ConnectTile meetingPlace = ConnectTile(
+          key: const Key('meeting_place'),
           leading: 'WHERE',
           detail: worshipDetails.meetingPlace,
         );
