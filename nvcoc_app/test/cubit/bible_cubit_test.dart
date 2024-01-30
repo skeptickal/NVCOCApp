@@ -16,17 +16,34 @@ main() {
         bibleCubit = BibleCubit(bibleQuery: mockBibleQuery);
       });
 
-      blocTest('Search Term returns valid verse',
-          setUp: () {
-            when(() => mockBibleQuery.getPassage(any())).thenAnswer(
-              (_) => Future.value('John 3:16'),
-            );
-          },
-          build: () => bibleCubit,
-          act: (cubit) async {
-            await cubit.searchVerse('');
-          },
-          expect: () => [const BibleState(verse: 'John 3:16')]);
+      blocTest(
+        'Search Term returns valid verse',
+        setUp: () {
+          when(() => mockBibleQuery.getPassage(any())).thenAnswer(
+            (_) => Future.value('John 3:16'),
+          );
+        },
+        build: () => bibleCubit,
+        act: (cubit) async {
+          await cubit.searchVerse('');
+        },
+        expect: () => [
+          const BibleState(verse: 'John 3:16'),
+        ],
+      );
+      blocTest(
+        'Search Term Thrown Invalid Exception',
+        setUp: () {
+          when(() => mockBibleQuery.getPassage(any())).thenThrow(Exception);
+        },
+        build: () => bibleCubit,
+        act: (cubit) async {
+          await cubit.searchVerse('');
+        },
+        expect: () => [
+          const BibleState(verse: 'Scripture not found, check formatting'),
+        ],
+      );
     },
   );
 }
