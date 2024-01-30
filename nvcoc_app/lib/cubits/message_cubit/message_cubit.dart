@@ -18,7 +18,4 @@ class MessageCubit extends Cubit<MessageState> {
     emit(state.copyWith(message: message));
   }
 
-  void dismissMessage() {
-    emit(state.copyWith(message: null));
-  }
 }

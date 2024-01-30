@@ -29,7 +29,7 @@ class MockMessageCubit extends MockCubit<MessageState> implements MessageCubit {
 class MockLeaderCubit extends MockCubit<LeaderState> implements LeaderCubit {}
 
 // Services
-class MockTaskService extends Mock implements NovaService {}
+class MockNovaService extends Mock implements NovaService {}
 
 // Other
 class MockGoRouter extends Mock implements GoRouter {}
