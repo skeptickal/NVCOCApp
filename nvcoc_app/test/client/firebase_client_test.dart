@@ -34,12 +34,7 @@ void main() {
 
     test('setData adds data on success', () async {
       final firestore = FakeFirebaseFirestore();
-
       FirebaseClient client = FirebaseClient(firestore: firestore);
-      final collection = firestore.collection('collectionName');
-      final doc = collection.doc('docId');
-      await doc.set({'exampleField': 'exampleValue'});
-
       final result = await client.setData(collectionName: 'collectionName', body: {'exampleField': 'exampleValue'});
 
       expect(result, 'Success');
