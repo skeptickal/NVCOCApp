@@ -53,6 +53,7 @@ dependencies:
   share_plus: ^7.2.1
   googleapis: ^12.0.0
   mocktail_image_network: ^1.1.0
+  fake_cloud_firestore: ^2.4.8
 
 dev_dependencies:
   flutter_test:
