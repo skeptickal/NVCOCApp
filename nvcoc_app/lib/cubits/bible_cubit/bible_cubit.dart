@@ -14,7 +14,7 @@ class BibleCubit extends Cubit<BibleState> {
   Future<void> searchVerse(String searchTerm) async {
     try {
       final String verseText = await bibleQuery.getPassage(searchTerm);
-      emit(BibleState(verse: verseText));
+      emit(state.copyWith(verse: verseText));
     } catch (e) {
       handleError(e);
     }
@@ -23,6 +23,6 @@ class BibleCubit extends Cubit<BibleState> {
   void handleError(dynamic error) {
     const errorMessage = 'Scripture not found, check formatting';
     print('Error searching verse: $error');
-    emit(const BibleState(verse: errorMessage));
+    emit(state.copyWith(verse: errorMessage));
   }
 }
