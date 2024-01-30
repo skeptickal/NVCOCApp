@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fake_cloud_firestore/src/fake_cloud_firestore_instance.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mocktail/mocktail.dart';
@@ -37,15 +38,13 @@ class MockGoRouter extends Mock implements GoRouter {}
 
 class MockNetworkImage extends Mock implements NetworkImage {}
 
-class MockFirebaseFirestore extends Mock implements FirebaseFirestore {}
-
 class MockQuerySnapshot<T> extends Mock implements QuerySnapshot<T> {}
 
-// class MockCollectionReference<T> extends Mock implements CollectionReference {}
-
-// class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
-
 //client(s)
-class MockFirebaseClient extends Mock implements FirebaseClient {}
+class MockFirebaseClient extends Mock implements FirebaseClient {
+  @override
+  FakeFirebaseFirestore firestore;
+  MockFirebaseClient({FakeFirebaseFirestore? firestore}) : firestore = firestore ?? FakeFirebaseFirestore();
+}
 
 class MockBibleQuery extends Mock implements BibleQuery {}

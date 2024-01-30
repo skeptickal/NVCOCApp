@@ -6,7 +6,7 @@ class Ebulletin {
 
   factory Ebulletin.fromJson(Map<String, dynamic> json) {
     return Ebulletin(
-      link: json['ebulletin'].toString(),
+      link: json['link'].toString(),
     );
   }
 }
