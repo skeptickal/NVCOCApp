@@ -14,23 +14,27 @@ class GiveScreen extends StatelessWidget {
       children: [
         seperation,
         const ConnectColumn(
+          key: Key('give_title'),
           detail: 'Access any of our Giving Options',
           title: 'GIVE',
           padding: cardPadding,
         ),
         const GiveBox(
+          key: Key('online_bill_pay'),
           image: 'online_bill_pay.png',
           label: 'ONLINE BILL PAY',
           subtext:
               '''Use your bank's own "bill pay" feature: Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172 \n\nIn the memo line, indicate: weekly, poor, mission, etc. The bill can be set up as one time or recurring''',
         ),
         const GiveBox(
+          key: Key('zelle'),
           image: 'zelle.png',
           label: 'admin@nvcoc.org',
           subtext: '',
           url: 'https://zellepay.com',
         ),
         const GiveBox(
+          key: Key('jotform'),
           image: 'credit.png',
           label: 'CREDIT CARD/PAYPAL',
           subtext: '''Give via your personal PayPal account or credit card. Please note this option incurs online processing fees.''',

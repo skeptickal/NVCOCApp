@@ -11,25 +11,44 @@ import '../mocks.dart';
 
 class MockFirebaseClient extends Mock implements FirebaseClient {}
 
+Comment comment = Comment(
+  'collectionName',
+  'John',
+  'Smith',
+  'johnsmith@gmail.com',
+  'comment',
+  'join',
+  'campus',
+  'US',
+  '1234 Broad St.',
+  '123',
+  'Washington DC',
+  'VA',
+  '12345',
+  '123-456-7890',
+  'johnsmith1@gmail.com',
+);
 void main() {
   late MockFirebaseClient testClient;
-  Comment comment = Comment(
-    'collectionName',
-    'John',
-    'Smith',
-    'johnsmith@gmail.com',
-    'comment',
-    'join',
-    'campus',
-    'US',
-    '1234 Broad St.',
-    '123',
-    'Washington DC',
-    'VA',
-    '12345',
-    '123-456-7890',
-    'johnsmith1@gmail.com',
-  );
+  setUpAll(() {
+    registerFallbackValue(Comment(
+      'dummyCollectionName',
+      'DummyFirstName',
+      'DummyLastName',
+      'dummy@gmail.com',
+      'dummyComment',
+      'dummyJoin',
+      'dummyCampus',
+      'DummyUS',
+      'DummyStreet',
+      'DummyStreetNumber',
+      'DummyCity',
+      'DummyState',
+      'DummyZip',
+      'DummyPhone',
+      'dummy1@gmail.com',
+    ));
+  });
 
   group(
     'Comment Cards Screen',
@@ -50,7 +69,7 @@ void main() {
             (_) => Future.value(),
           );
           when(() => mockCommentCubit.state).thenReturn(CommentState(comment: comment));
-          when(() => mockCommentCubit.addComment(comment)).thenAnswer((_) => Future.value());
+          when(() => mockCommentCubit.addComment(any())).thenAnswer((_) => Future<void>.value());
           await tester.pumpWidget(Materializer(
             mockCubits: [
               mockCommentCubit,
@@ -90,6 +109,11 @@ void main() {
           expect(email1KeyFinder, findsOneWidget);
           final submitKeyFinder = find.byKey(const Key('submit_button'));
           expect(submitKeyFinder, findsOneWidget);
+          await tester.tap(submitKeyFinder);
+          await tester.pumpAndSettle();
+          verify(() => mockCommentCubit.addComment(any())).called(1);
+          final successMessageFinder = find.text('Comment Submitted');
+          expect(successMessageFinder, findsOneWidget);
         },
       );
     },
