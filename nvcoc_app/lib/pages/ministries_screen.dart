@@ -4,9 +4,10 @@ import 'package:nvcoc_app/constants/colors.dart';
 import 'package:nvcoc_app/constants/screen_wrapper.dart';
 import 'package:nvcoc_app/cubits/leader_cubit/leader_cubit.dart';
 
-import '../constants/connect_with_us_widgets.dart';
 import '../constants/other_widgets.dart';
 import '../constants/spacing.dart';
+import '../constants/sub_titles.dart';
+import '../constants/text_styles.dart';
 
 class MinistriesScreen extends StatelessWidget {
   const MinistriesScreen({super.key});
@@ -54,11 +55,20 @@ class _MinistryList extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(children: [
         seperation,
-        const ConnectColumn(
-            key: Key('ministries_and_leaders_title'),
-            detail: 'Check out our Ministries by clicking their photo, and scroll further to view our leadership team!',
-            title: 'MINISTRIES + LEADERSHIP',
-            padding: cardPadding),
+        Center(
+          child: Text(
+            key: const Key('ministries_and_leaders_title'),
+            'MINISTRIES + LEADERSHIP',
+            style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+          ),
+        ),
+        Center(
+          child: SubTitle(
+            padding: const EdgeInsets.all(14),
+            textStyle: montserrat.copyWith(color: novaBlue, fontStyle: FontStyle.italic),
+            subTitleText: 'Check out our Ministries by clicking their photo, and scroll further to view our leadership team!',
+          ),
+        ),
         const MinistriesBox(
           key: Key('youth_and_family'),
           url: 'https://www.nvcoc.church/youthandfamily',

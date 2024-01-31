@@ -25,7 +25,6 @@ class GiveScreen extends StatelessWidget {
           ),
           Center(
             child: SubTitle(
-              key: const Key('calendar_subtitle'),
               padding: const EdgeInsets.all(14),
               textStyle: montserrat.copyWith(color: novaBlue, fontStyle: FontStyle.italic),
               subTitleText: 'Check out our giving options below!',
