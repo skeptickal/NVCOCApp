@@ -33,7 +33,6 @@ class CalendarScreen extends StatelessWidget {
                 subTitleText: 'Click any Calendar option below to view our online Calendars',
               ),
             ),
-            seperation,
             const MinistriesBox(
               key: Key('calendar_link'),
               url: 'https://www.nvcoc.church/churchcalendar',
@@ -41,7 +40,6 @@ class CalendarScreen extends StatelessWidget {
               title: '',
               fontSize: 23,
             ),
-            seperation,
             const MinistriesBox(
               key: Key('featured_events_link'),
               url: 'https://www.nvcoc.church/featured-events',
@@ -49,7 +47,6 @@ class CalendarScreen extends StatelessWidget {
               title: '',
               fontSize: 23,
             ),
-            seperation,
             const MinistriesBox(
               key: Key('google_sheets_link'),
               url: 'https://docs.google.com/spreadsheets/d/1sdPuWX3xtC9JKrvL_UVVMPz56Oh0iDqThtkXHTL6xmo/edit#gid=0s',
