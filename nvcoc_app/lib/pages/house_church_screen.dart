@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:nvcoc_app/constants/screen_wrapper.dart';
+import 'package:nvcoc_app/constants/url_launching_widgets.dart';
 import 'package:nvcoc_app/cubits/housechurch_cubit/housechurch_cubit.dart';
 
 import '../constants/colors.dart';
@@ -55,6 +56,7 @@ class _HouseChurchList extends StatelessWidget {
                       style: montserrat,
                     ),
                   ),
+                  CustomTextLaunchButton(url: 'https://www.google.com/maps/dir//${houseChurch.location}', title: 'Get Directions'),
                   TextButton(
                     onPressed: () async => await FlutterPhoneDirectCaller.callNumber(houseChurch.number),
                     child: Text(houseChurch.number),
