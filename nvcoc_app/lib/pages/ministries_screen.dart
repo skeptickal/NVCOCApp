@@ -73,8 +73,8 @@ class _MinistryList extends StatelessWidget {
           key: Key('youth_and_family'),
           url: 'https://www.nvcoc.church/youthandfamily',
           image: 'yf.jpeg',
-          title: 'YOUTH AND FAMILY MINISTRY',
-          fontSize: 35,
+          title: 'YOUTH AND FAMILY',
+          fontSize: 40,
         ),
         const MinistriesBox(
           key: Key('campus'),
