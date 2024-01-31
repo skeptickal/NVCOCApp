@@ -27,7 +27,6 @@ class GiveScreen extends StatelessWidget {
             subtext:
                 '''Use your bank's own "bill pay" feature: Create a bill payable to NVCOC mailing address: P.O. Box 979, Herndon, VA 20172 \n\nIn the memo line, indicate: weekly, poor, mission, etc. The bill can be set up as one time or recurring''',
           ),
-          seperation,
           const GiveBox(
             key: Key('zelle'),
             image: 'zelle.png',
@@ -35,7 +34,6 @@ class GiveScreen extends StatelessWidget {
             subtext: '',
             url: 'https://zellepay.com',
           ),
-          seperation,
           const GiveBox(
             key: Key('jotform'),
             image: 'credit.png',
