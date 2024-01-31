@@ -36,6 +36,7 @@ class MinistriesBox extends StatelessWidget {
           padding: const EdgeInsets.all(6.0),
           child: Center(
             child: Text(
+              textAlign: TextAlign.center,
               title,
               style: montserrat.copyWith(fontSize: fontSize, fontWeight: FontWeight.bold, color: white),
             ),
