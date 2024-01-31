@@ -88,7 +88,7 @@ class HomeNavCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.push(route),
       child: Container(
-        width: 250,
+        width: MediaQuery.of(context).size.width,
         height: 250,
         decoration: BoxDecoration(
           image: DecorationImage(
