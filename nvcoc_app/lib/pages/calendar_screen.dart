@@ -51,7 +51,7 @@ class CalendarScreen extends StatelessWidget {
             ),
             seperation,
             const MinistriesBox(
-              key: Key('calendar_subtitle'),
+              key: Key('google_sheets_link'),
               url: 'https://docs.google.com/spreadsheets/d/1sdPuWX3xtC9JKrvL_UVVMPz56Oh0iDqThtkXHTL6xmo/edit#gid=0s',
               image: 'google_sheet_calendar.png',
               title: '',
