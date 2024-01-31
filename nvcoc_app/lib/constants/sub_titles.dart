@@ -18,6 +18,7 @@ class SubTitle extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Text(
+        textAlign: TextAlign.center,
         subTitleText,
         style: textStyle,
       ),

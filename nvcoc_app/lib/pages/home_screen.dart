@@ -55,6 +55,7 @@ class _BannerMessage extends StatelessWidget {
                   style: montserrat.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
+                  textAlign: TextAlign.center,
                   state.message!.message,
                   style: montserrat.copyWith(fontWeight: FontWeight.bold),
                 ),
