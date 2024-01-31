@@ -46,7 +46,7 @@ class _HouseChurchList extends StatelessWidget {
                     padding: cardPadding,
                     child: Text(
                       houseChurch.name,
-                      style: montserrat,
+                      style: montserrat.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
