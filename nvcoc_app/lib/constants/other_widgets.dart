@@ -139,6 +139,7 @@ class GiveBox extends StatelessWidget {
                   ),
                 ),
                 Text(
+                  textAlign: TextAlign.center,
                   subtext,
                   style: montserrat.copyWith(
                     color: white,
