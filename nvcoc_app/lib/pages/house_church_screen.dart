@@ -56,7 +56,10 @@ class _HouseChurchList extends StatelessWidget {
                       style: montserrat,
                     ),
                   ),
-                  CustomTextLaunchButton(url: 'https://www.google.com/maps/dir//${houseChurch.location}', title: 'Get Directions'),
+                  CustomTextLaunchButton(
+                    url: 'https://www.google.com/maps/dir//${houseChurch.location}',
+                    title: 'Get Directions',
+                  ),
                   TextButton(
                     onPressed: () async => await FlutterPhoneDirectCaller.callNumber(houseChurch.number),
                     child: Text(houseChurch.number),
