@@ -51,8 +51,7 @@ class _MinistryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
+    return SingleChildScrollView(
       child: Column(children: [
         seperation,
         const ConnectColumn(
@@ -67,7 +66,6 @@ class _MinistryList extends StatelessWidget {
           title: 'YOUTH AND FAMILY MINISTRY',
           fontSize: 30,
         ),
-        seperation,
         const MinistriesBox(
           key: Key('campus'),
           url: 'https://www.nvcoc.church/campus',
@@ -75,7 +73,6 @@ class _MinistryList extends StatelessWidget {
           title: 'CAMPUS',
           fontSize: 50,
         ),
-        seperation,
         const MinistriesBox(
           key: Key('mosaic'),
           url: 'https://www.nvcoc.church/mosaic',

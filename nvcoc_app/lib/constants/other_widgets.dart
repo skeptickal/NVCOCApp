@@ -24,7 +24,7 @@ class MinistriesBox extends StatelessWidget {
     return GestureDetector(
       onTap: () => canLaunchUrl(url),
       child: Container(
-        width: MediaQuery.of(context).size.width * .8,
+        width: MediaQuery.of(context).size.width,
         height: 250,
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -34,14 +34,11 @@ class MinistriesBox extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(6.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: montserrat.copyWith(fontSize: fontSize, fontWeight: FontWeight.bold, color: white),
-              ),
-            ],
+          child: Center(
+            child: Text(
+              title,
+              style: montserrat.copyWith(fontSize: fontSize, fontWeight: FontWeight.bold, color: white),
+            ),
           ),
         ),
       ),
@@ -116,38 +113,40 @@ class GiveBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: url != null ? () => canLaunchUrl(url!) : null,
-      child: Container(
-        width: 250,
-        height: 250,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/$image'),
-            fit: BoxFit.cover,
+      child: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 250,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/$image'),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                label,
-                style: montserrat.copyWith(
-                  color: white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
+          child: Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  label,
+                  style: montserrat.copyWith(
+                    color: white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                  ),
                 ),
-              ),
-              Text(
-                subtext,
-                style: montserrat.copyWith(
-                  color: white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.0,
+                Text(
+                  subtext,
+                  style: montserrat.copyWith(
+                    color: white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
