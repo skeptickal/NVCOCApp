@@ -24,7 +24,7 @@ class MinistriesBox extends StatelessWidget {
     return GestureDetector(
       onTap: () => canLaunchUrl(url),
       child: Container(
-        width: 250,
+        width: MediaQuery.of(context).size.width * .8,
         height: 250,
         decoration: BoxDecoration(
           image: DecorationImage(
