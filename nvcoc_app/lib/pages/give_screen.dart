@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nvcoc_app/constants/screen_wrapper.dart';
-import '../constants/connect_with_us_widgets.dart';
+import '../constants/colors.dart';
 import '../constants/other_widgets.dart';
 import '../constants/spacing.dart';
+import '../constants/sub_titles.dart';
+import '../constants/text_styles.dart';
 
 class GiveScreen extends StatelessWidget {
   const GiveScreen({super.key});
@@ -14,11 +16,20 @@ class GiveScreen extends StatelessWidget {
       child: Column(
         children: [
           seperation,
-          const ConnectColumn(
-            key: Key('give_title'),
-            detail: 'Access any of our Giving Options',
-            title: 'GIVE',
-            padding: cardPadding,
+          Center(
+            child: Text(
+              key: const Key('give_title'),
+              'CONTRIBUTION',
+              style: montserrat.copyWith(fontSize: 20, fontWeight: FontWeight.bold, color: novaBlue),
+            ),
+          ),
+          Center(
+            child: SubTitle(
+              key: const Key('calendar_subtitle'),
+              padding: const EdgeInsets.all(14),
+              textStyle: montserrat.copyWith(color: novaBlue, fontStyle: FontStyle.italic),
+              subTitleText: 'Check out our giving options below!',
+            ),
           ),
           const GiveBox(
             key: Key('online_bill_pay'),
