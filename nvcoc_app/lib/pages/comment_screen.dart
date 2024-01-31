@@ -215,7 +215,9 @@ class CommentScreen extends StatelessWidget with CommentMixin {
                   child: Text(
                     'Submit Comment',
                     style: montserrat.copyWith(color: novaBlue),
-                  ))
+                  )),
+              seperation,
+              seperation,
             ],
           );
         },
