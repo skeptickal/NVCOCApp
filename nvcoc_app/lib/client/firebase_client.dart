@@ -1,7 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+
+Future<void> handleBackgroundMessage(RemoteMessage message) async {
+  print('Title: ${message.notification?.title}');
+  print('Body: ${message.notification?.body}');
+  print('Payload: ${message.data}');
+}
 
 class FirebaseClient {
   final FirebaseFirestore firestore;
+  final _firebaseMessaging = FirebaseMessaging.instance;
 
   FirebaseClient({FirebaseFirestore? firestore}) : firestore = firestore ?? FirebaseFirestore.instance;
 
@@ -30,5 +38,12 @@ class FirebaseClient {
     } else {
       return null;
     }
+  }
+
+  Future<void> initNotifications() async {
+    await _firebaseMessaging.requestPermission();
+    final fCMToken = await _firebaseMessaging.getToken();
+    print('token: $fCMToken');
+    FirebaseMessaging.onBackgroundMessage(handleBackgroundMessage);
   }
 }
