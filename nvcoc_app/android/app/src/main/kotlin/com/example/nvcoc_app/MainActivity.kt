@@ -1,4 +1,4 @@
-package com.example.nvcoc_app
+package com.JG.nvcoc_app
 
 import io.flutter.embedding.android.FlutterActivity
 
